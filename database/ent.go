@@ -14,7 +14,20 @@ type Ent struct {
 	client *ent.Client
 }
 
-func Open(driver, username, password, host, port, database string) (*Ent, error) {
+type EntConfig struct {
+	Driver   string
+	Username string
+	Password string
+	Host     string
+	Port     string
+	Database string
+}
+
+func init() {
+	Register("ent", &Ent{})
+}
+
+func (e *Ent) open(driver, username, password, host, port, database string) error {
 	var dataSourceName string
 
 	switch driver {
@@ -40,12 +53,23 @@ func Open(driver, username, password, host, port, database string) (*Ent, error)
 
 	drv, err := sql.Open(driver, dataSourceName)
 	if err != nil {
-		return nil, err
+		return err
 	}
 
-	return &Ent{
-		client: ent.NewClient(ent.Driver(drv)),
-	}, nil
+	e.client = ent.NewClient(ent.Driver(drv))
+	return nil
+}
+
+func (e *Ent) Connect(ctx context.Context, conf interface{}) error {
+	if c, ok := conf.(*EntConfig); ok {
+		err := e.open(c.Driver, c.Username, c.Password, c.Host, c.Port, c.Database)
+		if err != nil {
+			return err
+		}
+
+		return e.Migrate(ctx)
+	}
+	return ErrInvalidDriverConfig
 }
 
 func (e *Ent) Migrate(ctx context.Context) error {

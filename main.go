@@ -32,6 +32,7 @@ func init() {
 	flags.String("db-password", "", "database password")
 	flags.String("delay", "10", "sync delay in seconds")
 	flags.String("api-endpoint", "", "api endpoint")
+	flags.String("cache-driver", "memory", "cache driver. supported drivers: ent (mysql, sqlite3, postgres), memory")
 
 	err := flags.Parse(os.Args[1:])
 	if err != nil {
@@ -57,17 +58,12 @@ func init() {
 func main() {
 	cg := api.NewCoinGeco(viper.GetString("api-endpoint"))
 
-	db, err := database.Open(viper.GetString("db-driver"), viper.GetString("db-username"), viper.GetString("db-password"), viper.GetString("db-host"), viper.GetString("db-port"), viper.GetString("db-name"))
+	m, err := database.NewManager(context.Background(), viper.GetString("cache-driver"), getCacheDriverConfig(viper.GetString("cache-driver")))
 	if err != nil {
 		panic(err)
 	}
 
-	err = db.Migrate(context.Background())
-	if err != nil {
-		panic(err)
-	}
-
-	syncr, _ := syncer.New(cg, db, &syncer.Config{
+	syncr, _ := syncer.New(cg, m, &syncer.Config{
 		Delay: time.Duration(viper.GetInt("delay")) * time.Second,
 	})
 	defer syncr.Stop()
@@ -77,7 +73,7 @@ func main() {
 		panic(err)
 	}
 
-	s := api.NewServer(db)
+	s := api.NewServer(m)
 
 	r := mux.NewRouter()
 	r.HandleFunc("/v1/markets", s.Markets)
@@ -97,4 +93,20 @@ func main() {
 	sig := make(chan os.Signal, 1)
 	signal.Notify(sig, os.Interrupt)
 	<-sig
+}
+
+func getCacheDriverConfig(driver string) interface{} {
+	switch driver {
+	case "ent":
+		return &database.EntConfig{
+			Driver:   viper.GetString("db-driver"),
+			Username: viper.GetString("db-username"),
+			Password: viper.GetString("db-password"),
+			Host:     viper.GetString("db-host"),
+			Port:     viper.GetString("db-port"),
+			Database: viper.GetString("db-name"),
+		}
+	default:
+		return nil
+	}
 }
