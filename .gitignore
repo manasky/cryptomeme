@@ -2,3 +2,7 @@
 .DS_Store
 *.sqlite3
 config.yml
+
+node_modules
+/.svelte-kit
+/dist
