@@ -16,6 +16,7 @@ import (
 	"time"
 
 	_ "github.com/go-sql-driver/mysql"
+	"github.com/gorilla/handlers"
 	_ "github.com/mattn/go-sqlite3"
 )
 
@@ -83,7 +84,10 @@ func main() {
 	http.Handle("/", r)
 
 	go func() {
-		err = http.ListenAndServe(viper.GetString("host"), nil)
+		err = http.ListenAndServe(viper.GetString("host"), handlers.CORS(
+			handlers.AllowedOrigins([]string{"*"}),
+			handlers.AllowedHeaders([]string{"Content-Type", "X-Requested-With"}),
+		)(r))
 		if err != nil {
 			panic(err)
 		}
