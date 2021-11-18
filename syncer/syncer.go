@@ -40,6 +40,7 @@ func (m *Syncer) Start() error {
 	m.ticker = time.NewTicker(m.config.Delay)
 
 	go func() {
+		m.syncAPI()
 		for {
 			select {
 			case <-m.stop:
