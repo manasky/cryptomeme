@@ -1,15 +1,15 @@
 <script>
-  export let coin = {
-    name: '',
-    symbol: '',
-    current_price: '',
-    price_change_24h: '',
-    price_change_percentage_24h: '',
-    high_24h: '',
-    low_24h: '',
-    image: 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==',
-    chart: 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==',
-  }
+export let coin = {
+  name: '',
+  symbol: '',
+  current_price: '',
+  price_change_24h: '',
+  price_change_percentage_24h: '',
+  high_24h: '',
+  low_24h: '',
+  image: 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==',
+  chart: 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==',
+}
 </script>
 
 <tr class="hover">
@@ -65,6 +65,7 @@
     </div>
   </td>
   <td class="flex-shrink-0 rounded-r-lg">
-    <img class="h-16 w-52 rounded-box" src={coin.chart} alt="{coin.name} price"/>
+    <!-- <img class="h-16 w-52 rounded-box" src={coin.chart} alt="{coin.name} price"/> -->
+    <slot/>
   </td>
 </tr>

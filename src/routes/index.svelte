@@ -2,6 +2,7 @@
 import { onMount } from 'svelte'
 import { timeAgo } from '@src/functions/timeAgo.js'
 import TableItem from '@components/TableItem.svelte'
+import Meme from '@components/Meme.svelte'
 
 let API_PATH
 if (import.meta.env.VITE_API_PATH !== undefined) {
@@ -76,7 +77,9 @@ onMount(() => {
     <tbody>
       {#if coins}
         {#each coins as coin}
-          <TableItem {coin} />
+          <TableItem {coin}>
+            <Meme id={coin.symbol} />
+          </TableItem>
         {/each}
       {:else}
         {#each Array(10) as coin}
