@@ -3,20 +3,24 @@ package api
 import (
 	"context"
 	"cryptolist/database"
+	"cryptolist/meme"
 	"encoding/json"
 	"log"
 	"net/http"
 	"strconv"
+	"strings"
 	"time"
 )
 
 type Server struct {
 	db database.Provider
+	mm *meme.Manager
 }
 
-func NewServer(db database.Provider) *Server {
+func NewServer(db database.Provider, memeManager *meme.Manager) *Server {
 	return &Server{
 		db: db,
+		mm: memeManager,
 	}
 }
 
@@ -41,6 +45,17 @@ func (s *Server) Markets(w http.ResponseWriter, r *http.Request) {
 		log.Printf("error while fetching from database: %s", err)
 		http.Error(w, "internal error", http.StatusInternalServerError)
 		return
+	}
+
+	for _, market := range markets {
+		m, err := s.mm.Meme(strings.ToLower(market.Name), (market.PriceChange24h / market.CurrentPrice) * 100)
+		if err == nil {
+			market.Meme = m.Image
+			c, err := meme.ParseCaption(m.Caption, market)
+			if err == nil {
+				market.MemeCaption = c
+			}
+		}
 	}
 
 	resp, err := json.Marshal(markets)

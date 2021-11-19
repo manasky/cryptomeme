@@ -34,4 +34,7 @@ type Market struct {
 	ATLDate                      time.Time `json:"atl_date"`
 	ROI                          *ROI      `json:"roi"`
 	LastUpdated                  time.Time `json:"last_updated"`
+	
+	Meme string `json:"meme"`
+	MemeCaption string `json:"meme_caption"`
 }

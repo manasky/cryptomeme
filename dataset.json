@@ -1,0 +1,84 @@
+{
+  "coins": [
+    {
+      "name": "bitcoin",
+      "ranges": [
+        {
+          "value": 0,
+          "memes": [
+            {
+              "caption": "this is a test of {{.Name}} with {{.CurrentPrice}} price and negative change",
+              "image": "test0.jpeg"
+            }
+          ]
+        },
+        {
+          "value": 2,
+          "memes": [
+            {
+              "caption": "this is a test of {{.Name}} with {{.CurrentPrice}} price and under 2 percent change",
+              "image": "test2.jpeg"
+            },
+            {
+              "caption": "this is a test of {{.Name}} with {{.CurrentPrice}} price and under 2 percent change: 2",
+              "image": "test2-2.jpeg"
+            }
+          ]
+        },
+        {
+          "value": 10,
+          "memes": [
+            {
+              "caption": "this is a test of {{.Name}} with {{.CurrentPrice}} price and under 10 percent change",
+              "image": "test10.jpeg"
+            },
+            {
+              "caption": "this is a test of {{.Name}} with {{.CurrentPrice}} price and under 10 percent change: 2",
+              "image": "test10-2.jpeg"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ethereum",
+      "ranges": [
+        {
+          "value": 0,
+          "memes": [
+            {
+              "caption": "this is a test of {{.Name}} with {{.CurrentPrice}} price and negative change",
+              "image": "test0.jpeg"
+            }
+          ]
+        },
+        {
+          "value": 2,
+          "memes": [
+            {
+              "caption": "this is a test of {{.Name}} with {{.CurrentPrice}} price and under 2 percent change",
+              "image": "test2.jpeg"
+            },
+            {
+              "caption": "this is a test of {{.Name}} with {{.CurrentPrice}} price and under 2 percent change: 2",
+              "image": "test2-2.jpeg"
+            }
+          ]
+        },
+        {
+          "value": 10,
+          "memes": [
+            {
+              "caption": "this is a test of {{.Name}} with {{.CurrentPrice}} price and under 10 percent change",
+              "image": "test10.jpeg"
+            },
+            {
+              "caption": "this is a test of {{.Name}} with {{.CurrentPrice}} price and under 10 percent change: 2",
+              "image": "test10-2.jpeg"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

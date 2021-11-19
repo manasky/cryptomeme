@@ -4,6 +4,7 @@ import (
 	"context"
 	"cryptolist/api"
 	"cryptolist/database"
+	"cryptolist/meme"
 	"cryptolist/syncer"
 	"github.com/gorilla/mux"
 	"github.com/spf13/pflag"
@@ -33,6 +34,7 @@ func init() {
 	flags.String("delay", "10", "sync delay in seconds")
 	flags.String("api-endpoint", "", "api endpoint")
 	flags.String("cache-driver", "memory", "cache driver. supported drivers: ent (mysql, sqlite3, postgres), memory")
+	flags.String("meme-dataset-path", "dataset.json", "path of meme dataset json file")
 
 	err := flags.Parse(os.Args[1:])
 	if err != nil {
@@ -73,7 +75,12 @@ func main() {
 		panic(err)
 	}
 
-	s := api.NewServer(m)
+	mm, err := meme.New(viper.GetString("meme-dataset-path"))
+	if err != nil {
+		panic(err)
+	}
+
+	s := api.NewServer(m, mm)
 
 	r := mux.NewRouter()
 	r.HandleFunc("/v1/markets", s.Markets)
