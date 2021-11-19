@@ -16,4 +16,16 @@ module.exports = {
   plugins: [
     require('daisyui')
   ],
+  daisyui: {
+    themes: [
+      'dark',
+      'forest',
+      'garden',
+      'cupcake',
+      'light',
+      'valentine',
+      'cyberpunk',
+      'synthwave',
+    ]
+  }
 }
