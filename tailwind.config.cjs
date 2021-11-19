@@ -24,7 +24,6 @@ module.exports = {
       'cupcake',
       'light',
       'valentine',
-      'cyberpunk',
       'synthwave',
     ]
   }

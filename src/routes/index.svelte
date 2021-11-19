@@ -57,10 +57,20 @@ onMount(() => {
             </span>
           {/if}
         </th> 
-        <th>Price</th> 
-        <th>24h %</th> 
-        <th>7d %</th>
-        <th>7d chart</th>
+        <th>
+          <div class="normal-case">Current Price</div>
+          <div class="flex items-center gap-1 text-xs normal-case opacity-40">
+            <svg class="w-3 h-3 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.92,6.62a1,1,0,0,0-.54-.54A1,1,0,0,0,17,6H7A1,1,0,0,0,7,8h7.59l-8.3,8.29a1,1,0,0,0,0,1.42,1,1,0,0,0,1.42,0L16,9.41V17a1,1,0,0,0,2,0V7A1,1,0,0,0,17.92,6.62Z"/></svg>
+            Price change in 24 hours
+          </div>
+        </th>
+        <th>
+          <div class="normal-case">Min/Max price</div>
+          <div class="text-xs normal-case opacity-40">In 24 hours</div>            
+        </th>
+        <th>
+          <div class="normal-case">Weekly chart</div>
+        </th>
       </tr>
     </thead> 
     <tbody>
