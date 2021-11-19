@@ -30,7 +30,7 @@
   </th>
   <td>
     <div class="flex flex-col">
-      <div class="font-mono text-lg">
+      <div class="font-mono text-lg font-bold">
         {#if coin.current_price}
           ${coin.current_price.toLocaleString()}
         {:else}
