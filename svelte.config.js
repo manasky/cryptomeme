@@ -13,8 +13,8 @@ export default {
   kit: {
     
 		adapter: adapter({
-			pages: 'dist',
-			assets: 'dist',
+			pages: 'public',
+			assets: 'public',
 			fallback: null
 		}),
     vite: {
