@@ -6,5 +6,8 @@ import (
 	"entgo.io/ent/dialect/sql"
 )
 
+// MarketChart is the predicate function for marketchart builders.
+type MarketChart func(*sql.Selector)
+
 // Markets is the predicate function for markets builders.
 type Markets func(*sql.Selector)

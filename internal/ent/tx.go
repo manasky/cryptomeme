@@ -12,6 +12,8 @@ import (
 // Tx is a transactional client that is created by calling Client.Tx().
 type Tx struct {
 	config
+	// MarketChart is the client for interacting with the MarketChart builders.
+	MarketChart *MarketChartClient
 	// Markets is the client for interacting with the Markets builders.
 	Markets *MarketsClient
 
@@ -149,6 +151,7 @@ func (tx *Tx) Client() *Client {
 }
 
 func (tx *Tx) init() {
+	tx.MarketChart = NewMarketChartClient(tx.config)
 	tx.Markets = NewMarketsClient(tx.config)
 }
 
@@ -159,7 +162,7 @@ func (tx *Tx) init() {
 // of them in order to commit or rollback the transaction.
 //
 // If a closed transaction is embedded in one of the generated entities, and the entity
-// applies a query, for example: Markets.QueryXXX(), the query will be executed
+// applies a query, for example: MarketChart.QueryXXX(), the query will be executed
 // through the driver which created this transaction.
 //
 // Note that txDriver is not goroutine safe.

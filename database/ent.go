@@ -4,6 +4,7 @@ import (
 	"context"
 	"cryptolist/common"
 	"cryptolist/internal/ent"
+	"cryptolist/internal/ent/marketchart"
 	"cryptolist/internal/ent/markets"
 	"entgo.io/ent/dialect/sql"
 	"fmt"
@@ -91,4 +92,34 @@ func (e *Ent) Markets(ctx context.Context, t time.Time) ([]*common.Market, error
 		return nil, err
 	}
 	return mrks.Markets, nil
+}
+
+func (e *Ent) SaveMarketChart(ctx context.Context, chart *common.MarketChart) error {
+	c, err := e.client.MarketChart.Query().Where(marketchart.Name(chart.Name)).Where(marketchart.Currency(chart.Currency)).First(ctx)
+	if err != nil {
+		if ent.IsNotFound(err) {
+			_, err = e.client.MarketChart.Create().SetCurrency(chart.Currency).SetName(chart.Name).SetChart(*chart).Save(ctx)
+			if err != nil {
+				return err
+			}
+			return nil
+		}
+		return err
+	}
+	c.Chart = *chart
+	_, err = c.Update().Save(ctx)
+	return err
+}
+
+func (e *Ent) MarketsCharts(ctx context.Context, currency string) (map[string]*common.MarketChart, error) {
+	charts, err := e.client.MarketChart.Query().Where(marketchart.Currency(currency)).All(ctx)
+	if err != nil {
+		return nil, err
+	}
+
+	tmp := make(map[string]*common.MarketChart)
+	for _, c := range charts {
+		tmp[c.Name] = &c.Chart
+	}
+	return tmp, nil
 }

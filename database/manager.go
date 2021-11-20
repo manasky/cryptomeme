@@ -45,6 +45,14 @@ func (m *Manager) Markets(ctx context.Context, t time.Time) ([]*common.Market, e
 	return m.drv.Markets(ctx, t)
 }
 
+func (m *Manager) MarketsCharts(ctx context.Context, currency string) (map[string]*common.MarketChart, error) {
+	return m.drv.MarketsCharts(ctx, currency)
+}
+
+func (m *Manager) SaveMarketChart(ctx context.Context, chart *common.MarketChart) error {
+	return m.drv.SaveMarketChart(ctx, chart)
+}
+
 func Register(name string, driver Driver) {
 	drivers[name] = driver
 }

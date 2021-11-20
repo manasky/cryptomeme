@@ -9,6 +9,7 @@ import (
 
 	"cryptolist/internal/ent/migrate"
 
+	"cryptolist/internal/ent/marketchart"
 	"cryptolist/internal/ent/markets"
 
 	"entgo.io/ent/dialect"
@@ -21,6 +22,8 @@ type Client struct {
 	config
 	// Schema is the client for creating, migrating and dropping schema.
 	Schema *migrate.Schema
+	// MarketChart is the client for interacting with the MarketChart builders.
+	MarketChart *MarketChartClient
 	// Markets is the client for interacting with the Markets builders.
 	Markets *MarketsClient
 }
@@ -36,6 +39,7 @@ func NewClient(opts ...Option) *Client {
 
 func (c *Client) init() {
 	c.Schema = migrate.NewSchema(c.driver)
+	c.MarketChart = NewMarketChartClient(c.config)
 	c.Markets = NewMarketsClient(c.config)
 }
 
@@ -68,9 +72,10 @@ func (c *Client) Tx(ctx context.Context) (*Tx, error) {
 	cfg := c.config
 	cfg.driver = tx
 	return &Tx{
-		ctx:     ctx,
-		config:  cfg,
-		Markets: NewMarketsClient(cfg),
+		ctx:         ctx,
+		config:      cfg,
+		MarketChart: NewMarketChartClient(cfg),
+		Markets:     NewMarketsClient(cfg),
 	}, nil
 }
 
@@ -88,15 +93,16 @@ func (c *Client) BeginTx(ctx context.Context, opts *sql.TxOptions) (*Tx, error) 
 	cfg := c.config
 	cfg.driver = &txDriver{tx: tx, drv: c.driver}
 	return &Tx{
-		config:  cfg,
-		Markets: NewMarketsClient(cfg),
+		config:      cfg,
+		MarketChart: NewMarketChartClient(cfg),
+		Markets:     NewMarketsClient(cfg),
 	}, nil
 }
 
 // Debug returns a new debug-client. It's used to get verbose logging on specific operations.
 //
 //	client.Debug().
-//		Markets.
+//		MarketChart.
 //		Query().
 //		Count(ctx)
 //
@@ -119,7 +125,98 @@ func (c *Client) Close() error {
 // Use adds the mutation hooks to all the entity clients.
 // In order to add hooks to a specific client, call: `client.Node.Use(...)`.
 func (c *Client) Use(hooks ...Hook) {
+	c.MarketChart.Use(hooks...)
 	c.Markets.Use(hooks...)
+}
+
+// MarketChartClient is a client for the MarketChart schema.
+type MarketChartClient struct {
+	config
+}
+
+// NewMarketChartClient returns a client for the MarketChart from the given config.
+func NewMarketChartClient(c config) *MarketChartClient {
+	return &MarketChartClient{config: c}
+}
+
+// Use adds a list of mutation hooks to the hooks stack.
+// A call to `Use(f, g, h)` equals to `marketchart.Hooks(f(g(h())))`.
+func (c *MarketChartClient) Use(hooks ...Hook) {
+	c.hooks.MarketChart = append(c.hooks.MarketChart, hooks...)
+}
+
+// Create returns a create builder for MarketChart.
+func (c *MarketChartClient) Create() *MarketChartCreate {
+	mutation := newMarketChartMutation(c.config, OpCreate)
+	return &MarketChartCreate{config: c.config, hooks: c.Hooks(), mutation: mutation}
+}
+
+// CreateBulk returns a builder for creating a bulk of MarketChart entities.
+func (c *MarketChartClient) CreateBulk(builders ...*MarketChartCreate) *MarketChartCreateBulk {
+	return &MarketChartCreateBulk{config: c.config, builders: builders}
+}
+
+// Update returns an update builder for MarketChart.
+func (c *MarketChartClient) Update() *MarketChartUpdate {
+	mutation := newMarketChartMutation(c.config, OpUpdate)
+	return &MarketChartUpdate{config: c.config, hooks: c.Hooks(), mutation: mutation}
+}
+
+// UpdateOne returns an update builder for the given entity.
+func (c *MarketChartClient) UpdateOne(mc *MarketChart) *MarketChartUpdateOne {
+	mutation := newMarketChartMutation(c.config, OpUpdateOne, withMarketChart(mc))
+	return &MarketChartUpdateOne{config: c.config, hooks: c.Hooks(), mutation: mutation}
+}
+
+// UpdateOneID returns an update builder for the given id.
+func (c *MarketChartClient) UpdateOneID(id uuid.UUID) *MarketChartUpdateOne {
+	mutation := newMarketChartMutation(c.config, OpUpdateOne, withMarketChartID(id))
+	return &MarketChartUpdateOne{config: c.config, hooks: c.Hooks(), mutation: mutation}
+}
+
+// Delete returns a delete builder for MarketChart.
+func (c *MarketChartClient) Delete() *MarketChartDelete {
+	mutation := newMarketChartMutation(c.config, OpDelete)
+	return &MarketChartDelete{config: c.config, hooks: c.Hooks(), mutation: mutation}
+}
+
+// DeleteOne returns a delete builder for the given entity.
+func (c *MarketChartClient) DeleteOne(mc *MarketChart) *MarketChartDeleteOne {
+	return c.DeleteOneID(mc.ID)
+}
+
+// DeleteOneID returns a delete builder for the given id.
+func (c *MarketChartClient) DeleteOneID(id uuid.UUID) *MarketChartDeleteOne {
+	builder := c.Delete().Where(marketchart.ID(id))
+	builder.mutation.id = &id
+	builder.mutation.op = OpDeleteOne
+	return &MarketChartDeleteOne{builder}
+}
+
+// Query returns a query builder for MarketChart.
+func (c *MarketChartClient) Query() *MarketChartQuery {
+	return &MarketChartQuery{
+		config: c.config,
+	}
+}
+
+// Get returns a MarketChart entity by its id.
+func (c *MarketChartClient) Get(ctx context.Context, id uuid.UUID) (*MarketChart, error) {
+	return c.Query().Where(marketchart.ID(id)).Only(ctx)
+}
+
+// GetX is like Get, but panics if an error occurs.
+func (c *MarketChartClient) GetX(ctx context.Context, id uuid.UUID) *MarketChart {
+	obj, err := c.Get(ctx, id)
+	if err != nil {
+		panic(err)
+	}
+	return obj
+}
+
+// Hooks returns the client hooks.
+func (c *MarketChartClient) Hooks() []Hook {
+	return c.hooks.MarketChart
 }
 
 // MarketsClient is a client for the Markets schema.

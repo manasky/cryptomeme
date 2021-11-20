@@ -3,6 +3,7 @@
 package ent
 
 import (
+	"cryptolist/internal/ent/marketchart"
 	"cryptolist/internal/ent/markets"
 	"errors"
 	"fmt"
@@ -29,7 +30,8 @@ type OrderFunc func(*sql.Selector)
 // columnChecker returns a function indicates if the column exists in the given column.
 func columnChecker(table string) func(string) error {
 	checks := map[string]func(string) bool{
-		markets.Table: markets.ValidColumn,
+		marketchart.Table: marketchart.ValidColumn,
+		markets.Table:     markets.ValidColumn,
 	}
 	check, ok := checks[table]
 	if !ok {

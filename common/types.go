@@ -37,4 +37,54 @@ type Market struct {
 	
 	Meme string `json:"meme"`
 	MemeCaption string `json:"meme_caption"`
+	Prices7Days	[]*ChartPrice `json:"prices_7d"`
 }
+
+type ChartPrice struct {
+	Time int64 `json:"time"`
+	Price float64 `json:"price"`
+}
+
+type MarketChart struct {
+	Name string `json:"name"`
+	Currency string `json:"currency"`
+	RawPrices [][]float64       `json:"prices"`
+	RawMarketCaps [][]float64   `json:"market_caps"`
+	RawTotalVolumes [][]float64 `json:"total_volumes"`
+}
+
+func (m *MarketChart) Prices() []*ChartPrice {
+	var tmp []*ChartPrice
+	for _, p := range m.RawPrices {
+		tmp = append(tmp, &ChartPrice{
+			Time: int64(p[0]),
+			Price: p[1],
+		})
+	}
+	return tmp
+}
+
+func (m *MarketChart) MarketCaps() []*ChartPrice {
+	var tmp []*ChartPrice
+	for _, p := range m.RawMarketCaps {
+		tmp = append(tmp, &ChartPrice{
+			Time: int64(p[0]),
+			Price: p[1],
+		})
+	}
+	return tmp
+}
+
+func (m *MarketChart) TotalVolumes() []*ChartPrice {
+	var tmp []*ChartPrice
+	for _, p := range m.RawTotalVolumes {
+		tmp = append(tmp, &ChartPrice{
+			Time: int64(p[0]),
+			Price: p[1],
+		})
+	}
+	return tmp
+}
+
+
+

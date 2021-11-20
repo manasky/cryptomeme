@@ -3,6 +3,7 @@
 package ent
 
 import (
+	"cryptolist/internal/ent/marketchart"
 	"cryptolist/internal/ent/markets"
 	"cryptolist/internal/ent/schema"
 	"time"
@@ -14,6 +15,25 @@ import (
 // (default values, validators, hooks and policies) and stitches it
 // to their package variables.
 func init() {
+	marketchartMixin := schema.MarketChart{}.Mixin()
+	marketchartMixinFields0 := marketchartMixin[0].Fields()
+	_ = marketchartMixinFields0
+	marketchartFields := schema.MarketChart{}.Fields()
+	_ = marketchartFields
+	// marketchartDescCreateTime is the schema descriptor for create_time field.
+	marketchartDescCreateTime := marketchartMixinFields0[0].Descriptor()
+	// marketchart.DefaultCreateTime holds the default value on creation for the create_time field.
+	marketchart.DefaultCreateTime = marketchartDescCreateTime.Default.(func() time.Time)
+	// marketchartDescUpdateTime is the schema descriptor for update_time field.
+	marketchartDescUpdateTime := marketchartMixinFields0[1].Descriptor()
+	// marketchart.DefaultUpdateTime holds the default value on creation for the update_time field.
+	marketchart.DefaultUpdateTime = marketchartDescUpdateTime.Default.(func() time.Time)
+	// marketchart.UpdateDefaultUpdateTime holds the default value on update for the update_time field.
+	marketchart.UpdateDefaultUpdateTime = marketchartDescUpdateTime.UpdateDefault.(func() time.Time)
+	// marketchartDescID is the schema descriptor for id field.
+	marketchartDescID := marketchartFields[0].Descriptor()
+	// marketchart.DefaultID holds the default value on creation for the id field.
+	marketchart.DefaultID = marketchartDescID.Default.(func() uuid.UUID)
 	marketsMixin := schema.Markets{}.Mixin()
 	marketsMixinFields0 := marketsMixin[0].Fields()
 	_ = marketsMixinFields0

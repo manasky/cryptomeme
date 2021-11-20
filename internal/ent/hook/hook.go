@@ -8,6 +8,19 @@ import (
 	"fmt"
 )
 
+// The MarketChartFunc type is an adapter to allow the use of ordinary
+// function as MarketChart mutator.
+type MarketChartFunc func(context.Context, *ent.MarketChartMutation) (ent.Value, error)
+
+// Mutate calls f(ctx, m).
+func (f MarketChartFunc) Mutate(ctx context.Context, m ent.Mutation) (ent.Value, error) {
+	mv, ok := m.(*ent.MarketChartMutation)
+	if !ok {
+		return nil, fmt.Errorf("unexpected mutation type %T. expect *ent.MarketChartMutation", m)
+	}
+	return f(ctx, mv)
+}
+
 // The MarketsFunc type is an adapter to allow the use of ordinary
 // function as Markets mutator.
 type MarketsFunc func(context.Context, *ent.MarketsMutation) (ent.Value, error)

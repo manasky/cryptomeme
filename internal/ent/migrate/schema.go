@@ -8,6 +8,21 @@ import (
 )
 
 var (
+	// MarketChartsColumns holds the columns for the "market_charts" table.
+	MarketChartsColumns = []*schema.Column{
+		{Name: "id", Type: field.TypeUUID},
+		{Name: "create_time", Type: field.TypeTime},
+		{Name: "update_time", Type: field.TypeTime},
+		{Name: "name", Type: field.TypeString},
+		{Name: "currency", Type: field.TypeString},
+		{Name: "chart", Type: field.TypeJSON},
+	}
+	// MarketChartsTable holds the schema information for the "market_charts" table.
+	MarketChartsTable = &schema.Table{
+		Name:       "market_charts",
+		Columns:    MarketChartsColumns,
+		PrimaryKey: []*schema.Column{MarketChartsColumns[0]},
+	}
 	// MarketsColumns holds the columns for the "markets" table.
 	MarketsColumns = []*schema.Column{
 		{Name: "id", Type: field.TypeUUID},
@@ -24,6 +39,7 @@ var (
 	}
 	// Tables holds all the tables in the schema.
 	Tables = []*schema.Table{
+		MarketChartsTable,
 		MarketsTable,
 	}
 )
