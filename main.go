@@ -71,11 +71,11 @@ func main() {
 	defer syncr.StopAllTasks()
 
 	srv := service.NewService(cg, m)
-	err = syncr.RegisterTask("markets", time.Duration(viper.GetInt("market-delay")) * time.Second, srv.SyncMarkets)
+	err = syncr.RegisterTask("markets", time.Duration(viper.GetInt("market-delay"))*time.Second, srv.SyncMarkets)
 	if err != nil {
 		panic(err)
 	}
-	err = syncr.RegisterTask("markets-chart", time.Duration(viper.GetInt("market-chart-delay")) * time.Second, srv.SyncMarketsChart)
+	err = syncr.RegisterTask("markets-chart", time.Duration(viper.GetInt("market-chart-delay"))*time.Second, srv.SyncMarketsChart)
 	if err != nil {
 		panic(err)
 	}

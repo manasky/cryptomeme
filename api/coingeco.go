@@ -12,7 +12,7 @@ import (
 )
 
 const (
-	marketEndpoint string = "coins/markets"
+	marketEndpoint      string = "coins/markets"
 	marketChartEndpoint string = "coins/%s/market_chart"
 )
 
@@ -89,7 +89,7 @@ func (cg *CoinGeco) Markets(ctx context.Context, currency string, perPage int) (
 func (cg *CoinGeco) MarketChart(ctx context.Context, id, currency string, days uint) (*common.MarketChart, error) {
 	resp, err := cg.get(ctx, fmt.Sprintf(marketChartEndpoint, id), url.Values{
 		"vs_currency": {currency},
-		"days": {fmt.Sprint(days)},
+		"days":        {fmt.Sprint(days)},
 	}, nil)
 	if err != nil {
 		return nil, err

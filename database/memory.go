@@ -8,9 +8,9 @@ import (
 )
 
 type MemoryCache struct {
-	markets []*common.Market
+	markets       []*common.Market
 	marketsCharts map[string]map[string]*common.MarketChart
-	time    time.Time
+	time          time.Time
 }
 
 func init() {

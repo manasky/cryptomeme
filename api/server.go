@@ -60,7 +60,7 @@ func (s *Server) Markets(w http.ResponseWriter, r *http.Request) {
 			}
 		}
 
-		m, err := s.mm.Meme(strings.ToLower(market.Name), (market.PriceChange24h / market.CurrentPrice) * 100)
+		m, err := s.mm.Meme(strings.ToLower(market.Name), (market.PriceChange24h/market.CurrentPrice)*100)
 		if err == nil {
 			market.Meme = m.Image
 			c, err := meme.ParseCaption(m.Caption, market)

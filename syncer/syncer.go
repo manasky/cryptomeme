@@ -9,12 +9,13 @@ import (
 
 var (
 	ErrSyncTaskAlreadyExists = errors.New("a sync task with this name already exists")
-	ErrTaskNotFound = errors.New("task not found")
+	ErrTaskNotFound          = errors.New("task not found")
 )
+
 type CallbackFunc func()
 
 type task struct {
-	stop chan bool
+	stop   chan bool
 	ticker *time.Ticker
 }
 
@@ -41,7 +42,7 @@ func (m *Syncer) RegisterTask(name string, delay time.Duration, callback Callbac
 	}
 	tsk := &task{
 		ticker: time.NewTicker(delay),
-		stop:  make(chan bool, 1),
+		stop:   make(chan bool, 1),
 	}
 	m.tasks.Store(name, tsk)
 

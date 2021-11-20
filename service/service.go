@@ -17,8 +17,8 @@ type Service struct {
 
 func NewService(api api.API, db database.Provider) *Service {
 	return &Service{
-		api: api,
-		db: db,
+		api:        api,
+		db:         db,
 		retryDelay: 10 * time.Second,
 	}
 }
