@@ -9,16 +9,16 @@ import (
 )
 
 type rangeCache struct {
-	Range float64
-	Index int
+	Range     float64
+	Index     int
 	ExpiredAt time.Time
 }
 
 type Manager struct {
-	ds *common.MemeDataset
-	mp map[string]int
+	ds        *common.MemeDataset
+	mp        map[string]int
 	randCache map[string]*rangeCache
-	cd time.Duration // cache duration
+	cd        time.Duration // cache duration
 }
 
 func New(dataset string, cacheDuration time.Duration) (*Manager, error) {
@@ -28,10 +28,10 @@ func New(dataset string, cacheDuration time.Duration) (*Manager, error) {
 	}
 
 	return &Manager{
-		ds: ds,
-		mp: indexDataset(ds),
+		ds:        ds,
+		mp:        indexDataset(ds),
 		randCache: make(map[string]*rangeCache),
-		cd: cacheDuration,
+		cd:        cacheDuration,
 	}, nil
 }
 
@@ -56,8 +56,8 @@ func (m *Manager) randOrCache(coin string, rng float64, len int) int {
 
 	rand.Seed(time.Now().UnixNano())
 	tmp := &rangeCache{
-		Range: rng,
-		Index: rand.Intn(len),
+		Range:     rng,
+		Index:     rand.Intn(len),
 		ExpiredAt: time.Now().Add(m.cd),
 	}
 	m.randCache[coin] = tmp

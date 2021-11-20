@@ -33,7 +33,7 @@ func ParseCaption(tmpl string, market *common.Market) (string, error) {
 func formatNumber(f float64) string {
 	switch {
 	case f > 10000:
-		f = f/1000
+		f = f / 1000
 		return fmt.Sprintf("%.1fK", f)
 	case f > 100:
 		p := message.NewPrinter(language.English)
