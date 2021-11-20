@@ -5,6 +5,7 @@ import (
 	"cryptolist/api"
 	"cryptolist/database"
 	"cryptolist/meme"
+	"cryptolist/service"
 	"cryptolist/syncer"
 	"github.com/gorilla/mux"
 	"github.com/spf13/pflag"
@@ -31,7 +32,8 @@ func init() {
 	flags.String("db-name", "cryptolist", "database name")
 	flags.String("db-username", "", "database username")
 	flags.String("db-password", "", "database password")
-	flags.String("delay", "10", "sync delay in seconds")
+	flags.String("market-delay", "180", "market sync delay in seconds")
+	flags.String("market-chart-delay", "21600", "chart sync delay in seconds")
 	flags.String("api-endpoint", "", "api endpoint")
 	flags.String("cache-driver", "memory", "cache driver. supported drivers: ent (mysql, sqlite3, postgres), memory")
 	flags.String("meme-dataset-path", "dataset.json", "path of meme dataset json file")
@@ -65,12 +67,15 @@ func main() {
 		panic(err)
 	}
 
-	syncr, _ := syncer.New(cg, m, &syncer.Config{
-		Delay: time.Duration(viper.GetInt("delay")) * time.Second,
-	})
-	defer syncr.Stop()
+	syncr := syncer.New()
+	defer syncr.StopAllTasks()
 
-	err = syncr.Start()
+	srv := service.NewService(cg, m)
+	err = syncr.RegisterTask("markets", time.Duration(viper.GetInt("market-delay")) * time.Second, srv.SyncMarkets)
+	if err != nil {
+		panic(err)
+	}
+	err = syncr.RegisterTask("markets-chart", time.Duration(viper.GetInt("market-chart-delay")) * time.Second, srv.SyncMarketsChart)
 	if err != nil {
 		panic(err)
 	}

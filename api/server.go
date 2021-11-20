@@ -47,7 +47,18 @@ func (s *Server) Markets(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	charts, err := s.db.MarketsCharts(context.Background(), "usd")
+	if err != nil {
+		log.Printf("error while fetching charts from database: %s", err)
+	}
+
 	for _, market := range markets {
+		if charts != nil {
+			if chart, ok := charts[market.ID]; ok {
+				market.Prices7Days = chart.Prices()
+			}
+		}
+
 		m, err := s.mm.Meme(strings.ToLower(market.Name), (market.PriceChange24h / market.CurrentPrice) * 100)
 		if err == nil {
 			market.Meme = m.Image
