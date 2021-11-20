@@ -3,10 +3,10 @@
 package ent
 
 import (
-	"cryptolist/internal/ent/marketchart"
-	"cryptolist/internal/ent/markets"
 	"errors"
 	"fmt"
+	"github.com/manasky/cryptomeme/internal/ent/marketchart"
+	"github.com/manasky/cryptomeme/internal/ent/markets"
 
 	"entgo.io/ent"
 	"entgo.io/ent/dialect/sql"

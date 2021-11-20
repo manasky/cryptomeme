@@ -4,10 +4,10 @@ package ent
 
 import (
 	"context"
-	"cryptolist/internal/ent/markets"
-	"cryptolist/internal/ent/predicate"
 	"errors"
 	"fmt"
+	"github.com/manasky/cryptomeme/internal/ent/markets"
+	"github.com/manasky/cryptomeme/internal/ent/predicate"
 	"math"
 
 	"entgo.io/ent/dialect/sql"

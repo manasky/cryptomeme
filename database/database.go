@@ -2,7 +2,7 @@ package database
 
 import (
 	"context"
-	"cryptolist/common"
+	"github.com/manasky/cryptomeme/common"
 	"time"
 )
 

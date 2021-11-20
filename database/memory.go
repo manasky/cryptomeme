@@ -2,8 +2,8 @@ package database
 
 import (
 	"context"
-	"cryptolist/common"
 	"errors"
+	"github.com/manasky/cryptomeme/common"
 	"time"
 )
 

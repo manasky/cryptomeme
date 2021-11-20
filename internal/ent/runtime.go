@@ -3,9 +3,9 @@
 package ent
 
 import (
-	"cryptolist/internal/ent/marketchart"
-	"cryptolist/internal/ent/markets"
-	"cryptolist/internal/ent/schema"
+	"github.com/manasky/cryptomeme/internal/ent/marketchart"
+	"github.com/manasky/cryptomeme/internal/ent/markets"
+	"github.com/manasky/cryptomeme/internal/ent/schema"
 	"time"
 
 	"github.com/google/uuid"

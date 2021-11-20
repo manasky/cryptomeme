@@ -2,8 +2,8 @@ package meme
 
 import (
 	"bytes"
-	"cryptolist/common"
 	"fmt"
+	"github.com/manasky/cryptomeme/common"
 	"golang.org/x/text/language"
 	"golang.org/x/text/message"
 	"html/template"

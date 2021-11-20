@@ -4,9 +4,9 @@ package enttest
 
 import (
 	"context"
-	"cryptolist/internal/ent"
+	"github.com/manasky/cryptomeme/internal/ent"
 	// required by schema hooks.
-	_ "cryptolist/internal/ent/runtime"
+	_ "github.com/manasky/cryptomeme/internal/ent/runtime"
 
 	"entgo.io/ent/dialect/sql/schema"
 )

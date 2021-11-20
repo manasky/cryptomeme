@@ -7,10 +7,10 @@ import (
 	"fmt"
 	"log"
 
-	"cryptolist/internal/ent/migrate"
+	"github.com/manasky/cryptomeme/internal/ent/migrate"
 
-	"cryptolist/internal/ent/marketchart"
-	"cryptolist/internal/ent/markets"
+	"github.com/manasky/cryptomeme/internal/ent/marketchart"
+	"github.com/manasky/cryptomeme/internal/ent/markets"
 
 	"entgo.io/ent/dialect"
 	"entgo.io/ent/dialect/sql"

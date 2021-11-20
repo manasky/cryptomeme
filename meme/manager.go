@@ -1,8 +1,8 @@
 package meme
 
 import (
-	"cryptolist/common"
 	"encoding/json"
+	"github.com/manasky/cryptomeme/common"
 	"io/ioutil"
 	"math/rand"
 	"time"

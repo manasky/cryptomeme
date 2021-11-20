@@ -2,9 +2,9 @@ package api
 
 import (
 	"context"
-	"cryptolist/database"
-	"cryptolist/meme"
 	"encoding/json"
+	"github.com/manasky/cryptomeme/database"
+	"github.com/manasky/cryptomeme/meme"
 	"log"
 	"net/http"
 	"strconv"

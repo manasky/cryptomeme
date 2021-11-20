@@ -4,10 +4,10 @@ package ent
 
 import (
 	"context"
-	"cryptolist/common"
-	"cryptolist/internal/ent/marketchart"
 	"errors"
 	"fmt"
+	"github.com/manasky/cryptomeme/common"
+	"github.com/manasky/cryptomeme/internal/ent/marketchart"
 	"time"
 
 	"entgo.io/ent/dialect/sql/sqlgraph"

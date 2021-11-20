@@ -4,8 +4,8 @@ package hook
 
 import (
 	"context"
-	"cryptolist/internal/ent"
 	"fmt"
+	"github.com/manasky/cryptomeme/internal/ent"
 )
 
 // The MarketChartFunc type is an adapter to allow the use of ordinary

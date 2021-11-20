@@ -4,11 +4,11 @@ package ent
 
 import (
 	"context"
-	"cryptolist/common"
-	"cryptolist/internal/ent/marketchart"
-	"cryptolist/internal/ent/markets"
-	"cryptolist/internal/ent/predicate"
 	"fmt"
+	"github.com/manasky/cryptomeme/common"
+	"github.com/manasky/cryptomeme/internal/ent/marketchart"
+	"github.com/manasky/cryptomeme/internal/ent/markets"
+	"github.com/manasky/cryptomeme/internal/ent/predicate"
 	"sync"
 	"time"
 

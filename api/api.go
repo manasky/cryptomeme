@@ -2,7 +2,7 @@ package api
 
 import (
 	"context"
-	"cryptolist/common"
+	"github.com/manasky/cryptomeme/common"
 )
 
 type API interface {

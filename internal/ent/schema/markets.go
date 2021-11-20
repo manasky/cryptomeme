@@ -1,11 +1,11 @@
 package schema
 
 import (
-	"cryptolist/common"
 	"entgo.io/ent"
 	"entgo.io/ent/schema/field"
 	"entgo.io/ent/schema/mixin"
 	"github.com/google/uuid"
+	"github.com/manasky/cryptomeme/common"
 )
 
 // Markets holds the schema definition for the Markets entity.

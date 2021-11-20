@@ -2,12 +2,12 @@ package database
 
 import (
 	"context"
-	"cryptolist/common"
-	"cryptolist/internal/ent"
-	"cryptolist/internal/ent/marketchart"
-	"cryptolist/internal/ent/markets"
 	"entgo.io/ent/dialect/sql"
 	"fmt"
+	"github.com/manasky/cryptomeme/common"
+	"github.com/manasky/cryptomeme/internal/ent"
+	"github.com/manasky/cryptomeme/internal/ent/marketchart"
+	"github.com/manasky/cryptomeme/internal/ent/markets"
 	"time"
 )
 

@@ -2,8 +2,8 @@ package service
 
 import (
 	"context"
-	"cryptolist/api"
-	"cryptolist/database"
+	"github.com/manasky/cryptomeme/api"
+	"github.com/manasky/cryptomeme/database"
 	"log"
 	"time"
 )

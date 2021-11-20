@@ -3,10 +3,10 @@
 package ent
 
 import (
-	"cryptolist/common"
-	"cryptolist/internal/ent/markets"
 	"encoding/json"
 	"fmt"
+	"github.com/manasky/cryptomeme/common"
+	"github.com/manasky/cryptomeme/internal/ent/markets"
 	"strings"
 	"time"
 

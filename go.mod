@@ -1,4 +1,4 @@
-module cryptolist
+module github.com/manasky/cryptomeme
 
 go 1.16
 

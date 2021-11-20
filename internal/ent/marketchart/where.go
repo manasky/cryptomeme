@@ -3,7 +3,7 @@
 package marketchart
 
 import (
-	"cryptolist/internal/ent/predicate"
+	"github.com/manasky/cryptomeme/internal/ent/predicate"
 	"time"
 
 	"entgo.io/ent/dialect/sql"

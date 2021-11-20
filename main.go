@@ -2,12 +2,12 @@ package main
 
 import (
 	"context"
-	"cryptolist/api"
-	"cryptolist/database"
-	"cryptolist/meme"
-	"cryptolist/service"
-	"cryptolist/syncer"
 	"github.com/gorilla/mux"
+	"github.com/manasky/cryptomeme/api"
+	"github.com/manasky/cryptomeme/database"
+	"github.com/manasky/cryptomeme/meme"
+	"github.com/manasky/cryptomeme/service"
+	"github.com/manasky/cryptomeme/syncer"
 	"github.com/spf13/pflag"
 	"github.com/spf13/viper"
 	"log"
