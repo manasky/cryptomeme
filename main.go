@@ -15,6 +15,7 @@ import (
 	"os"
 	"os/signal"
 	"path"
+	"strings"
 	"time"
 
 	_ "github.com/go-sql-driver/mysql"
@@ -57,7 +58,6 @@ func init() {
 	if err != nil {
 		log.Print(err)
 	}
-
 	viper.SetEnvKeyReplacer(strings.NewReplacer("-", "_"))
 	viper.AutomaticEnv()
 }
