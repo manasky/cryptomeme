@@ -1,78 +1,87 @@
 package syncer
 
 import (
-	"context"
-	"cryptolist/api"
-	"cryptolist/database"
 	"errors"
 	"log"
+	"sync"
 	"time"
 )
 
-type Syncer struct {
-	api api.API
-	db  database.Provider
+var (
+	ErrSyncTaskAlreadyExists = errors.New("a sync task with this name already exists")
+	ErrTaskNotFound = errors.New("task not found")
+)
+type CallbackFunc func()
 
-	stop   chan bool
+type task struct {
+	stop chan bool
 	ticker *time.Ticker
-	config *Config
+}
+
+func (t *task) Stop() {
+	t.stop <- true
+	t.ticker.Stop()
+}
+
+type Syncer struct {
+	tasks sync.Map
 }
 
 type Config struct {
 	Delay time.Duration
 }
 
-func New(api api.API, db database.Provider, config *Config) (*Syncer, error) {
-	return &Syncer{
-		api: api,
-		db:  db,
-
-		stop:   make(chan bool, 1),
-		config: config,
-	}, nil
+func New() *Syncer {
+	return &Syncer{}
 }
 
-func (m *Syncer) Start() error {
-	if m.ticker != nil {
-		return errors.New("already syncing")
+func (m *Syncer) RegisterTask(name string, delay time.Duration, callback CallbackFunc) error {
+	if _, ok := m.tasks.Load(name); ok {
+		return ErrSyncTaskAlreadyExists
 	}
-
-	m.ticker = time.NewTicker(m.config.Delay)
+	tsk := &task{
+		ticker: time.NewTicker(delay),
+		stop:  make(chan bool, 1),
+	}
+	m.tasks.Store(name, tsk)
 
 	go func() {
-		m.syncAPI()
+		log.Printf("start syncing %s each %s", name, delay.String())
+		callback()
 		for {
 			select {
-			case <-m.stop:
+			case <-tsk.stop:
 				return
-			case t := <-m.ticker.C:
-				log.Println("syncing at", t)
-				m.syncAPI()
+			case t := <-tsk.ticker.C:
+				log.Printf("syncing %s at %s", name, t)
+				callback()
 			}
 		}
 	}()
+
 	return nil
 }
 
-func (m *Syncer) Stop() error {
-	if m.ticker == nil {
-		return errors.New("no syncer found")
+func (m *Syncer) StopTask(name string) error {
+	if tsk, ok := m.tasks.Load(name); ok {
+		t, ok := tsk.(*task)
+		if !ok {
+			return ErrTaskNotFound
+		}
+
+		t.Stop()
+		m.tasks.Delete(name)
+		return nil
 	}
-	m.stop <- true
-	m.ticker.Stop()
-	m.ticker = nil
-	return nil
+	return ErrTaskNotFound
 }
 
-func (m *Syncer) syncAPI() {
-	ctx := context.Background()
-	markets, err := m.api.Markets(ctx, "usd", 10)
-	if err != nil {
-		log.Printf("error while fetching from API: %s", err)
-	}
-
-	err = m.db.SaveMarkets(ctx, markets, time.Now())
-	if err != nil {
-		log.Printf("error while saving to database: %s", err)
-	}
+func (m *Syncer) StopAllTasks() {
+	m.tasks.Range(func(key, value interface{}) bool {
+		if t, ok := value.(*task); ok {
+			t.Stop()
+		}
+		m.tasks.Delete(key)
+		return true
+	})
 }
