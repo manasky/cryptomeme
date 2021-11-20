@@ -36,13 +36,13 @@ export const bottomImage = ({canvas, ctx, path}) => {
 export const topText = ({canvas, ctx, color= 'black', text, fontSize}) => {
   if (text.length > 300) { fontSize = 12 } else
   if (text.length > 200) { fontSize = 18 } else
-  if (text.length > 180) { fontSize = 20 } else
-  if (text.length > 150) { fontSize = 22 } else
-  if (text.length > 100) { fontSize = 24 } else
-  if (text.length > 40) { fontSize = 32 } else
+  if (text.length > 180) { fontSize = 22 } else
+  if (text.length > 150) { fontSize = 24 } else
+  if (text.length > 100) { fontSize = 28 } else
+  if (text.length > 40) { fontSize = 36 } else
   if (text.length > 30) { fontSize = 42 } else
-  if (text.length > 10) { fontSize = 44 } else
-  { fontSize = 48 }
+  if (text.length > 10) { fontSize = 60 } else
+  { fontSize = 68 }
 
   let textMaxWidth = canvas.width-40;
   let lineHeight = fontSize + (fontSize*0.4);

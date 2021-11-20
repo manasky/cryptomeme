@@ -70,7 +70,7 @@ onMount(() => {
           <div class="text-xs normal-case opacity-40">In 24 hours</div>            
         </th>
         <th>
-          <div class="normal-case">Weekly chart</div>
+          <div class="normal-case">Current price meme</div>
         </th>
       </tr>
     </thead> 
@@ -78,7 +78,9 @@ onMount(() => {
       {#if coins}
         {#each coins as coin}
           <TableItem {coin}>
-            <Meme id={coin.symbol} />
+            {#if coin.meme}
+              <Meme id={coin.symbol} meme={coin.meme} meme_caption={coin.meme_caption} />
+            {/if}
           </TableItem>
         {/each}
       {:else}

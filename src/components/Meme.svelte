@@ -1,5 +1,7 @@
 <script>
 export let id
+export let meme
+export let meme_caption
 import { onMount } from 'svelte'
 import { bgBox, bottomImage, topText } from '@src/functions/canvas.js'
 // import { download } from '@src/functions/downloadImage.js'
@@ -20,12 +22,12 @@ onMount(() => {
   topText({
     canvas: canvasEl,
     ctx: ctx,
-    text: "When you pay $120 gas fee for a $4 exchange$4 exchange$4 exchange",
+    text: meme_caption,
   });
   bottomImage({
     canvas: canvasEl,
     ctx: ctx,
-    path : "/hide-your-pain.jpg",
+    path : meme,
   });
   download = () => {
     let link = document.createElement('a');
