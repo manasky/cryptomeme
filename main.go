@@ -58,6 +58,7 @@ func init() {
 		log.Print(err)
 	}
 
+	viper.SetEnvKeyReplacer(strings.NewReplacer("-", "_"))
 	viper.AutomaticEnv()
 }
 
