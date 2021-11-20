@@ -29,7 +29,7 @@ func init() {
 	flags.String("db-driver", "sqlite3", "database driver")
 	flags.String("db-host", "localhost", "database host")
 	flags.String("db-port", "3306", "database host")
-	flags.String("db-name", "cryptolist", "database name")
+	flags.String("db-name", "crypromeme", "database name")
 	flags.String("db-username", "", "database username")
 	flags.String("db-password", "", "database password")
 	flags.String("market-delay", "180", "market sync delay in seconds")
