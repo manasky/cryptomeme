@@ -7,7 +7,7 @@
           "value": -30,
           "memes": [
             {
-              "caption": "{{.Name}} is {{.CurrentPrice}}",
+              "caption": "{{.Name}} is ${{FormatNumber .CurrentPrice}}",
               "image": "/memes/sad-frog-suicide.jpg"
             },
             {
@@ -17,6 +17,14 @@
             {
               "caption": "My {{.Name}} strategy",
               "image": "/memes/brainless-trade-strategy.jpg"
+            },
+            {
+              "caption": "They sold {{.Name}} at ${{FormatNumber .CurrentPrice}}? Pump it",
+              "image": "/memes/dump-it.jpg"
+            },
+            {
+              "caption": "They sold? Pump it",
+              "image": "/memes/dump-it.jpg"
             }
           ]
         },
@@ -28,12 +36,20 @@
               "image": "/memes/sad-frog.jpg"
             },
             {
-              "caption": "Me explaining why {{.Name}} won't go under {{.CurrentPrice}}",
+              "caption": "Me explaining why {{.Name}} won't go under ${{FormatNumber .CurrentPrice}}",
               "image": "/memes/explaining.jpg"
             },
             {
-              "caption": "Me, investing on {{.Name}} before the price dropped to {{.CurrentPrice}}",
+              "caption": "Me, investing on {{.Name}} before the price dropped to ${{FormatNumber .CurrentPrice}}",
               "image": "/memes/burn-money.jpg"
+            },
+            {
+              "caption": "When I see {{.Name}} price at ${{FormatNumber .CurrentPrice}}",
+              "image": "/memes/financially-recover.png"
+            },
+            {
+              "caption": "How {{.Name}} is going to the moon",
+              "image": "/memes/to-the-moon.jpg"
             }
           ]
         },
@@ -41,16 +57,20 @@
           "value": -10,
           "memes": [
             {
-              "caption": "Let me check how much is my {{.Name}} today. It's {{.CurrentPrice}} now.",
+              "caption": "Let me check how much is my {{.Name}} today. It's ${{FormatNumber .CurrentPrice}} now.",
               "image": "/memes/dissapointed.jpg"
             },
             {
-              "caption": "${{.CurrentPrice}} {{.Name}} is fine.",
+              "caption": "${{FormatNumber .CurrentPrice}} {{.Name}} is fine.",
               "image": "/memes/this-is-fine.jpg"
             },
             {
               "caption": "Me before investing on {{.Name}}, Me after investing on {{.Name}}",
               "image": "/memes/rich-vs-poor.jpg"
+            },
+            {
+              "caption": "Me, watching {{.Name}} dump memes.",
+              "image": "/memes/ross-humor-based-on-my-pain.png"
             }
           ]
         },
@@ -58,12 +78,24 @@
           "value": -5,
           "memes": [
             {
-              "caption": "Just bought {{.Name}} yesterday. It's {{.CurrentPrice}} now.",
+              "caption": "Just bought {{.Name}} yesterday. It's ${{FormatNumber .CurrentPrice}} now.",
               "image": "/memes/hide-your-pain.jpg"
             },
             {
               "caption": "Me before investing on {{.Name}}, Me after investing on {{.Name}}",
               "image": "/memes/rich-vs-poor.jpg"
+            },
+            {
+              "caption": "Are ya winning son?",
+              "image": "/memes/are-you-winning.jpg"
+            },
+            {
+              "caption": "Watching {{.Name}} price at ${{FormatNumber .CurrentPrice}}",
+              "image": "/memes/joker.jpg"
+            },
+            {
+              "caption": "1 {{.Name}} = ${{FormatNumber .CurrentPrice}}",
+              "image": "/memes/wojak-sad.jpg"
             }
           ]
         },
@@ -77,6 +109,14 @@
             {
               "caption": "Me, explaining to my mom how {{.Name}} will go up tomorrow.",
               "image": "/memes/explaining.jpg"
+            },
+            {
+              "caption": "No {{.Name}} dump today. ${{FormatNumber .CurrentPrice}}",
+              "image": "/memes/hulk-absolute-win.jpg"
+            },
+            {
+              "caption": "Stock market trader talking with {{.Name}} trader",
+              "image": "/memes/mel-gibson-jesus.jpg"
             }
           ]
         },
@@ -84,16 +124,24 @@
           "value": 5,
           "memes": [
             {
-              "caption": "Oh my god, it's happening. {{.Name}} is {{.CurrentPrice}}! Everybody calm down",
+              "caption": "Oh my god, it's happening. {{.Name}} is ${{FormatNumber .CurrentPrice}}! Everybody calm down",
               "image": "/memes/michael-scott-calm-down.jpg"
             },
             {
-              "caption": "Me, looking at ${{.CurrentPrice}} {{.Name}}",
+              "caption": "Me, looking at ${{FormatNumber .CurrentPrice}} {{.Name}}",
               "image": "/memes/andy-dwyer-surprised.jpg"
             },
             {
               "caption": "My investment on {{.Name}} is fine.",
               "image": "/memes/harold-thumbs.jpg"
+            },
+            {
+              "caption": "Everyone predict {{.Name}} will pump. {{.Name}}:",
+              "image": "/memes/now-im-not-doing-it.jpg"
+            },
+            {
+              "caption": "Me explaining to everyone how {{.Name}} will pump.",
+              "image": "/memes/now-im-not-doing-it.jpg"
             }
           ]
         },
@@ -101,12 +149,20 @@
           "value": 10,
           "memes": [
             {
-              "caption": "When I see {{.Name}} price at ${{.CurrentPrice}}",
+              "caption": "When I see {{.Name}} price at ${{FormatNumber .CurrentPrice}}",
               "image": "/memes/bart-rich.png"
             },
             {
-              "caption": "When I see {{.Name}} is ${{.CurrentPrice}}",
+              "caption": "When I see {{.Name}} is ${{FormatNumber .CurrentPrice}}",
               "image": "/memes/harold-win.jpg"
+            },
+            {
+              "caption": "I'm telling you, {{.Name}} will pump any time now",
+              "image": "/memes/man-explaining.jpg"
+            },
+            {
+              "caption": "Ok class, we have a {{.Name}} billionaire here",
+              "image": "/memes/ok-class.jpg"
             }
           ]
         },
@@ -114,8 +170,24 @@
           "value": 20,
           "memes": [
             {
-              "caption": "Watching {{.Name}} price at ${{.CurrentPrice}}",
+              "caption": "Watching {{.Name}} price at ${{FormatNumber .CurrentPrice}}",
               "image": "/memes/kylo-ren-more.jpg"
+            },
+            {
+              "caption": "They bought {{.Name}} at ${{FormatNumber .CurrentPrice}}? Dump it",
+              "image": "/memes/dump-it.jpg"
+            },
+            {
+              "caption": "They bought? Dump it again",
+              "image": "/memes/dump-it.jpg"
+            },
+            {
+              "caption": "{{.Name}} at ${{FormatNumber .CurrentPrice}}?",
+              "image": "/memes/like-thats-ever-gonna-happen.jpg"
+            },
+            {
+              "caption": "People who are selling {{.Name}} at ${{FormatNumber .CurrentPrice}} vs. Me, hodling",
+              "image": "/memes/black-widow-happy-scared.jpg"
             }
           ]
         },
@@ -123,16 +195,24 @@
           "value": 30,
           "memes": [
             {
-              "caption": "No, you can't just sell {{.Name}} at ${{.CurrentPrice}}",
+              "caption": "No, you can't just sell {{.Name}} at ${{FormatNumber .CurrentPrice}}",
               "image": "/memes/no-you-cant.jpg"
             },
             {
-              "caption": "{{.Name}} = ${{.CurrentPrice}}",
+              "caption": "{{.Name}} = ${{FormatNumber .CurrentPrice}}",
               "image": "/memes/money.jpg"
             },
             {
-              "caption": "1 {{.Name}} is ${{.CurrentPrice}} now",
+              "caption": "1 {{.Name}} is ${{FormatNumber .CurrentPrice}} now",
               "image": "/memes/will-smith-thats-hot.jpg"
+            },
+            {
+              "caption": "They bought {{.Name}} at ${{FormatNumber .CurrentPrice}}? Dump it.",
+              "image": "/memes/dump-it.jpg"
+            },
+            {
+              "caption": "How's your {{.Name}} investment going?",
+              "image": "/memes/batman-rich.jpg"
             }
           ]
         }
@@ -145,12 +225,16 @@
           "value": -30,
           "memes": [
             {
-              "caption": "{{.Name}} ${{.CurrentPrice}}",
+              "caption": "{{.Name}} ${{FormatNumber .CurrentPrice}}",
               "image": "/memes/sad-frog-suicide.jpg"
             },
             {
-              "caption": "When I see the {{.Name}} price at ${{.CurrentPrice}}",
+              "caption": "When I see the {{.Name}} price at ${{FormatNumber .CurrentPrice}}",
               "image": "/memes/wojak-gun.jpg"
+            },
+            {
+              "caption": "Me and my shitcoin owner friends",
+              "image": "/memes/squidward-patrick-spongebob.jpg"
             }
           ]
         },
@@ -158,12 +242,20 @@
           "value": -10,
           "memes": [
             {
-              "caption": "{{.Name}} ${{.CurrentPrice}}",
+              "caption": "{{.Name}} ${{FormatNumber .CurrentPrice}}",
               "image": "/memes/sad-frog-suicide.jpg"
             },
             {
-              "caption": "{{.Name}} ${{.CurrentPrice}}",
+              "caption": "{{.Name}} ${{FormatNumber .CurrentPrice}}",
               "image": "/memes/sad-frog-suicide-2.jpg"
+            },
+            {
+              "caption": "When I check the {{.Name}} price and it's still at ${{FormatNumber .CurrentPrice}}",
+              "image": "/memes/interstellar-cry.jpg"
+            },
+            {
+              "caption": "Me, selling my house to buy {{.Name}}",
+              "image": "/memes/thanos-small-price-salvation.jpg"
             }
           ]
         },
@@ -173,6 +265,14 @@
             {
               "caption": "Me, losing all my money on {{.Name}}",
               "image": "/memes/ethereum-wallet.jpg"
+            },
+            {
+              "caption": "Waiting for {{.Name}} price to pump",
+              "image": "/memes/thor-sad.jpg"
+            },
+            {
+              "caption": "{{.Name}} dumping to ${{FormatNumber .CurrentPrice}}",
+              "image": "/memes/star-trek-surprised.jpg"
             }
           ]
         },
@@ -182,6 +282,18 @@
             {
               "caption": "They don't know how much {{.Name}} I'm holding",
               "image": "/memes/they-dont-know.jpg"
+            },
+            {
+              "caption": "When they ask me how's my {{.Name}} investment going",
+              "image": "/memes/you-wouldnt-get-it.jpg"
+            },
+            {
+              "caption": "Waiting for {{.Name}} price to pump",
+              "image": "/memes/spongebob-alone.jpg"
+            },
+            {
+              "caption": "{{.Name}} holders when it's ${{FormatNumber .CurrentPrice}}",
+              "image": "/memes/sunglasses.jpg"
             }
           ]
         },
@@ -189,8 +301,20 @@
           "value": 5,
           "memes": [
             {
-              "caption": "{{.Name}} is ${{.CurrentPrice}} but it can go higher",
+              "caption": "{{.Name}} is ${{FormatNumber .CurrentPrice}} but it can go higher",
               "image": "/memes/life-is-good.png"
+            },
+            {
+              "caption": "{{.Name}} holders right now.",
+              "image": "/memes/money.jpg"
+            },
+            {
+              "caption": "{{.Name}} holders vs. other coin holders",
+              "image": "/memes/edna-helen.jpg"
+            },
+            {
+              "caption": "${{FormatNumber .CurrentPrice}} {{.Name}}. Is this a pump?",
+              "image": "/memes/is-this-a-pigeon.jpg"
             }
           ]
         },
@@ -198,8 +322,16 @@
           "value": 10,
           "memes": [
             {
-              "caption": "{{.Name}} is ${{.CurrentPrice}} today",
+              "caption": "{{.Name}} is ${{FormatNumber .CurrentPrice}} today",
               "image": "/memes/perfection.jpg"
+            },
+            {
+              "caption": "{{.Name}} is ${{FormatNumber .CurrentPrice}} today",
+              "image": "/memes/wolf-of-wallstreet-rookie-numbers.jpg"
+            },
+            {
+              "caption": "Holding {{.Name}} feels like",
+              "image": "/memes/superiority.jpg"
             }
           ]
         },
@@ -207,7 +339,7 @@
           "value": 30,
           "memes": [
             {
-              "caption": "{{.Name}} is ${{.CurrentPrice}} today",
+              "caption": "{{.Name}} is ${{FormatNumber .CurrentPrice}} today",
               "image": "/memes/perfection.jpg"
             }
           ]
@@ -218,11 +350,23 @@
       "name": "binance coin",
       "ranges": [
         {
-          "value": -20,
+          "value": -30,
           "memes": [
             {
-              "caption": "Le me check {{.Name}} price.         ${{.CurrentPrice}}",
+              "caption": "Let me check {{.Name}} price.         ${{FormatNumber .CurrentPrice}}",
               "image": "/memes/dissapointed.jpg"
+            },
+            {
+              "caption": "When {{.Name}} price goes down to ${{FormatNumber .CurrentPrice}}",
+              "image": "/memes/first-time.jpg"
+            },
+            {
+              "caption": "{{.Name}} CEO right now",
+              "image": "/memes/kekw.jpg"
+            },
+            {
+              "caption": "You said {{.Name}} price will pump",
+              "image": "/memes/woman-yelling-at-cat.jpg"
             }
           ]
         },
@@ -230,17 +374,33 @@
           "value": 0,
           "memes": [
             {
-              "caption": "{{.Name}} is ${{.CurrentPrice}}",
+              "caption": "{{.Name}} is ${{FormatNumber .CurrentPrice}}",
               "image": "/memes/anyway.png"
+            },
+            {
+              "caption": "1 {{.Name}} is now ${{FormatNumber .CurrentPrice}}",
+              "image": "/memes/hulk-confusing-times.jpg"
+            },
+            {
+              "caption": "Me telling everyone to buy {{.Name}}",
+              "image": "/memes/talk-to-wall.jpg"
             }
           ]
         },
         {
-          "value": 20,
+          "value": 30,
           "memes": [
             {
               "caption": "{{.Name}} holders to other alts",
               "image": "/memes/know-your-place-trash.jpg"
+            },
+            {
+              "caption": "Ok class, we have a {{.Name}} billionaire here",
+              "image": "/memes/ok-class.jpg"
+            },
+            {
+              "caption": "How {{.Name}} holders look at other crypto holders",
+              "image": "/memes/vampires-looking.png"
             }
           ]
         }
@@ -255,6 +415,10 @@
             {
               "caption": "Nobody:                                          {{.Name}} price:",
               "image": "/memes/buttons-price.jpg"
+            },
+            {
+              "caption": "When {{.Name}} price gets to ${{FormatNumber .CurrentPrice}}:",
+              "image": "/memes/we-dont-do-that-here.png"
             }
           ]
         },
@@ -273,6 +437,10 @@
             {
               "caption": "{{.Name}} holders looking at all other cryptos going up and down",
               "image": "/memes/jealous-kid.jpg"
+            },
+            {
+              "caption": "{{.Name}} price is ${{FormatNumber .CurrentPrice}} now",
+              "image": "/memes/stonks.jpg"
             }
           ]
         }
@@ -287,15 +455,14 @@
             {
               "caption": "My {{.Name}} investment is totaly fine",
               "image": "/memes/sad-with-happy-mask.jpg"
-            }
-          ]
-        },
-        {
-          "value": -20,
-          "memes": [
+            },
             {
-              "caption": "1 {{.Name}} = ${{.CurrentPrice}}",
+              "caption": "1 {{.Name}} = ${{FormatNumber .CurrentPrice}}",
               "image": "/memes/pepe-dump-chart.jpg"
+            },
+            {
+              "caption": "When they say {{.Name}} will pump again",
+              "image": "/memes/hawkeye-dont-give-me-hope.jpg"
             }
           ]
         },
@@ -305,6 +472,14 @@
             {
               "caption": "Waiting for {{.Name}} price to go up",
               "image": "/memes/kermit-waiting.jpg"
+            },
+            {
+              "caption": "Me, calling the cops after seeing {{.Name}} at ${{FormatNumber .CurrentPrice}}",
+              "image": "/memes/harold-calling.jpg"
+            },
+            {
+              "caption": "Me, losing all my money to {{.Name}}",
+              "image": "/memes/kid-burn-house.jpg"
             }
           ]
         },
@@ -314,6 +489,14 @@
             {
               "caption": "When they ask me what is my {{.Name}} trading strategy",
               "image": "/memes/brainless-trade-strategy.jpg"
+            },
+            {
+              "caption": "Waiting for a {{.Name}} pump now",
+              "image": "/memes/kermit-waiting-2.jpg"
+            },
+            {
+              "caption": "Waiting for a {{.Name}} dump so I can buy more",
+              "image": "/memes/kermit-waiting-2.jpg"
             }
           ]
         },
@@ -321,17 +504,12 @@
           "value": 10,
           "memes": [
             {
-              "caption": "1 {{.Name}} = ${{.CurrentPrice}}",
+              "caption": "1 {{.Name}} = ${{FormatNumber .CurrentPrice}}",
               "image": "/memes/wolf-of-wallstreet-rookie-numbers.jpg"
-            }
-          ]
-        },
-        {
-          "value": 20,
-          "memes": [
+            },
             {
-              "caption": "How my {{.Name}} investment is going",
-              "image": "/memes/ironman-money.jpg"
+              "caption": "When your friend is a {{.Name}} billionaire and you know where they put their private keys",
+              "image": "/memes/kid-gun.jpg"
             }
           ]
         },
@@ -339,7 +517,11 @@
           "value": 30,
           "memes": [
             {
-              "caption": "1 {{.Name}} = ${{.CurrentPrice}}",
+              "caption": "How my {{.Name}} investment is going",
+              "image": "/memes/ironman-money.jpg"
+            },
+            {
+              "caption": "1 {{.Name}} = ${{FormatNumber .CurrentPrice}}",
               "image": "/memes/breaking-bad-money.jpg"
             }
           ]
@@ -355,14 +537,9 @@
             {
               "caption": "You can't lose money if you don't have money",
               "image": "/memes/smart-frog.jpg"
-            }
-          ]
-        },
-        {
-          "value": -20,
-          "memes": [
+            },
             {
-              "caption": "{{.Name}} is ${{.CurrentPrice}} today. I guess I need a 3rd job",
+              "caption": "{{.Name}} is ${{FormatNumber .CurrentPrice}} today. I guess I need a 3rd job",
               "image": "/memes/wojak-mcdonalds-crying.jpg"
             }
           ]
@@ -373,6 +550,10 @@
             {
               "caption": "Waiting for {{.Name}} price to go up",
               "image": "/memes/pepe-sleep-chart.jpg"
+            },
+            {
+              "caption": "{{.Name}} price dumped to ${{FormatNumber .CurrentPrice}}. This is the worst dump ever...  No, This is the worst dump ever so far.",
+              "image": "/memes/simpsons-so-far.jpg"
             }
           ]
         },
@@ -380,8 +561,12 @@
           "value": 0,
           "memes": [
             {
-              "caption": "Let me see if {{.Name}} price goes higher than ${{.CurrentPrice}}",
+              "caption": "Let me see if {{.Name}} price goes higher than ${{FormatNumber .CurrentPrice}}",
               "image": "/memes/look-hard.jpg"
+            },
+            {
+              "caption": "Me, buying ${{FormatNumber .CurrentPrice}} {{.Name}} like:",
+              "image": "/memes/salt-bae.jpg"
             }
           ]
         },
@@ -389,17 +574,8 @@
           "value": 10,
           "memes": [
             {
-              "caption": "One {{.Name}} is now ${{.CurrentPrice}}",
+              "caption": "One {{.Name}} is now ${{FormatNumber .CurrentPrice}}",
               "image": "/memes/kylo-ren-more.jpg"
-            }
-          ]
-        },
-        {
-          "value": 20,
-          "memes": [
-            {
-              "caption": "They don't know {{.Name}} is ${{.CurrentPrice}} now",
-              "image": "/memes/they-dont-know.jpg"
             }
           ]
         },
@@ -407,7 +583,11 @@
           "value": 30,
           "memes": [
             {
-              "caption": "{{.Name}} price is ${{.CurrentPrice}} now",
+              "caption": "They don't know {{.Name}} is ${{FormatNumber .CurrentPrice}} now",
+              "image": "/memes/they-dont-know.jpg"
+            },
+            {
+              "caption": "{{.Name}} price is ${{FormatNumber .CurrentPrice}} now",
               "image": "/memes/where-lambo.jpg"
             }
           ]
@@ -423,15 +603,18 @@
             {
               "caption": "When can I see {{.Name}} price go up again?",
               "image": "/memes/invincible-neat-thing.jpg"
-            }
-          ]
-        },
-        {
-          "value": -20,
-          "memes": [
+            },
             {
-              "caption": "{{.Name}} is ${{.CurrentPrice}} now.",
+              "caption": "You can't lose money on {{.Name}} If you don't have money",
+              "image": "/memes/no-money.png"
+            },
+            {
+              "caption": "{{.Name}} is ${{FormatNumber .CurrentPrice}} now.",
               "image": "/memes/wojak-mcdonalds.jpg"
+            },
+            {
+              "caption": "When you sell all your {{.Name}} at ${{FormatNumber .CurrentPrice}} to avoid losing more money.",
+              "image": "/memes/lotr-its-done.jpg"
             }
           ]
         },
@@ -441,6 +624,14 @@
             {
               "caption": "When they ask me about my {{.Name}} investment",
               "image": "/memes/russian-xrp-5usd.jpg"
+            },
+            {
+              "caption": "Me buying {{.Name}} on ATH vs. Me now",
+              "image": "/memes/matthew-mcconaughey-happy-sad.jpg"
+            },
+            {
+              "caption": "Me as a {{.Name}} holder",
+              "image": "/memes/worthless.jpg"
             }
           ]
         },
@@ -448,7 +639,7 @@
           "value": 0,
           "memes": [
             {
-              "caption": "Let me see if {{.Name}} price goes higher than ${{.CurrentPrice}} or not",
+              "caption": "Let me see if {{.Name}} price goes higher than ${{FormatNumber .CurrentPrice}} or not",
               "image": "/memes/look-hard.jpg"
             }
           ]
@@ -457,16 +648,7 @@
           "value": 10,
           "memes": [
             {
-              "caption": "One {{.Name}} is now ${{.CurrentPrice}}",
-              "image": "/memes/pepe-pump-chart.jpg"
-            }
-          ]
-        },
-        {
-          "value": 20,
-          "memes": [
-            {
-              "caption": "Today {{.Name}} price: ${{.CurrentPrice}}",
+              "caption": "One {{.Name}} is now ${{FormatNumber .CurrentPrice}}",
               "image": "/memes/pepe-pump-chart.jpg"
             }
           ]
@@ -475,7 +657,11 @@
           "value": 30,
           "memes": [
             {
-              "caption": "When you see {{.Name}} price is ${{.CurrentPrice}}",
+              "caption": "Today {{.Name}} price: ${{FormatNumber .CurrentPrice}}",
+              "image": "/memes/pepe-pump-chart.jpg"
+            },
+            {
+              "caption": "When you see {{.Name}} price is ${{FormatNumber .CurrentPrice}}",
               "image": "/memes/interesting.jpg"
             }
           ]
@@ -491,14 +677,9 @@
             {
               "caption": "Some day my {{.Name}} investment will pay off",
               "image": "/memes/sure-grandma.jpg"
-            }
-          ]
-        },
-        {
-          "value": -20,
-          "memes": [
+            },
             {
-              "caption": "When you buy {{.Name}} and price goes to ${{.CurrentPrice}}",
+              "caption": "When you buy {{.Name}} and price goes to ${{FormatNumber .CurrentPrice}}",
               "image": "/memes/will-smith-sad.jpg"
             }
           ]
@@ -507,7 +688,7 @@
           "value": -10,
           "memes": [
             {
-              "caption": "{{.Name}} = ${{.CurrentPrice}}",
+              "caption": "{{.Name}} = ${{FormatNumber .CurrentPrice}}",
               "image": "/memes/dissapointed.jpg"
             }
           ]
@@ -516,8 +697,12 @@
           "value": 0,
           "memes": [
             {
-              "caption": "One {{.Name}} here is ${{.CurrentPrice}} on earth",
+              "caption": "One {{.Name}} here is ${{FormatNumber .CurrentPrice}} on earth",
               "image": "/memes/interstellar-7years.jpg"
+            },
+            {
+              "caption": "Me, buying {{.Name}} at ${{FormatNumber .CurrentPrice}}",
+              "image": "/memes/polkadot-man.jpg"
             }
           ]
         },
@@ -525,17 +710,12 @@
           "value": 10,
           "memes": [
             {
-              "caption": "Me looking at ${{.CurrentPrice}} {{.Name}}",
+              "caption": "Me looking at ${{FormatNumber .CurrentPrice}} {{.Name}}",
               "image": "/memes/dio-satisfied.jpg"
-            }
-          ]
-        },
-        {
-          "value": 20,
-          "memes": [
+            },
             {
-              "caption": "Watching {{.Name}} price go up",
-              "image": "/memes/will-smith-thats-hot.jpg"
+              "caption": "Me, watching {{.Name}} price at ${{FormatNumber .CurrentPrice}}",
+              "image": "/memes/polkadot-man.jpg"
             }
           ]
         },
@@ -543,7 +723,11 @@
           "value": 30,
           "memes": [
             {
-              "caption": "1{{.Name}} = ${{.CurrentPrice}}",
+              "caption": "Watching {{.Name}} price go up",
+              "image": "/memes/will-smith-thats-hot.jpg"
+            },
+            {
+              "caption": "1{{.Name}} = ${{FormatNumber .CurrentPrice}}",
               "image": "/memes/breaking-bad-money.jpg"
             }
           ]
@@ -559,6 +743,10 @@
             {
               "caption": "Nobody:                                          {{.Name}} price:",
               "image": "/memes/buttons-price.jpg"
+            },
+            {
+              "caption": "When you see {{.Name}} price goes down.",
+              "image": "/memes/oh-no.png"
             }
           ]
         },
@@ -577,6 +765,10 @@
             {
               "caption": "{{.Name}} holders watching other cryptos go up and down",
               "image": "/memes/chaos.jpg"
+            },
+            {
+              "caption": "When you see {{.Name}} price goes up.",
+              "image": "/memes/anyway.png"
             }
           ]
         }
@@ -589,8 +781,12 @@
           "value": -20,
           "memes": [
             {
-              "caption": "{{.Name}} is ${{.CurrentPrice}}. wow!",
+              "caption": "{{.Name}} is ${{FormatNumber .CurrentPrice}}. wow!",
               "image": "/memes/dogecoin-bicycle.jpg"
+            },
+            {
+              "caption": "How {{.Name}} is going to the moon",
+              "image": "/memes/to-the-moon.jpg"
             }
           ]
         },
@@ -609,6 +805,10 @@
             {
               "caption": "1 {{.Name}} = 1 {{.Name}}",
               "image": "/memes/doge-honest-work.jpg"
+            },
+            {
+              "caption": "1 {{.Name}} = 1 {{.Name}}",
+              "image": "/memes/elon-musk-dogecoin.jpg"
             }
           ]
         },
@@ -618,6 +818,10 @@
             {
               "caption": "Waiting to go {{.Name}} price to go wow",
               "image": "/memes/elon-musk-dogecoin-handshake.jpg"
+            },
+            {
+              "caption": "Hello sir. Your {{.Name}} price is ${{FormatNumber .CurrentPrice}} now",
+              "image": "/memes/doge-nurse.jpg"
             }
           ]
         },
@@ -625,8 +829,12 @@
           "value": 5,
           "memes": [
             {
-              "caption": "{{.Name}} is ${{.CurrentPrice}}. such crypto!",
+              "caption": "{{.Name}} is ${{FormatNumber .CurrentPrice}}. such crypto!",
               "image": "/memes/doge-to-moon.jpg"
+            },
+            {
+              "caption": "Wow! 1 {{.Name}} is 1 {{.Name}} now",
+              "image": "/memes/doge-rich.jpg"
             }
           ]
         },
@@ -634,8 +842,16 @@
           "value": 10,
           "memes": [
             {
-              "caption": "${{.CurrentPrice}}. such money. such dogecoin",
+              "caption": "${{FormatNumber .CurrentPrice}}. such money. such {{.Name}}",
               "image": "/memes/doge-stonks.png"
+            },
+            {
+              "caption": "${{FormatNumber .CurrentPrice}}. such money. such {{.Name}}",
+              "image": "/memes/doge-strong.jpg"
+            },
+            {
+              "caption": "When I see {{.Name}} is ${{FormatNumber .CurrentPrice}}",
+              "image": "/memes/tom-cruise-laugh.jpg"
             }
           ]
         },
@@ -643,8 +859,12 @@
           "value": 20,
           "memes": [
             {
-              "caption": "${{.CurrentPrice}}. such wealth. such dogecoin",
+              "caption": "${{FormatNumber .CurrentPrice}}. such wealth. such dogecoin",
               "image": "/memes/dogecoin-rich.jpg"
+            },
+            {
+              "caption": "Is this the currency of future?",
+              "image": "/memes/is-this-a-pigeon.jpg"
             }
           ]
         }
