@@ -25,6 +25,7 @@ func NewServer(db database.Provider, memeManager *meme.Manager) *Server {
 }
 
 func (s *Server) Markets(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json; charset=UTF-8")
 	t := r.FormValue("time")
 	var ti time.Time
 	if t != "" {
