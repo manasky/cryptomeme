@@ -37,6 +37,7 @@ func init() {
 	flags.String("api-endpoint", "", "api endpoint")
 	flags.String("cache-driver", "memory", "cache driver. supported drivers: ent (mysql, sqlite3, postgres), memory")
 	flags.String("meme-dataset-path", "dataset.json", "path of meme dataset json file")
+	flags.String("meme-cache-duration", "3600", "cache duration in seconds")
 
 	err := flags.Parse(os.Args[1:])
 	if err != nil {
@@ -80,7 +81,7 @@ func main() {
 		panic(err)
 	}
 
-	mm, err := meme.New(viper.GetString("meme-dataset-path"))
+	mm, err := meme.New(viper.GetString("meme-dataset-path"), time.Duration(viper.GetInt("meme-cache-duration"))*time.Second)
 	if err != nil {
 		panic(err)
 	}
