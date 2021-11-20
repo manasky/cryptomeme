@@ -13,6 +13,7 @@ import (
 
 const (
 	marketEndpoint string = "coins/markets"
+	marketChartEndpoint string = "coins/%s/market_chart"
 )
 
 type Header struct {
@@ -83,4 +84,33 @@ func (cg *CoinGeco) Markets(ctx context.Context, currency string, perPage int) (
 	}
 
 	return markets, nil
+}
+
+func (cg *CoinGeco) MarketChart(ctx context.Context, id, currency string, days uint) (*common.MarketChart, error) {
+	resp, err := cg.get(ctx, fmt.Sprintf(marketChartEndpoint, id), url.Values{
+		"vs_currency": {currency},
+		"days": {fmt.Sprint(days)},
+	}, nil)
+	if err != nil {
+		return nil, err
+	}
+
+	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		return nil, err
+	}
+
+	if resp.StatusCode != 200 {
+		return nil, errors.New(fmt.Sprintf("error: %d - %s", resp.StatusCode, body))
+	}
+
+	var chart *common.MarketChart
+	if err = json.Unmarshal(body, &chart); err != nil {
+		return nil, err
+	}
+
+	chart.Name = id
+	chart.Currency = currency
+
+	return chart, nil
 }
