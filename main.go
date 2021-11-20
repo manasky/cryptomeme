@@ -38,6 +38,7 @@ func init() {
 	flags.String("cache-driver", "memory", "cache driver. supported drivers: ent (mysql, sqlite3, postgres), memory")
 	flags.String("meme-dataset-path", "dataset.json", "path of meme dataset json file")
 	flags.String("meme-cache-duration", "3600", "cache duration in seconds")
+	flags.String("allowed-origins", "*", "allowed origins for the API")
 
 	err := flags.Parse(os.Args[1:])
 	if err != nil {
@@ -94,7 +95,7 @@ func main() {
 
 	go func() {
 		err = http.ListenAndServe(viper.GetString("host"), handlers.CORS(
-			handlers.AllowedOrigins([]string{"*"}),
+			handlers.AllowedOrigins([]string{viper.GetString("allowed-origins")}),
 			handlers.AllowedHeaders([]string{"Content-Type", "X-Requested-With"}),
 		)(r))
 		if err != nil {
