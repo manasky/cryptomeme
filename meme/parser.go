@@ -11,7 +11,8 @@ import (
 
 var (
 	tmplFuncMap = template.FuncMap{
-		"FormatNumber": formatNumber,
+		"FormatNumber":        formatNumber,
+		"FormatOppositePrice": formatOppositePrice,
 	}
 )
 
@@ -41,4 +42,9 @@ func formatNumber(f float64) string {
 	default:
 		return fmt.Sprintf("%.2f", f)
 	}
+}
+
+func formatOppositePrice(v, p float64) string {
+	f := v + (v * ((-1 * p) / 100))
+	return formatNumber(f)
 }
