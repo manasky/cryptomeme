@@ -4,6 +4,9 @@ export let meme
 export let meme_caption
 export let creditPrice = ''
 export let creditDate = ''
+
+export let classes = 'w-52 rounded'
+
 import { onMount } from 'svelte'
 import { drawMeme } from '@src/functions/canvas.js'
 
@@ -32,7 +35,7 @@ onMount(() => {
 </script>
 
 <canvas
-  class="w-52 -my-3 -mr-4 border border-base-content border-opacity-5 cursor-pointer rounded" width="700" height="600" 
+  class="{classes} -my-3 -mr-4 border border-base-content border-opacity-5 cursor-pointer" width='700' height='600' 
   id={id} on:click={download()} bind:this={canvasEl}
 ></canvas>
 
