@@ -17,7 +17,7 @@ let themes = [
 <nav class="px-3 navbar">
   <div class="navbar-start">
 
-    <div class="dropdown">
+    <!-- <div class="dropdown">
       <div tabindex="0" class="btn btn-ghost btn-square mask mask-squircle">
         <svg class="inline-block w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
       </div> 
@@ -29,7 +29,7 @@ let themes = [
           <a href="/">About</a>
         </li>
       </ul>
-    </div>
+    </div> -->
 
   </div>
   <div class="navbar-center flex flex-col">

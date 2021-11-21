@@ -39,7 +39,7 @@ onMount(() => {
 </script>
 
 <div class="overflow-x-auto">
-  <table class="table w-full">
+  <table class="table table-zebra w-full">
     <thead>
       <tr>
         <th>
@@ -67,19 +67,26 @@ onMount(() => {
         </th>
         <th>
           <div class="normal-case">Min/Max price</div>
-          <div class="text-xs normal-case opacity-40">In 24 hours</div>            
+          <div class="text-xs normal-case opacity-40">In 24 hours</div>
         </th>
         <th>
           <div class="normal-case">Current price meme</div>
+          <div class="text-xs normal-case opacity-40">Generated hourly</div>
         </th>
       </tr>
     </thead> 
     <tbody>
       {#if coins}
-        {#each coins as coin}
+        {#each coins.slice(0, 10) as coin}
           <TableItem {coin}>
             {#if coin.meme}
-              <Meme id={coin.symbol} meme={coin.meme} meme_caption={coin.meme_caption} />
+              <Meme 
+                id={coin.symbol} 
+                meme={coin.meme} 
+                meme_caption={coin.meme_caption} 
+                creditDate=""
+                creditPrice= "{coin.symbol.toUpperCase()} price on {new Date(Date.now()).toLocaleString("en-US",{ year: "numeric", month: "short", day: "2-digit" })}: ${coin.current_price} ({(coin.price_change_24h<0?"▼":"▲") + '$' + Number(Math.abs(coin.price_change_24h))})"
+              />
             {/if}
           </TableItem>
         {/each}

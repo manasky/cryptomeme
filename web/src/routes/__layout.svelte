@@ -14,6 +14,6 @@
   <div class="px-3">
     <slot />
   </div>
-  <div class="mt-10"></div>
+  <div class="mt-4"></div>
   <Footer/>
 </main>
