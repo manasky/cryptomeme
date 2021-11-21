@@ -3,6 +3,7 @@ import { onMount } from 'svelte'
 import { timeAgo } from '@src/functions/timeago.js'
 import TableItem from '@components/TableItem.svelte'
 import Meme from '@components/Meme.svelte'
+import Seo from '@components/Seo.svelte'
 
 let API_PATH
 if (import.meta.env.VITE_API_PATH !== undefined) {
@@ -38,6 +39,14 @@ onMount(() => {
 
 </script>
 
+<svelte:head>
+  <Seo
+    title={`CryptoMeme.WTF - Crypto Price + Memes`}
+    desc={`Crypto price memes - Bitcoin meme, Ethereum meme, crypto meme`}
+    img={`/card.jpg`}
+  />
+</svelte:head>
+
 <div class="overflow-x-auto">
   <table class="table table-zebra w-full">
     <thead>
@@ -59,19 +68,19 @@ onMount(() => {
           {/if}
         </th> 
         <th>
-          <div class="normal-case">Current Price</div>
-          <div class="flex items-center gap-1 text-xs normal-case opacity-40">
+          <div class="normal-case font-black tracking-wider">Current Price</div>
+          <div class="flex items-center gap-1 text-xs normal-case opacity-70">
             <svg class="w-3 h-3 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.92,6.62a1,1,0,0,0-.54-.54A1,1,0,0,0,17,6H7A1,1,0,0,0,7,8h7.59l-8.3,8.29a1,1,0,0,0,0,1.42,1,1,0,0,0,1.42,0L16,9.41V17a1,1,0,0,0,2,0V7A1,1,0,0,0,17.92,6.62Z"/></svg>
             Price change in 24 hours
           </div>
         </th>
         <th>
-          <div class="normal-case">Min/Max price</div>
-          <div class="text-xs normal-case opacity-40">In 24 hours</div>
+          <div class="normal-case font-black tracking-wider">Min/Max price</div>
+          <div class="text-xs normal-case opacity-70">In 24 hours</div>
         </th>
         <th>
-          <div class="normal-case">Current price meme</div>
-          <div class="text-xs normal-case opacity-40">Generated hourly</div>
+          <div class="normal-case font-black tracking-wider">Current price meme</div>
+          <div class="text-xs normal-case opacity-70">Generated hourly</div>
         </th>
       </tr>
     </thead> 
