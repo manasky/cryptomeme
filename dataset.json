@@ -86,6 +86,10 @@
               "image": "/memes/rich-vs-poor.jpg"
             },
             {
+              "caption": "My investment on {{.Name}} is fine.",
+              "image": "/memes/harold-thumbs.jpg"
+            },
+            {
               "caption": "Are ya winning son?",
               "image": "/memes/are-you-winning.jpg"
             },
@@ -124,30 +128,26 @@
           "value": 5,
           "memes": [
             {
-              "caption": "Oh my god, it's happening. {{.Name}} is ${{FormatNumber .CurrentPrice}}! Everybody calm down",
-              "image": "/memes/michael-scott-calm-down.jpg"
-            },
-            {
               "caption": "Me, looking at ${{FormatNumber .CurrentPrice}} {{.Name}}",
               "image": "/memes/andy-dwyer-surprised.jpg"
-            },
-            {
-              "caption": "My investment on {{.Name}} is fine.",
-              "image": "/memes/harold-thumbs.jpg"
             },
             {
               "caption": "Everyone predict {{.Name}} will pump. {{.Name}}:",
               "image": "/memes/now-im-not-doing-it.jpg"
             },
             {
-              "caption": "Me explaining to everyone how {{.Name}} will pump.",
-              "image": "/memes/now-im-not-doing-it.jpg"
+              "caption": "Me explaining to my mom why {{.Name}} is the future.",
+              "image": "/memes/explaining.jpg"
             }
           ]
         },
         {
           "value": 10,
           "memes": [
+            {
+              "caption": "Oh my god, it's happening. {{.Name}} is ${{FormatNumber .CurrentPrice}}! Everybody calm down",
+              "image": "/memes/michael-scott-calm-down.jpg"
+            },
             {
               "caption": "When I see {{.Name}} price at ${{FormatNumber .CurrentPrice}}",
               "image": "/memes/bart-rich.png"
@@ -371,7 +371,7 @@
           ]
         },
         {
-          "value": 0,
+          "value": 10,
           "memes": [
             {
               "caption": "{{.Name}} is ${{FormatNumber .CurrentPrice}}",
@@ -484,7 +484,7 @@
           ]
         },
         {
-          "value": 0,
+          "value": 5,
           "memes": [
             {
               "caption": "When they ask me what is my {{.Name}} trading strategy",
@@ -545,7 +545,7 @@
           ]
         },
         {
-          "value": -10,
+          "value": -5,
           "memes": [
             {
               "caption": "Waiting for {{.Name}} price to go up",
@@ -558,14 +558,14 @@
           ]
         },
         {
-          "value": 0,
+          "value": 5,
           "memes": [
             {
-              "caption": "Let me see if {{.Name}} price goes higher than ${{FormatNumber .CurrentPrice}}",
-              "image": "/memes/look-hard.jpg"
+              "caption": "Watching {{.Name}} price at ${{FormatNumber .CurrentPrice}}",
+              "image": "/memes/joker.jpg"
             },
             {
-              "caption": "Me, buying ${{FormatNumber .CurrentPrice}} {{.Name}} like:",
+              "caption": "Me, putting my life investment on ${{FormatNumber .CurrentPrice}} {{.Name}} like:",
               "image": "/memes/salt-bae.jpg"
             }
           ]
@@ -576,6 +576,10 @@
             {
               "caption": "One {{.Name}} is now ${{FormatNumber .CurrentPrice}}",
               "image": "/memes/kylo-ren-more.jpg"
+            },
+            {
+              "caption": "When I see {{.Name}} is ${{FormatNumber .CurrentPrice}}",
+              "image": "/memes/tom-cruise-laugh.jpg"
             }
           ]
         },
@@ -619,7 +623,7 @@
           ]
         },
         {
-          "value": -10,
+          "value": -5,
           "memes": [
             {
               "caption": "When they ask me about my {{.Name}} investment",
@@ -636,7 +640,7 @@
           ]
         },
         {
-          "value": 0,
+          "value": 5,
           "memes": [
             {
               "caption": "Let me see if {{.Name}} price goes higher than ${{FormatNumber .CurrentPrice}} or not",
@@ -685,7 +689,7 @@
           ]
         },
         {
-          "value": -10,
+          "value": -5,
           "memes": [
             {
               "caption": "{{.Name}} = ${{FormatNumber .CurrentPrice}}",
@@ -694,7 +698,7 @@
           ]
         },
         {
-          "value": 0,
+          "value": 5,
           "memes": [
             {
               "caption": "One {{.Name}} here is ${{FormatNumber .CurrentPrice}} on earth",
@@ -781,7 +785,7 @@
           "value": -20,
           "memes": [
             {
-              "caption": "{{.Name}} is ${{FormatNumber .CurrentPrice}}. wow!",
+              "caption": "{{.Name}} is ${{FormatNumber .CurrentPrice}}. such dump!",
               "image": "/memes/dogecoin-bicycle.jpg"
             },
             {
@@ -816,7 +820,7 @@
           "value": 0,
           "memes": [
             {
-              "caption": "Waiting to go {{.Name}} price to go wow",
+              "caption": "Elon and I buying {{.Name}} at ${{FormatNumber .CurrentPrice}}",
               "image": "/memes/elon-musk-dogecoin-handshake.jpg"
             },
             {
@@ -829,7 +833,7 @@
           "value": 5,
           "memes": [
             {
-              "caption": "{{.Name}} is ${{FormatNumber .CurrentPrice}}. such crypto!",
+              "caption": "1 {{.Name}} is 1 {{.Name}} today. such crypto!",
               "image": "/memes/doge-to-moon.jpg"
             },
             {
@@ -842,16 +846,12 @@
           "value": 10,
           "memes": [
             {
-              "caption": "${{FormatNumber .CurrentPrice}}. such money. such {{.Name}}",
+              "caption": "${{FormatNumber .CurrentPrice}}. very currency. such coin",
               "image": "/memes/doge-stonks.png"
             },
             {
-              "caption": "${{FormatNumber .CurrentPrice}}. such money. such {{.Name}}",
+              "caption": "${{FormatNumber .CurrentPrice}}. much money. such {{.Name}}",
               "image": "/memes/doge-strong.jpg"
-            },
-            {
-              "caption": "When I see {{.Name}} is ${{FormatNumber .CurrentPrice}}",
-              "image": "/memes/tom-cruise-laugh.jpg"
             }
           ]
         },
