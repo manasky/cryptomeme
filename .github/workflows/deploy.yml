@@ -19,7 +19,8 @@ jobs:
         
       - name: build
         run: |
-          cd web && npm run build
+          cd web
+          VITE_API_PATH='https://api.cryptomeme.wtf/v1' npm run build
           touch public/.nojekyll
           
       - name: Deploy
