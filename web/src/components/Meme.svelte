@@ -1,9 +1,11 @@
 <script>
 export let id
 export let meme
+export let coin_name
 export let meme_caption
 export let creditPrice = ''
 export let creditDate = ''
+export let clickToDownload = false
 
 export let classes = 'w-52 rounded'
 
@@ -25,7 +27,7 @@ onMount(() => {
   });
   download = () => {
     let link = document.createElement('a');
-    link.download = id+'-meme.jpg';
+    link.download = coin_name+'-meme-'+new Date(Date.now()).toLocaleString("en-US",{ year: "numeric", month: "short", day: "2-digit" })+' [cryptomeme.wtf].jpg';
     link.href = canvasEl.toDataURL()
     link.click();
   }
@@ -36,7 +38,7 @@ onMount(() => {
 
 <canvas
   class="{classes} -my-3 -mr-4 border border-base-content border-opacity-5 cursor-pointer" width='700' height='600' 
-  id={id} on:click={download()} bind:this={canvasEl}
+  id={id} on:click={clickToDownload ? download() : ''} bind:this={canvasEl}
 ></canvas>
 
 

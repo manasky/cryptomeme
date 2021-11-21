@@ -58,11 +58,11 @@ onMount(() => {
 </svelte:head>
 
 {#if coin}
-  <div class="flex gap-12 flex-col-reverse lg:flex-row">
-    <div class="w-80 rounded-box flex flex-col gap-4">
+  <div class="flex gap-12 flex-col-reverse items-center md:flex-row">
+    <div class="w-full md:w-80 rounded-box flex flex-col gap-4">
 
       <div class="flex gap-2 items-center w-full px-4">
-        <img class="w-10 h-10 rounded" src={coin.image} alt={coin.name} width="40" height="40"/>
+        <img class="w-12 h-12 rounded" src={coin.image} alt={coin.name} width="48" height="48"/>
         <div>
           <h1 class="font-black text-xl">{coin.name}</h1>
           <div class="font-mono text-xs uppercase opacity-80">{coin.symbol}</div>
@@ -136,11 +136,13 @@ onMount(() => {
         <div class="mt-3">
           <Meme 
             id={coin.symbol} 
+            coin_name={coin.name} 
             meme={coin.meme} 
             meme_caption={coin.meme_caption} 
             creditDate=""
             creditPrice= "{coin.symbol.toUpperCase()} price on {new Date(Date.now()).toLocaleString("en-US",{ year: "numeric", month: "short", day: "2-digit" })}: ${coin.current_price} ({(coin.price_change_24h<0?"▼":"▲") + '$' + Number(Math.abs(coin.price_change_24h))})"
             classes='w-full rounded-box'
+            clickToDownload=true
           />
         </div>
       {/if}

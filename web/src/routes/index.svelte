@@ -89,13 +89,15 @@ onMount(() => {
         {#each coins.slice(0, 10) as coin}
           <TableItem {coin}>
             {#if coin.meme}
-              <Meme 
-                id={coin.symbol} 
-                meme={coin.meme} 
-                meme_caption={coin.meme_caption} 
-                creditDate=""
-                creditPrice= "{coin.symbol.toUpperCase()} price on {new Date(Date.now()).toLocaleString("en-US",{ year: "numeric", month: "short", day: "2-digit" })}: ${coin.current_price} ({(coin.price_change_24h<0?"▼":"▲") + '$' + Number(Math.abs(coin.price_change_24h))})"
-              />
+              <a href="/{coin.symbol}" class="cursor-pointer">
+                <Meme 
+                  id={coin.symbol} 
+                  meme={coin.meme} 
+                  meme_caption={coin.meme_caption} 
+                  creditDate=""
+                  creditPrice= "{coin.symbol.toUpperCase()} price on {new Date(Date.now()).toLocaleString("en-US",{ year: "numeric", month: "short", day: "2-digit" })}: ${coin.current_price} ({(coin.price_change_24h<0?"▼":"▲") + '$' + Number(Math.abs(coin.price_change_24h))})"
+                />
+              </a>
             {/if}
           </TableItem>
         {/each}
