@@ -8,7 +8,7 @@
         A project by <a rel="noopener" href="https://manasky.com" class="link link-hover" target="_blank">MANA SKY design and development team</a>
       </p>
       <p class="text-xs">
-        Data provided by CoinGecko
+        Market data provided by CoinGecko
       </p>
     </div>
   </div>
