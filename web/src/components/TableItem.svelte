@@ -21,7 +21,7 @@ let formatPrice = (amount) => {
 <tr class="hover">
   <th class="flex-shrink-0 rounded-l-lg bg-primary">
     <div class="flex items-center gap-3">
-      <img class="w-8 h-8 rounded" src={coin.image} alt={coin.name}/>
+      <img class="w-8 h-8 rounded" src={coin.image} alt={coin.name} width="32" height="32"/>
       <div class="flex flex-col pr-4">
         <div class="font-semibold">
           {#if coin.name}
@@ -30,7 +30,7 @@ let formatPrice = (amount) => {
             <svg class="w-4 h-4 animate-spin text-base-content" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
           {/if}
         </div>
-        <div class="font-mono text-xs font-bold text-opacity-50 uppercase text-base-content">{coin.symbol}</div>
+        <div class="font-mono text-xs text-opacity-70 font-light uppercase text-base-content">{coin.symbol}</div>
       </div>
     </div>
   </th>

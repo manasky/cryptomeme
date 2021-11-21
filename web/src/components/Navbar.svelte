@@ -36,7 +36,7 @@ let themes = [
     <a href="/" class="text-xl font-black link link-hover">
       CryptoMeme.WTF
     </a>
-    <div class="text-xs opacity-50">crypto live price + memes!</div>
+    <div class="text-xs opacity-70">crypto live price + memes!</div>
   </div>
   <div class="gap-4 navbar-end">
 
