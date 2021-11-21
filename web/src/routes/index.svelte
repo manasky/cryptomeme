@@ -1,6 +1,6 @@
 <script>
 import { onMount } from 'svelte'
-import { timeAgo } from '@src/functions/timeAgo.js'
+import { timeAgo } from '@src/functions/timeago.js'
 import TableItem from '@components/TableItem.svelte'
 import Meme from '@components/Meme.svelte'
 
