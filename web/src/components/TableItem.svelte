@@ -1,4 +1,5 @@
 <script>
+import { formatPrice } from '@src/functions/numbers.js'
 export let coin = {
   name: '',
   symbol: '',
@@ -9,12 +10,6 @@ export let coin = {
   low_24h: '',
   image: 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==',
   chart: 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==',
-}
-let formatPrice = (amount) => {
-  if (amount > 1) {
-    return amount.toLocaleString('en-US', { maximumFractionDigits: 2 })
-  }
-  return amount.toLocaleString('en-US', { maximumFractionDigits: 10 })
 }
 </script>
 
