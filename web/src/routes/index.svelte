@@ -10,7 +10,11 @@ import { goto } from '$app/navigation';
 
 // handle dynamic routes
 onMount(() => {
+  console.log('mounted')
+  console.log('path:')
+  console.log($page.path)
   if ($page.path != '/') {
+    console.log('path is not /')
     goto($page.path) 
   }
 })
