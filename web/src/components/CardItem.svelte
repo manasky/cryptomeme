@@ -18,8 +18,8 @@ export let coin = {
 let sparklineEl
 onMount(() => {
   if(coin.prices_7d){
-    let chartValues = extractObjectProperyToArray(coin.prices_7d, 'price')
-    sparkline(sparklineEl, normalizeArrayToMin(chartValues))
+    // let chartValues = extractObjectProperyToArray(coin.prices_7d, 'price')
+    // sparkline(sparklineEl, normalizeArrayToMin(chartValues))
   }
 })
 </script>

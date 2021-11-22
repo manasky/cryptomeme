@@ -6,7 +6,6 @@ import Seo from '@components/Seo.svelte'
 import Meme from '@components/Meme.svelte'
 import sparkline from "@fnando/sparkline"
 import { normalizeArrayToMin, extractObjectProperyToArray } from '@src/functions/utils.js'
-import { timeAgo } from '@src/functions/timeago.js'
 
 let API_PATH
 if (import.meta.env.VITE_API_PATH !== undefined) {
@@ -31,8 +30,8 @@ onMount(() => {
         coins = response
         localStorage.setItem('coins', JSON.stringify(coins));
         
-        chartValues = extractObjectProperyToArray(coin.prices_7d, 'price')
-        sparkline(sparklineEl, normalizeArrayToMin(chartValues))
+        // chartValues = extractObjectProperyToArray(coin.prices_7d, 'price')
+        // sparkline(sparklineEl, normalizeArrayToMin(chartValues))
       })
       .catch((error) => {
         loadingStatus = 'error'
