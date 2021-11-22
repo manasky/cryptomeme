@@ -11,7 +11,9 @@ export default {
   ],
 
   kit: {
-    
+    prerender: {
+			entries: ['*','/404.html'],
+		},
 		adapter: adapter({
 			pages: 'public',
 			assets: 'public',
