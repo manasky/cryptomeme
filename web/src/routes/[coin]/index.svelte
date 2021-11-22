@@ -98,7 +98,7 @@ onMount(() => {
           <svg 
             bind:this={sparklineEl} 
             class="mx-auto max-w-full" 
-            width="220" 
+            width="250" 
             height="100" 
             stroke-width="2" 
             fill="none" 

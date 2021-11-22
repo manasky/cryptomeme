@@ -1,7 +1,5 @@
 <script>
 import { onMount } from 'svelte'
-import { timeAgo } from '@src/functions/timeago.js'
-import TableItem from '@components/TableItem.svelte'
 import CardItem from '@components/CardItem.svelte'
 import Meme from '@components/Meme.svelte'
 import Seo from '@components/Seo.svelte'
@@ -48,50 +46,18 @@ onMount(() => {
   />
 </svelte:head>
 
-<div class="overflow-x-auto hidden md:block">
-  <table class="table table-zebra w-full">
-    <thead>
-      <tr>
-        <th>
-          {#if loadingStatus == 'loading'}
-            <svg class="w-4 h-4 animate-spin text-base-content" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-            </svg>
-          {:else if loadingStatus == 'error'}
-            <span class="text-xs normal-case text-warning">
-              {#if lastUpdate}
-                Last update: {timeAgo(lastUpdate)}
-              {:else}
-                Cannot connect to server
-              {/if}
-            </span>
-          {/if}
-        </th> 
-        <th>
-          <div class="normal-case font-black tracking-wider">Current Price</div>
-          <div class="flex items-center gap-1 text-xs normal-case opacity-70">
-            <svg class="w-3 h-3 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.92,6.62a1,1,0,0,0-.54-.54A1,1,0,0,0,17,6H7A1,1,0,0,0,7,8h7.59l-8.3,8.29a1,1,0,0,0,0,1.42,1,1,0,0,0,1.42,0L16,9.41V17a1,1,0,0,0,2,0V7A1,1,0,0,0,17.92,6.62Z"/></svg>
-            Price change in 24 hours
-          </div>
-        </th>
-        <th>
-          <div class="normal-case font-black tracking-wider">Min/Max price</div>
-          <div class="text-xs normal-case opacity-70">In 24 hours</div>
-        </th>
-        <th>
-          <div class="normal-case font-black tracking-wider">Current price meme</div>
-          <div class="text-xs normal-case opacity-70">Generated hourly</div>
-        </th>
-      </tr>
-    </thead> 
-    <tbody>
-      {#if coins}
-        {#each coins.slice(0, 10) as coin}
-          <TableItem {coin}>
+<div class="md:hidden -mx-3">
+  {#if coins}
+  <div class="w-full">
+    <div class="w-full carousel carousel-center overflow-y-hidden">
+      <div class="w-1/12 carousel-item"></div>
+      {#each coins.slice(0, 20) as coin}
+        <div class="w-10/12 carousel-item">
+          <CardItem {coin}>
             {#if coin.meme}
               <a href="/{coin.symbol}" class="cursor-pointer">
                 <Meme 
+                  classes="w-full rounded-box my-0"
                   id={coin.symbol} 
                   meme={coin.meme} 
                   meme_caption={coin.meme_caption} 
@@ -100,27 +66,25 @@ onMount(() => {
                 />
               </a>
             {/if}
-          </TableItem>
-        {/each}
-      {:else}
-        {#each Array(10) as coin}
-          <TableItem />
-        {/each}
-      {/if}
-    </tbody>
-  </table>
-</div>
-<div class="md:hidden -mx-3">
-  {#if coins}
-  <div class="w-full">
-    <div class="w-full carousel carousel-center overflow-y-hidden">
+          </CardItem>
+        </div>
+      {/each}
       <div class="w-1/12 carousel-item"></div>
+    </div>
+  </div>
+  {/if}
+</div>
+
+
+<div class="hidden md:block -mx-3">
+  {#if coins}
+    <div class="w-full md:flex md:flex-col">
       {#each coins.slice(0, 20) as coin}
         <CardItem {coin}>
           {#if coin.meme}
             <a href="/{coin.symbol}" class="cursor-pointer">
               <Meme 
-                classes="w-full rounded-box my-0"
+                classes="w-full rounded-xl my-0 hover:brightness-90"
                 id={coin.symbol} 
                 meme={coin.meme} 
                 meme_caption={coin.meme_caption} 
@@ -131,8 +95,6 @@ onMount(() => {
           {/if}
         </CardItem>
       {/each}
-      <div class="w-1/12 carousel-item"></div>
     </div>
-  </div>
   {/if}
 </div>

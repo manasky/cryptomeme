@@ -1,9 +1,13 @@
 <script>
+import { onMount } from 'svelte'
+import sparkline from "@fnando/sparkline"
 import { formatPrice } from '@src/functions/utils.js'
+import { normalizeArrayToMin, extractObjectProperyToArray } from '@src/functions/utils.js'
 export let coin = {
   name: '',
   symbol: '',
   current_price: '',
+  prices_7d: [],
   price_change_24h: '',
   price_change_percentage_24h: '',
   high_24h: '',
@@ -11,6 +15,13 @@ export let coin = {
   image: 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==',
   chart: 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==',
 }
+// let sparklineEl
+// onMount(() => {
+//   if(coin.prices_7d){
+//     let chartValues = extractObjectProperyToArray(coin.prices_7d, 'price')
+//     sparkline(sparklineEl, normalizeArrayToMin(chartValues))
+//   }
+// })
 </script>
 
 <tr class="hover">
@@ -64,6 +75,19 @@ export let coin = {
         <span class="opacity-70">Min: ${formatPrice(coin.low_24h)}</span>
       </div>
     </div>
+  <td>
+    <!-- {#if coin.prices_7d}
+      <svg 
+        bind:this={sparklineEl} 
+        class="mx-auto max-w-full" 
+        width="220" 
+        height="60" 
+        stroke-width="2" 
+        fill="none" 
+        stroke="hsla(var({coin.prices_7d[0].price > coin.prices_7d[coin.prices_7d.length - 1].price ? '--er' : '--su'}))"
+      >
+      </svg>
+    {/if} -->
   </td>
   <td class="flex-shrink-0 rounded-r-lg">
     <!-- <img class="h-16 w-52 rounded-box" src={coin.chart} alt="{coin.name} price"/> -->
