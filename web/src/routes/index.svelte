@@ -5,6 +5,15 @@ import Meme from '@components/Meme.svelte'
 import Seo from '@components/Seo.svelte'
 import { sparkline } from "@fnando/sparkline"
 import { normalizeArrayToMin, extractObjectProperyToArray } from '@src/functions/utils.js'
+import { page } from '$app/stores';
+import { goto } from '$app/navigation';
+
+// handle dynamic routes
+onMount(() => {
+  if ($page.path != '/') {
+    goto($page.path) 
+  }
+})
 
 let API_PATH
 if (import.meta.env.VITE_API_PATH !== undefined) {
