@@ -1,8 +1,5 @@
 <script>
-import { onMount } from 'svelte'
-import sparkline from "@fnando/sparkline"
 import { formatPrice } from '@src/functions/utils.js'
-import { normalizeArrayToMin, extractObjectProperyToArray } from '@src/functions/utils.js'
 export let coin = {
   name: '',
   symbol: '',
@@ -15,13 +12,6 @@ export let coin = {
   image: 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==',
   chart: 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==',
 }
-let sparklineEl
-onMount(() => {
-  if(coin.prices_7d){
-    // let chartValues = extractObjectProperyToArray(coin.prices_7d, 'price')
-    // sparkline(sparklineEl, normalizeArrayToMin(chartValues))
-  }
-})
 </script>
 
 <div class="flex flex-col md:grid md:grid-cols-5 gap-3 px-5 w-full md:items-center md:p-2 md:hover:relative rounded-box md:odd:bg-base-200">
@@ -69,20 +59,7 @@ onMount(() => {
 
   </div>
 
-  {#if coin.prices_7d}
-    <div class="tooltip" data-tip="7 day price changes">
-      <svg 
-        bind:this={sparklineEl} 
-        class="mx-auto max-w-full" 
-        width="220" 
-        height="60" 
-        stroke-width="2" 
-        fill="none" 
-        stroke="hsla(var({coin.prices_7d[0].price > coin.prices_7d[coin.prices_7d.length - 1].price ? '--er' : '--su'}))"
-      >
-      </svg>
-    </div>
-  {/if}
+  <slot name="weeklyChart" />
 
   <div class="flex justify-center gap-4 md:flex-col-reverse md:items-center">
     <div class="flex items-center gap-1 text-xs">

@@ -4,7 +4,7 @@ import { page } from '$app/stores';
 import { formatPrice } from '@src/functions/utils.js'
 import Seo from '@components/Seo.svelte'
 import Meme from '@components/Meme.svelte'
-import sparkline from "@fnando/sparkline"
+import { sparkline } from "@fnando/sparkline"
 import { normalizeArrayToMin, extractObjectProperyToArray } from '@src/functions/utils.js'
 
 let API_PATH
@@ -30,8 +30,8 @@ onMount(() => {
         coins = response
         localStorage.setItem('coins', JSON.stringify(coins));
         
-        // chartValues = extractObjectProperyToArray(coin.prices_7d, 'price')
-        // sparkline(sparklineEl, normalizeArrayToMin(chartValues))
+        chartValues = extractObjectProperyToArray(coin.prices_7d, 'price')
+        sparkline(sparklineEl, normalizeArrayToMin(chartValues))
       })
       .catch((error) => {
         loadingStatus = 'error'

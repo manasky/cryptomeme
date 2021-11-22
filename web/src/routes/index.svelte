@@ -3,11 +3,16 @@ import { onMount } from 'svelte'
 import CardItem from '@components/CardItem.svelte'
 import Meme from '@components/Meme.svelte'
 import Seo from '@components/Seo.svelte'
+import { sparkline } from "@fnando/sparkline"
+import { normalizeArrayToMin, extractObjectProperyToArray } from '@src/functions/utils.js'
 
 let API_PATH
 if (import.meta.env.VITE_API_PATH !== undefined) {
   API_PATH = import.meta.env.VITE_API_PATH
 }
+
+let sparklineEl = []
+let sparklineEl2 = []
 
 let coins
 let lastUpdate
@@ -25,6 +30,13 @@ onMount(() => {
         coins = response
         localStorage.setItem('coins', JSON.stringify(coins));
         localStorage.setItem('lastUpdate', new Date().toISOString());
+        for (let coin of coins) {
+          if(coin.prices_7d){
+            let chartValues = extractObjectProperyToArray(coin.prices_7d, 'price')
+            sparkline(sparklineEl[coin.symbol], normalizeArrayToMin(chartValues))
+            sparkline(sparklineEl2[coin.symbol], normalizeArrayToMin(chartValues))
+          }
+        }
       })
       .catch((error) => {
         loadingStatus = 'error'
@@ -33,6 +45,8 @@ onMount(() => {
   const refreshInterval = setInterval(getCoins, 10*1000);
   getCoins()
   return () => clearInterval(refreshInterval)
+
+
 
 })
 
@@ -66,6 +80,22 @@ onMount(() => {
                 />
               </a>
             {/if}
+            <span class="mx-auto inline-block" slot="weeklyChart">
+              {#if coin.prices_7d}
+                <div class="tooltip" data-tip="7 day price changes">
+                  <svg 
+                    bind:this={sparklineEl[coin.symbol]} 
+                    class="mx-auto max-w-full" 
+                    width="250" 
+                    height="60" 
+                    stroke-width="2" 
+                    fill="none" 
+                    stroke="hsla(var({coin.prices_7d[0].price > coin.prices_7d[coin.prices_7d.length - 1].price ? '--er' : '--su'}))"
+                  >
+                  </svg>
+                </div>
+              {/if}
+            </span>
           </CardItem>
         </div>
       {/each}
@@ -93,6 +123,22 @@ onMount(() => {
               />
             </a>
           {/if}
+            <span slot="weeklyChart">
+              {#if coin.prices_7d}
+                <div class="tooltip" data-tip="7 day price changes">
+                  <svg 
+                    bind:this={sparklineEl2[coin.symbol]} 
+                    class="mx-auto max-w-full" 
+                    width="220" 
+                    height="60" 
+                    stroke-width="2" 
+                    fill="none" 
+                    stroke="hsla(var({coin.prices_7d[0].price > coin.prices_7d[coin.prices_7d.length - 1].price ? '--er' : '--su'}))"
+                  >
+                  </svg>
+                </div>
+              {/if}
+            </span>
         </CardItem>
       {/each}
     </div>

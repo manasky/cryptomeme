@@ -1,7 +1,7 @@
 <script>
 export let id
 export let meme
-export let coin_name
+export let coin_name = ''
 export let meme_caption
 export let creditPrice = ''
 export let creditDate = ''
