@@ -16,6 +16,7 @@
     "tailwindcss": "^2.2.19"
   },
   "dependencies": {
+    "@fnando/sparkline": "^0.3.10",
     "theme-change": "^2.0.2"
   }
 }
