@@ -12,7 +12,7 @@ export default {
 
   kit: {
     prerender: {
-			entries: ['*','/404'],
+			entries: ['*'],
 		},
 		adapter: adapter({
 			pages: 'public',
