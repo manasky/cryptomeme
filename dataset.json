@@ -29,7 +29,7 @@
           ]
         },
         {
-          "value": -20,
+          "value": -10,
           "memes": [
             {
               "caption": "Losing all my money on {{.Name}}",
@@ -54,7 +54,7 @@
           ]
         },
         {
-          "value": -10,
+          "value": -5,
           "memes": [
             {
               "caption": "Let me check how much is my {{.Name}} today. It's ${{FormatNumber .CurrentPrice}} now.",
@@ -75,7 +75,7 @@
           ]
         },
         {
-          "value": -5,
+          "value": -2,
           "memes": [
             {
               "caption": "Just bought {{.Name}} yesterday. It's ${{FormatNumber .CurrentPrice}} now.",
@@ -115,10 +115,6 @@
               "image": "/memes/explaining.jpg"
             },
             {
-              "caption": "No {{.Name}} dump today. ${{FormatNumber .CurrentPrice}}",
-              "image": "/memes/hulk-absolute-win.jpg"
-            },
-            {
               "caption": "Stock market trader talking with {{.Name}} trader",
               "image": "/memes/mel-gibson-jesus.jpg"
             }
@@ -127,6 +123,10 @@
         {
           "value": 5,
           "memes": [
+            {
+              "caption": "No {{.Name}} dump today. ${{FormatNumber .CurrentPrice}}",
+              "image": "/memes/hulk-absolute-win.jpg"
+            },
             {
               "caption": "Me, looking at ${{FormatNumber .CurrentPrice}} {{.Name}}",
               "image": "/memes/andy-dwyer-surprised.jpg"
@@ -239,7 +239,7 @@
           ]
         },
         {
-          "value": -10,
+          "value": -5,
           "memes": [
             {
               "caption": "{{.Name}} ${{FormatNumber .CurrentPrice}}",
@@ -260,7 +260,7 @@
           ]
         },
         {
-          "value": -5,
+          "value": -2,
           "memes": [
             {
               "caption": "Me, losing all my money on {{.Name}}",
@@ -298,7 +298,7 @@
           ]
         },
         {
-          "value": 5,
+          "value": 3,
           "memes": [
             {
               "caption": "{{.Name}} is ${{FormatNumber .CurrentPrice}} but it can go higher",
