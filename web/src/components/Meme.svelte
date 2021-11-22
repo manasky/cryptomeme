@@ -9,12 +9,12 @@ export let clickToDownload = false
 
 export let classes = 'w-52 rounded'
 
-import { onMount } from 'svelte'
+import { afterUpdate } from 'svelte'
 import { drawMeme } from '@src/functions/canvas.js'
 
 let canvasEl
 let download
-onMount(() => {
+afterUpdate(() => {
 
   let ctx = canvasEl.getContext('2d')
   drawMeme({
