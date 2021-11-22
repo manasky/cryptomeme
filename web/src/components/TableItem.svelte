@@ -1,5 +1,5 @@
 <script>
-import { formatPrice } from '@src/functions/numbers.js'
+import { formatPrice } from '@src/functions/utils.js'
 export let coin = {
   name: '',
   symbol: '',

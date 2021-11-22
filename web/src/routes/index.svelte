@@ -2,6 +2,7 @@
 import { onMount } from 'svelte'
 import { timeAgo } from '@src/functions/timeago.js'
 import TableItem from '@components/TableItem.svelte'
+import CardItem from '@components/CardItem.svelte'
 import Meme from '@components/Meme.svelte'
 import Seo from '@components/Seo.svelte'
 
@@ -47,7 +48,7 @@ onMount(() => {
   />
 </svelte:head>
 
-<div class="overflow-x-auto">
+<div class="overflow-x-auto hidden md:block">
   <table class="table table-zebra w-full">
     <thead>
       <tr>
@@ -108,4 +109,30 @@ onMount(() => {
       {/if}
     </tbody>
   </table>
+</div>
+<div class="md:hidden -mx-3">
+  {#if coins}
+  <div class="w-full">
+    <div class="w-full carousel carousel-center overflow-y-hidden">
+      <div class="w-1/12 carousel-item"></div>
+      {#each coins.slice(0, 20) as coin}
+        <CardItem {coin}>
+          {#if coin.meme}
+            <a href="/{coin.symbol}" class="cursor-pointer">
+              <Meme 
+                classes="w-full rounded-box my-0"
+                id={coin.symbol} 
+                meme={coin.meme} 
+                meme_caption={coin.meme_caption} 
+                creditDate=""
+                creditPrice= "{coin.symbol.toUpperCase()} price on {new Date(Date.now()).toLocaleString("en-US",{ year: "numeric", month: "short", day: "2-digit" })}: ${coin.current_price} ({(coin.price_change_24h<0?"▼":"▲") + '$' + Number(Math.abs(coin.price_change_24h))})"
+              />
+            </a>
+          {/if}
+        </CardItem>
+      {/each}
+      <div class="w-1/12 carousel-item"></div>
+    </div>
+  </div>
+  {/if}
 </div>
