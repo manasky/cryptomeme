@@ -111,7 +111,7 @@ onMount(() => {
         <div class="font-bold text-sm flex items-center gap-2 mb-2">Today price range</div>
         <div class="relative pt-8">
           <div class="tooltip absolute tooltip-open tooltip-primary" data-tip="${formatPrice(coin.current_price)}" style="left:{
-            Math.min(
+            100 - Math.min(
               ((coin.high_24h - coin.current_price)*100)/(coin.high_24h - coin.low_24h)
             , 100)
             }%">
@@ -120,7 +120,7 @@ onMount(() => {
         </div>
         <div class="h-2 p-px flex items-stretch bg-base-content bg-opacity-20 rounded-full">
           <div class="bg-base-content rounded-full" style="width:{
-            Math.min(
+            100 - Math.min(
               ((coin.high_24h - coin.current_price)*100)/(coin.high_24h - coin.low_24h)
             , 100)
             }%"></div>
@@ -135,15 +135,19 @@ onMount(() => {
         <div class="font-bold text-sm flex items-center gap-2 mb-2">All time range</div>
         <div class="relative pt-8">
           <div class="tooltip absolute tooltip-open tooltip-primary" data-tip="${formatPrice(coin.current_price)}" style="left:{
-            Math.min(
-              100 - Number(Math.abs(coin.ath_change_percentage))
+            100 - Math.min(
+              ((coin.ath - coin.current_price)*100)/(coin.ath - coin.atl)
             , 100)
             }%">
             <div class="w-px"></div>
           </div>
         </div>
         <div class="h-2 p-px flex items-stretch bg-base-content bg-opacity-20 rounded-full">
-          <div class="bg-base-content rounded-full" style="width:{100 - Number(Math.abs(coin.ath_change_percentage))}%"></div>
+          <div class="bg-base-content rounded-full" style="width:{
+            100 - Math.min(
+              ((coin.ath - coin.current_price)*100)/(coin.ath - coin.atl)
+            , 100)
+            }%"></div>
         </div>
         <div class="flex justify-between py-2">
           <div class="font-mono text-xs text-left">${formatPrice(coin.atl)}<br/>ATL</div>
