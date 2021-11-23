@@ -759,7 +759,24 @@
           "memes": [
             {
               "caption": "{{.Name}} holders looking at all other cryptos go up and down",
-              "image": "/memes/squidward-looking.jpg"
+              "image": "/memes/squidward-looking.jpg",
+              "content": [
+                {
+                  "x": 100,
+                  "y": 280,
+                  "text": "USDC"
+                },
+                {
+                  "x": 370,
+                  "y": 350,
+                  "text": "BTC"
+                },
+                {
+                  "x": 470,
+                  "y": 310,
+                  "text": "ETH"
+                }
+              ]
             }
           ]
         },

@@ -29,6 +29,7 @@ afterUpdate(() => {
       desc: (coin.price_change_24h<0?"▼":"▲") + ' $' + Number(Math.abs(coin.price_change_24h)),
       color : coin.price_change_24h<0?"#ea5333":"#469586",
     },
+    meme_content: coin.meme_content
   });
   download = () => {
     let link = document.createElement('a');
