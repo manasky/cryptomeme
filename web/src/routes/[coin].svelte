@@ -202,7 +202,7 @@ onMount(() => {
     <div>
       {#if coin.meme}
         <div class="tooltip tooltip-open tooltip-bottom" data-tip="↑ click to download image">
-          <div class="my-3">
+          <div class="py-3">
             <Meme 
               id={coin.symbol} 
               coin_name={coin.name} 
