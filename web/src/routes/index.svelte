@@ -78,7 +78,7 @@ onMount(() => {
         <div class="w-10/12 carousel-item">
           <CardItem {coin}>
             {#if coin.meme}
-              <a href="/{coin.symbol}" class="cursor-pointer">
+              <div class="cursor-pointer">
                 <Meme 
                   classes="w-full rounded-box my-0"
                   id={coin.symbol} 
@@ -87,7 +87,7 @@ onMount(() => {
                   creditDate=""
                   creditPrice= "{coin.symbol.toUpperCase()} price on {new Date(Date.now()).toLocaleString("en-US",{ year: "numeric", month: "short", day: "2-digit" })}: ${coin.current_price} ({(coin.price_change_24h<0?"▼":"▲") + '$' + Number(Math.abs(coin.price_change_24h))})"
                 />
-              </a>
+              </div>
             {/if}
             <span class="mx-auto inline-block" slot="weeklyChart">
               {#if coin.prices_7d}
@@ -121,7 +121,7 @@ onMount(() => {
       {#each coins.slice(0, 20) as coin}
         <CardItem {coin}>
           {#if coin.meme}
-            <a href="/{coin.symbol}" class="cursor-pointer">
+            <div class="cursor-pointer">
               <Meme 
                 classes="w-full rounded-xl my-0 hover:brightness-90"
                 id={coin.symbol} 
@@ -130,7 +130,7 @@ onMount(() => {
                 creditDate=""
                 creditPrice= "{coin.symbol.toUpperCase()} price on {new Date(Date.now()).toLocaleString("en-US",{ year: "numeric", month: "short", day: "2-digit" })}: ${coin.current_price} ({(coin.price_change_24h<0?"▼":"▲") + '$' + Number(Math.abs(coin.price_change_24h))})"
               />
-            </a>
+            </div>
           {/if}
             <span slot="weeklyChart">
               {#if coin.prices_7d}

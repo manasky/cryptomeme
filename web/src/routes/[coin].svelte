@@ -132,6 +132,30 @@ onMount(() => {
       </div>
 
       <div class="px-4"> 
+        <div class="font-bold text-sm flex items-center gap-2 mb-2">7 day price range</div>
+        <div class="relative pt-8">
+          <div class="tooltip absolute tooltip-open tooltip-primary" data-tip="${formatPrice(coin.current_price)}" style="left:{
+            100 - Math.min(
+              ((Math.max(...extractObjectProperyToArray(coin.prices_7d, 'price')) - coin.current_price)*100)/(Math.max(...extractObjectProperyToArray(coin.prices_7d, 'price')) - Math.min(...extractObjectProperyToArray(coin.prices_7d, 'price')))
+            , 100)
+            }%">
+            <div class="w-px"></div>
+          </div>
+        </div>
+        <div class="h-2 p-px flex items-stretch bg-base-content bg-opacity-20 rounded-full">
+          <div class="bg-base-content rounded-full" style="width:{
+            100 - Math.min(
+              ((Math.max(...extractObjectProperyToArray(coin.prices_7d, 'price')) - coin.current_price)*100)/(Math.max(...extractObjectProperyToArray(coin.prices_7d, 'price')) - Math.min(...extractObjectProperyToArray(coin.prices_7d, 'price')))
+            , 100)
+            }%"></div>
+        </div>
+        <div class="flex justify-between py-2">
+          <div class="font-mono text-xs text-left">${formatPrice(Math.min(...extractObjectProperyToArray(coin.prices_7d, 'price')))}<br/>Min</div>
+          <div class="font-mono text-xs text-right">${formatPrice(Math.max(...extractObjectProperyToArray(coin.prices_7d, 'price')))}<br/>Max</div>
+        </div>
+      </div>
+
+      <div class="px-4"> 
         <div class="font-bold text-sm flex items-center gap-2 mb-2">All time range</div>
         <div class="relative pt-8">
           <div class="tooltip absolute tooltip-open tooltip-primary" data-tip="${formatPrice(coin.current_price)}" style="left:{
