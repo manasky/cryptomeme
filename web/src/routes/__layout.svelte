@@ -3,6 +3,15 @@
   import Navbar from '@components/Navbar.svelte'
   import Footer from '@components/Footer.svelte'
   import Scripts from '@components/Scripts.svelte'
+  import PageTransitions from '@components/PageTransitions.svelte';
+  export let key
+</script>
+<script context="module">
+  export const load = async ({ page }) => ({
+    props: {
+      key: page.path,
+    },
+  })
 </script>
 <Scripts/>
 <svelte:head>
@@ -14,8 +23,10 @@
   <Navbar/>
   <div class="mt-4"></div>
   <div class="px-3">
-    <slot />
-  </div>
-  <div class="mt-4"></div>
-  <Footer/>
-</main>
+      <PageTransitions refresh={key}>
+        <slot />
+      </PageTransitions>
+    </div>
+    <div class="mt-4"></div>
+    <Footer/>
+  </main>
