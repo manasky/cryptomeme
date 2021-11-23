@@ -80,12 +80,9 @@ onMount(() => {
             {#if coin.meme}
               <div class="cursor-pointer">
                 <Meme 
-                  classes="w-full rounded-box my-0"
-                  id={coin.symbol} 
-                  meme={coin.meme} 
-                  meme_caption={coin.meme_caption} 
-                  creditDate=""
-                  creditPrice= "{coin.symbol.toUpperCase()} price on {new Date(Date.now()).toLocaleString("en-US",{ year: "numeric", month: "short", day: "2-digit" })}: ${coin.current_price} ({(coin.price_change_24h<0?"▼":"▲") + '$' + Number(Math.abs(coin.price_change_24h))})"
+                  coin={coin}
+                  classes="w-full my-0"
+                  wrapperClasses="rounded-box"
                 />
               </div>
             {/if}
@@ -99,7 +96,7 @@ onMount(() => {
                     height="60" 
                     stroke-width="2" 
                     fill="none" 
-                    stroke="hsla(var({coin.prices_7d[0].price > coin.prices_7d[coin.prices_7d.length - 1].price ? '--er' : '--su'}))"
+                    stroke="hsla(var({coin.prices_7d[0].price > coin.current_price ? '--er' : '--su'}))"
                   >
                   </svg>
                 </div>
@@ -123,12 +120,9 @@ onMount(() => {
           {#if coin.meme}
             <div class="cursor-pointer">
               <Meme 
-                classes="w-full rounded-xl my-0 hover:brightness-90"
-                id={coin.symbol} 
-                meme={coin.meme} 
-                meme_caption={coin.meme_caption} 
-                creditDate=""
-                creditPrice= "{coin.symbol.toUpperCase()} price on {new Date(Date.now()).toLocaleString("en-US",{ year: "numeric", month: "short", day: "2-digit" })}: ${coin.current_price} ({(coin.price_change_24h<0?"▼":"▲") + '$' + Number(Math.abs(coin.price_change_24h))})"
+                coin={coin}
+                classes="w-full my-0 hover:brightness-90"
+                wrapperClasses="rounded-xl"
               />
             </div>
           {/if}
@@ -142,7 +136,7 @@ onMount(() => {
                     height="60" 
                     stroke-width="2" 
                     fill="none" 
-                    stroke="hsla(var({coin.prices_7d[0].price > coin.prices_7d[coin.prices_7d.length - 1].price ? '--er' : '--su'}))"
+                    stroke="hsla(var({coin.prices_7d[0].price > coin.current_price ? '--er' : '--su'}))"
                   >
                   </svg>
                 </div>

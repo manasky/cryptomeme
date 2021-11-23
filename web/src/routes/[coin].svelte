@@ -210,13 +210,9 @@ onMount(() => {
         <div class="tooltip tooltip-open tooltip-bottom" data-tip="↑ click to download image">
           <div class="py-3">
             <Meme 
-              id={coin.symbol} 
-              coin_name={coin.name} 
-              meme={coin.meme} 
-              meme_caption={coin.meme_caption} 
-              creditDate=""
-              creditPrice= "{coin.symbol.toUpperCase()} price on {new Date(Date.now()).toLocaleString("en-US",{ year: "numeric", month: "short", day: "2-digit" })}: ${coin.current_price} ({(coin.price_change_24h<0?"▼":"▲") + '$' + Number(Math.abs(coin.price_change_24h))})"
-              classes='w-full rounded-box'
+              coin={coin}
+              classes="w-full"
+              wrapperClasses="rounded-box"
               clickToDownload=true
             />
           </div>

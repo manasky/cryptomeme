@@ -1,16 +1,13 @@
 <script>
-export let id
-export let meme
-export let coin_name = ''
-export let meme_caption
-export let creditPrice = ''
-export let creditDate = ''
+export let coin
 export let clickToDownload = false
 
-export let classes = 'w-52 rounded'
+export let classes = 'w-52'
+export let wrapperClasses = '-mt-3 rounded'
 
 import { afterUpdate } from 'svelte'
 import { drawMeme } from '@src/functions/canvas.js'
+import { formatPrice } from '@src/functions/utils.js'
 
 let canvasEl
 let download
@@ -20,14 +17,22 @@ afterUpdate(() => {
   drawMeme({
     canvas: canvasEl,
     ctx: ctx,
-    path : meme,
-    meme_caption: meme_caption,
-    creditPrice: creditPrice,
-    creditDate: creditDate,
+    bgImage : coin.meme,
+    caption: coin.meme_caption,
+    logo: '/logos/'+coin.symbol+'.png',
+    footer_left: {
+      title: coin.name,
+      desc: new Date(Date.now()).toLocaleString("en-US",{ year: "numeric", month: "short", day: "2-digit" }),
+    },
+    footer_right: {
+      title: '$'+formatPrice(coin.current_price),
+      desc: (coin.price_change_24h<0?"▼":"▲") + ' $' + Number(Math.abs(coin.price_change_24h)),
+      color : coin.price_change_24h<0?"#ea5333":"#469586",
+    },
   });
   download = () => {
     let link = document.createElement('a');
-    link.download = coin_name+'-meme-'+new Date(Date.now()).toLocaleString("en-US",{ year: "numeric", month: "short", day: "2-digit" })+' [cryptomeme.wtf].jpg';
+    link.download = coin.name+'-meme-'+new Date(Date.now()).toLocaleString("en-US",{ year: "numeric", month: "short", day: "2-digit" })+' [cryptomeme.wtf].jpg';
     link.href = canvasEl.toDataURL()
     link.click();
   }
@@ -36,9 +41,10 @@ afterUpdate(() => {
 
 </script>
 
-<canvas
-  class="{classes} -my-3 -mr-4 border border-base-content border-opacity-5 cursor-pointer" width='700' height='600' 
-  id={id} on:click={clickToDownload ? download() : ''} bind:this={canvasEl}
-></canvas>
-
+<div class="{wrapperClasses} overflow-hidden border border-base-content border-opacity-5 cursor-pointer">
+  <canvas
+    class="{classes} relative mb-[-12%] -mr-4" width='700' height='700' 
+    on:click={clickToDownload ? download() : ''} bind:this={canvasEl}
+  ></canvas>
+</div>
 
