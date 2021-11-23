@@ -40,7 +40,7 @@ onMount(() => {
         localStorage.setItem('coins', JSON.stringify(coins));
         localStorage.setItem('lastUpdate', new Date().toISOString());
         for (let coin of coins) {
-          if(coin.prices_7d){
+          if(coin.prices_7d != null){
             let chartValues = extractObjectProperyToArray(coin.prices_7d, 'price')
             sparkline(sparklineEl[coin.symbol], normalizeArrayToMin(chartValues))
             sparkline(sparklineEl2[coin.symbol], normalizeArrayToMin(chartValues))
@@ -74,7 +74,7 @@ onMount(() => {
   <div class="w-full">
     <div class="w-full carousel carousel-center overflow-y-hidden">
       <div class="w-1/12 carousel-item"></div>
-      {#each coins.slice(0, 20) as coin}
+      {#each coins.slice(0, 100) as coin}
         <div class="w-10/12 carousel-item">
           <CardItem {coin}>
             {#if coin.meme}
@@ -90,7 +90,7 @@ onMount(() => {
               </div>
             {/if}
             <span class="mx-auto inline-block" slot="weeklyChart">
-              {#if coin.prices_7d}
+              {#if coin.prices_7d != null}
                 <div class="tooltip" data-tip="7 day price changes">
                   <svg 
                     bind:this={sparklineEl[coin.symbol]} 
@@ -118,7 +118,7 @@ onMount(() => {
 <div class="hidden md:block -mx-3">
   {#if coins}
     <div class="w-full md:flex md:flex-col">
-      {#each coins.slice(0, 20) as coin}
+      {#each coins.slice(0, 100) as coin}
         <CardItem {coin}>
           {#if coin.meme}
             <div class="cursor-pointer">
@@ -133,7 +133,7 @@ onMount(() => {
             </div>
           {/if}
             <span slot="weeklyChart">
-              {#if coin.prices_7d}
+              {#if coin.prices_7d != null}
                 <div class="tooltip" data-tip="7 day price changes">
                   <svg 
                     bind:this={sparklineEl2[coin.symbol]} 

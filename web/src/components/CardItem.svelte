@@ -85,16 +85,18 @@ export let coin = {
         </div>
       </div>
 
-      <div class="grid grid-cols-5 gap-2 w-full place-items-center justify-items-start">
-        <span class="text-xs opacity-80 col-span-2">7&nbsp;day</span>
-        <div class="h-2 w-full p-px col-span-3 flex items-stretch bg-base-content bg-opacity-20 rounded-full">
-          <div class="bg-base-content rounded-full" style="width:{
-            100 - Math.min(
-              ((Math.max(...extractObjectProperyToArray(coin.prices_7d, 'price')) - coin.current_price)*100)/(Math.max(...extractObjectProperyToArray(coin.prices_7d, 'price')) - Math.min(...extractObjectProperyToArray(coin.prices_7d, 'price')))
-            , 100)
-            }%"></div>
+      {#if coin.prices_7d != null}
+        <div class="grid grid-cols-5 gap-2 w-full place-items-center justify-items-start">
+          <span class="text-xs opacity-80 col-span-2">7&nbsp;day</span>
+          <div class="h-2 w-full p-px col-span-3 flex items-stretch bg-base-content bg-opacity-20 rounded-full">
+            <div class="bg-base-content rounded-full" style="width:{
+              100 - Math.min(
+                ((Math.max(...extractObjectProperyToArray(coin.prices_7d, 'price')) - coin.current_price)*100)/(Math.max(...extractObjectProperyToArray(coin.prices_7d, 'price')) - Math.min(...extractObjectProperyToArray(coin.prices_7d, 'price')))
+              , 100)
+              }%"></div>
+          </div>
         </div>
-      </div>
+      {/if}
 
       <div class="grid grid-cols-5 gap-2 w-full place-items-center justify-items-start">
         <span class="text-xs opacity-80 col-span-2">All&nbsp;time</span>
