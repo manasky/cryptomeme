@@ -67,7 +67,6 @@ func (s *Server) Markets(w http.ResponseWriter, r *http.Request) {
 				market.MemeCaption = c
 			}
 
-
 			if len(m.Content) > 0 {
 				for i, c := range m.Content {
 					if c.Text != "" {
