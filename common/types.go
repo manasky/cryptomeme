@@ -37,6 +37,7 @@ type Market struct {
 
 	Meme        string        `json:"meme"`
 	MemeCaption string        `json:"meme_caption"`
+	MemeContent []*Content `json:"meme_content"`
 	Prices7Days []*ChartPrice `json:"prices_7d"`
 }
 
