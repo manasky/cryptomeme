@@ -9,11 +9,11 @@ import { page } from '$app/stores';
 import { goto } from '$app/navigation';
 
 // handle dynamic routes
-onMount(() => {
-  if (window.location.pathname != '/') {
-    goto(window.location.pathname) 
-  }
-})
+// onMount(() => {
+//   if (window.location.pathname != '/') {
+//     goto(window.location.pathname) 
+//   }
+// })
 
 let API_PATH
 if (import.meta.env.VITE_API_PATH !== undefined) {
