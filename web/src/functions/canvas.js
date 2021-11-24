@@ -62,17 +62,16 @@ export const drawMeme = ({
 
     // meme caption
     let fontSize
-    if (caption.length > 300) { fontSize = 12 } else
-    if (caption.length > 200) { fontSize = 18 } else
-    if (caption.length > 180) { fontSize = 22 } else
+    if (caption.length > 400) { fontSize = 18 } else
+    if (caption.length > 250) { fontSize = 23 } else
     if (caption.length > 150) { fontSize = 24 } else
     if (caption.length > 100) { fontSize = 32 } else
     if (caption.length > 40) { fontSize = 40 } else
     if (caption.length > 30) { fontSize = 54 } else
-    if (caption.length > 10) { fontSize = 60 } else
-    { fontSize = 68 }
+    if (caption.length > 10) { fontSize = 70 } else
+    { fontSize = 90 }
     let textMaxWidth = canvas.width-40;
-    let lineHeight = fontSize + (fontSize*0.4);
+    let lineHeight = fontSize + (fontSize*0.1);
     let textY = fontSize + 20;
     let textX = (canvas.width - textMaxWidth ) / 2;
     ctx.font = "Bold "+fontSize+"px 'Helvetica'";
