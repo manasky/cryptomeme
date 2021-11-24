@@ -69,10 +69,10 @@ onMount(() => {
   />
 </svelte:head>
 
-<div class="md:hidden -mx-3">
+<div class="-mx-3 md:hidden">
   {#if coins}
   <div class="w-full">
-    <div class="w-full carousel carousel-center overflow-y-hidden">
+    <div class="w-full overflow-y-hidden carousel carousel-center">
       <div class="w-1/12 carousel-item"></div>
       {#each coins.slice(0, 100) as coin}
         <div class="w-10/12 carousel-item">
@@ -86,12 +86,12 @@ onMount(() => {
                 />
               </div>
             {/if}
-            <span class="mx-auto inline-block" slot="weeklyChart">
+            <span class="inline-block mx-auto" slot="weeklyChart">
               {#if coin.prices_7d != null}
                 <div class="tooltip" data-tip="7 day price changes">
                   <svg 
                     bind:this={sparklineEl[coin.symbol]} 
-                    class="mx-auto max-w-full" 
+                    class="max-w-full mx-auto" 
                     width="250" 
                     height="60" 
                     stroke-width="2" 
@@ -112,7 +112,7 @@ onMount(() => {
 </div>
 
 
-<div class="hidden md:block -mx-3">
+<div class="hidden -mx-3 md:block">
   {#if coins}
     <div class="w-full md:flex md:flex-col">
       {#each coins.slice(0, 100) as coin}
@@ -131,7 +131,7 @@ onMount(() => {
                 <div class="tooltip" data-tip="7 day price changes">
                   <svg 
                     bind:this={sparklineEl2[coin.symbol]} 
-                    class="mx-auto max-w-full" 
+                    class="max-w-full mx-auto" 
                     width="220" 
                     height="60" 
                     stroke-width="2" 
