@@ -80,22 +80,24 @@ export const drawMeme = ({
     let crText = 'C'+'r'+'y'+'p'+'t'+'o'+'M'+'e'+'m'+'e'+'.'+'W'+'T'+'F';
 
     // meme content
-    meme_content.forEach(item => {
-      if (item.image) {
-        let contentImgObj = new Image();
-        contentImgObj.src = item.image; 
-        contentImgObj.onload = function(){
-          ctx.drawImage(contentImgObj, item.x, item.y, 100, 100);
+    if (meme_content && meme_content.length > 0) {
+      meme_content.forEach(item => {
+        if (item.image) {
+          let contentImgObj = new Image();
+          contentImgObj.src = item.image; 
+          contentImgObj.onload = function(){
+            ctx.drawImage(contentImgObj, item.x, item.y, 100, 100);
+          }
+        }else if(item.text){
+          ctx.font = "Bold 40px 'Arial'";
+          ctx.strokeStyle = 'white';
+          ctx.lineWidth = 8;
+          ctx.strokeText(item.text, item.x, item.y);
+          ctx.fillStyle = 'black';
+          ctx.fillText(item.text, item.x, item.y);
         }
-      }else if(item.text){
-        ctx.font = "Bold 40px 'Arial'";
-        ctx.strokeStyle = 'white';
-        ctx.lineWidth = 8;
-        ctx.strokeText(item.text, item.x, item.y);
-        ctx.fillStyle = 'black';
-        ctx.fillText(item.text, item.x, item.y);
-      }
-    });
+      })
+    }
 
     strokedText({
       ctx: ctx,
