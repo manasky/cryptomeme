@@ -25,6 +25,10 @@
             {
               "caption": "They sold? Pump it",
               "image": "/memes/dump-it.jpg"
+            },
+            {
+              "caption": "When I see the {{.Name}} price at ${{FormatNumber .CurrentPrice}}",
+              "image": "/memes/wojak-gun.jpg"
             }
           ]
         },
@@ -77,6 +81,18 @@
                   "y": 420,
                   "text": "dump"
                   
+                }
+              ]
+            },
+            {
+              "caption": "Is it a dump?",
+              "image": "/memes/always-has-been.jpg",
+              "content": [
+                {
+                  "x": 310,
+                  "y": 600,
+                  "text": "It always has been"
+
                 }
               ]
             }
@@ -192,6 +208,45 @@
                   
                 }
               ]
+            },
+            {
+              "caption": "DUMP it, DUMP it again MF",
+              "image": "/memes/say-one-more-time.jpg",
+              "content": [
+                {
+                  "x": 500,
+                  "y": 600,
+                  "text": "Whales"
+
+                },{
+                  "x": 520,
+                  "y": 456,
+
+                  "image": "/logos/btc.png"
+                }
+              ]
+            },
+            {
+              "caption": "",
+              "image": "/memes/captain-america-joke.jpg",
+              "content": [
+                {
+                  "x": 10,
+                  "y": 320,
+                  "text": "What's the price?"
+
+                },{
+                  "x": 450,
+                  "y": 320,
+                  "text": "${{FormatNumber .CurrentPrice}}"
+
+                },{
+                  "x": 595,
+                  "y": 70,
+                  "text": "text",
+                  "image": "logos/btc.png"
+                }
+              ]
             }
           ]
         },
@@ -217,7 +272,7 @@
                 {
                   "x": 324,
                   "y": 440,
-                  "text": "ATH"
+                  "text": "${{FormatNumber .ATH}}"
                   
                 },{
                   "x": 423,
@@ -264,6 +319,20 @@
                   "text": "WHALES"
                   
                 }
+              ]
+            },
+            {
+              "caption": "{{.Name}} is ${{FormatNumber .CurrentPrice}} today",
+              "image": "/memes/will-smith-sad.jpg",
+              "content": [
+
+              ]
+            },
+            {
+              "caption": "Me waiting for ${{FormatNumber .ATH}} {{.Name}}",
+              "image": "/memes/narcos-waiting.jpg",
+              "content": [
+
               ]
             }
           ]
@@ -385,6 +454,13 @@
             {
               "caption": "When your friend is a {{.Name}} billionaire and you know where they put their private keys",
               "image": "/memes/kid-gun.jpg"
+            },
+            {
+              "caption": "Me bought at ${{FormatOppositePrice .CurrentPrice .PriceChangePercentage24h}}",
+              "image": "/memes/tom-cruise-laugh.jpg",
+              "content": [
+
+              ]
             }
           ]
         },
@@ -439,6 +515,50 @@
                   
                 }
               ]
+            },
+            {
+              "caption": "Bull market starts",
+              "image": "/memes/hawkeye-dont-give-me-hope.jpg",
+              "content": [
+
+              ]
+            },
+            {
+              "caption": "",
+              "image": "/memes/sad-fan-angry-fan.jpg",
+              "content": [
+                {
+                  "x": 510,
+                  "y": 120,
+                  "text": "BTC"
+
+                },{
+                  "x": 450,
+                  "y": 180,
+                  "text": "Yesterday:"
+
+                },{
+                  "x": 480,
+                  "y": 240,
+                  "text": "${{FormatOppositePrice .CurrentPrice .PriceChangePercentage24h}}"
+
+                },{
+                  "x": 510,
+                  "y": 420,
+                  "text": "BTC"
+
+                },{
+                  "x": 485,
+                  "y": 480,
+                  "text": "Today:"
+
+                },{
+                  "x": 485,
+                  "y": 550,
+                  "text": "${{FormatNumber .CurrentPrice}}"
+
+                }
+              ]
             }
           ]
         },
@@ -464,6 +584,28 @@
             {
               "caption": "How's your {{.Name}} investment going?",
               "image": "/memes/batman-rich.jpg"
+            },
+            {
+              "caption": "",
+              "image": "/memes/flextape.jpg",
+              "content": [
+                {
+                  "x": 130,
+                  "y": 110,
+
+                  "image": "logos/btc.png"
+                },{
+                  "x": 237,
+                  "y": 464,
+                  "text": "Bull market"
+
+                },{
+                  "x": 380,
+                  "y": 120,
+                  "text": "Bear market"
+
+                }
+              ]
             }
           ]
         }
@@ -597,6 +739,52 @@
                   
                 }
               ]
+            },
+            {
+              "caption": "ETH: ${{FormatNumber .CurrentPrice}} today                     ",
+              "image": "/memes/kid-burn-house.jpg",
+              "content": [
+                {
+                  "x": 70,
+                  "y": 250,
+                  "text": "My portfolio"
+
+                },{
+                  "x": 200,
+                  "y": 600,
+                  "text": "Me bought at ${{FormatOppositePrice .CurrentPrice .PriceChangePercentage24h}}"
+
+                }
+              ]
+            },
+            {
+              "caption": "",
+              "image": "/memes/captain-america-joke.jpg",
+              "content": [
+                {
+                  "x": 10,
+                  "y": 320,
+                  "text": "What's the price?"
+
+                },{
+                  "x": 430,
+                  "y": 320,
+                  "text": "${{FormatNumber .CurrentPrice}}"
+
+                },{
+                  "x": 595,
+                  "y": 70,
+                  "text": "text",
+                  "image": "logos/eth.png"
+                }
+              ]
+            },
+            {
+              "caption": "Me waiting for ${{FormatNumber .ATH}} {{.Name}}",
+              "image": "/memes/narcos-waiting.jpg",
+              "content": [
+
+              ]
             }
           ]
         },
@@ -618,6 +806,18 @@
             {
               "caption": "{{.Name}} holders when it's ${{FormatNumber .CurrentPrice}}",
               "image": "/memes/sunglasses.jpg"
+            },
+            {
+              "caption": "",
+              "image": "/memes/everyday-i-wake-up.jpg",
+              "content": [
+                {
+                  "x": 50,
+                  "y": 590,
+                  "text": "It's dumping"
+
+                }
+              ]
             }
           ]
         },
@@ -677,7 +877,7 @@
           ]
         },
         {
-          "value": 3,
+          "value": 5,
           "memes": [
             {
               "caption": "{{.Name}} is ${{FormatNumber .CurrentPrice}} today",
@@ -732,6 +932,60 @@
                   "y": 600,
                   "text": "HODL"
                   
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "value": 10,
+          "memes": [
+            {
+              "caption": "",
+              "image": "/memes/anakin-for-the-better.jpg",
+              "content": [
+                {
+                  "x": 70,
+                  "y": 250,
+                  "text": "ETH is ${{FormatNumber .CurrentPrice}}"
+
+                },{
+                  "x": 370,
+                  "y": 250,
+                  "text": "How about fees?"
+
+                },{
+                  "x": 370,
+                  "y": 600,
+                  "text": "How about fees?"
+
+                }
+              ]
+            },
+            {
+              "caption": "",
+              "image": "/memes/kid-with-glasses.jpg",
+              "content": [
+                {
+                  "x": 180,
+                  "y": 350,
+                  "text": "I told you to HODL"
+
+                },{
+                  "x": 50,
+                  "y": 600,
+                  "text": "I told you"
+
+                },{
+                  "x": 340,
+                  "y": 600,
+                  "text": "to"
+
+                },{
+                  "x": 530,
+                  "y": 600,
+                  "text": "HODL"
+
                 }
               ]
             }
@@ -880,6 +1134,13 @@
         {
           "value": 2,
           "memes": [
+            {
+              "caption": "When {{.Name}} price is ${{FormatNumber .CurrentPrice}}",
+              "image": "/memes/ironman-money.jpg",
+              "content": [
+
+              ]
+            },
             {
               "caption": "{{.Name}} holders looking at all other cryptos going up and down",
               "image": "/memes/jealous-kid.jpg"
@@ -1222,7 +1483,7 @@
               "image": "/memes/russian-xrp-5usd.jpg"
             },
             {
-              "caption": "Me buying {{.Name}} on ATH vs. Me now",
+              "caption": "Me buying {{.Name}} on ${{FormatNumber .ATH}} vs. Me now",
               "image": "/memes/matthew-mcconaughey-happy-sad.jpg"
             },
             {
@@ -1248,6 +1509,41 @@
                   "y": 600,
                   "text": "Bitcoin, right?"
                   
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "value": 0,
+          "memes": [
+            {
+              "caption": "When they ask me about my {{.Name}} investment",
+              "image": "/memes/russian-xrp-5usd.jpg"
+            },
+            {
+              "caption": "Me buying {{.Name}} on ${{FormatNumber .ATH}} vs. Me now",
+              "image": "/memes/matthew-mcconaughey-happy-sad.jpg"
+            },
+            {
+              "caption": "{{.Name}}: ${{FormatNumber .CurrentPrice}}",
+              "image": "/memes/squidward-patrick-spongebob.jpg",
+              "content": [
+                {
+                  "x": 480,
+                  "y": 340,
+
+                  "image": "/logos/btc.png"
+                },{
+                  "x": 120,
+                  "y": 320,
+                  "text": "text",
+                  "image": "/logos/eth.png"
+                },{
+                  "x": 285,
+                  "y": 220,
+                  "text": "text",
+                  "image": "/logos/xrp.png"
                 }
               ]
             }
