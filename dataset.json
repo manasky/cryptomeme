@@ -4,7 +4,7 @@
       "name": "bitcoin",
       "ranges": [
         {
-          "value": -30,
+          "value": -10,
           "memes": [
             {
               "caption": "{{.Name}} is ${{FormatNumber .CurrentPrice}}",
@@ -29,7 +29,7 @@
           ]
         },
         {
-          "value": -10,
+          "value": -5,
           "memes": [
             {
               "caption": "Losing all my money on {{.Name}}",
@@ -67,11 +67,23 @@
                   
                 }
               ]
+            },
+            {
+              "caption": "1 {{.Name}} = ${{FormatNumber .CurrentPrice}}",
+              "image": "/memes/meta.jpg",
+              "content": [
+                {
+                  "x": 470,
+                  "y": 420,
+                  "text": "dump"
+                  
+                }
+              ]
             }
           ]
         },
         {
-          "value": -5,
+          "value": -3,
           "memes": [
             {
               "caption": "Let me check how much is my {{.Name}} today. It's ${{FormatNumber .CurrentPrice}} now.",
@@ -105,11 +117,33 @@
                   
                 }
               ]
+            },
+            {
+              "caption": "",
+              "image": "/memes/squid-game-choice.jpg",
+              "content": [
+                {
+                  "x": 42,
+                  "y": 65,
+                  "text": " buy bitcoin"
+                  
+                },{
+                  "x": 65,
+                  "y": 110,
+                  "text": "at xxx"
+                  
+                },{
+                  "x": 472,
+                  "y": 90,
+                  "text": "wait more"
+                  
+                }
+              ]
             }
           ]
         },
         {
-          "value": -2,
+          "value": -1,
           "memes": [
             {
               "caption": "Just bought {{.Name}} yesterday. It's ${{FormatNumber .CurrentPrice}} now.",
@@ -197,6 +231,39 @@
                   
                 }
               ]
+            }
+          ]
+        },
+        {
+          "value": 1,
+          "memes": [
+            {
+              "caption": "Me, looking at ${{FormatNumber .CurrentPrice}} {{.Name}}",
+              "image": "/memes/andy-dwyer-surprised.jpg"
+            },
+            {
+              "caption": "Everyone predict {{.Name}} will pump. {{.Name}}:",
+              "image": "/memes/now-im-not-doing-it.jpg"
+            },
+            {
+              "caption": "Me explaining to my mom why {{.Name}} is the future.",
+              "image": "/memes/explaining.jpg"
+            },
+            {
+              "caption": "No {{.Name}} dump today. ${{FormatNumber .CurrentPrice}}",
+              "image": "/memes/hulk-absolute-win.jpg"
+            },
+            {
+              "caption": "when your market predictions was right",
+              "image": "/memes/maybe-i-am.jpg",
+              "content": [
+                {
+                  "x": 166,
+                  "y": 605,
+                  "text": "maybe I am a trader"
+                  
+                }
+              ]
             },
             {
               "caption": "I bet he's cheating on me",
@@ -214,36 +281,20 @@
                   
                 }
               ]
-            }
-          ]
-        },
-        {
-          "value": 5,
-          "memes": [
-            {
-              "caption": "No {{.Name}} dump today. ${{FormatNumber .CurrentPrice}}",
-              "image": "/memes/hulk-absolute-win.jpg"
             },
             {
-              "caption": "Me, looking at ${{FormatNumber .CurrentPrice}} {{.Name}}",
-              "image": "/memes/andy-dwyer-surprised.jpg"
-            },
-            {
-              "caption": "Everyone predict {{.Name}} will pump. {{.Name}}:",
-              "image": "/memes/now-im-not-doing-it.jpg"
-            },
-            {
-              "caption": "Me explaining to my mom why {{.Name}} is the future.",
-              "image": "/memes/explaining.jpg"
-            },
-            {
-              "caption": "when your market predictions was right",
-              "image": "/memes/maybe-i-am.jpg",
+              "caption": "",
+              "image": "/memes/everyday-i-wake-up.jpg",
               "content": [
                 {
-                  "x": 166,
-                  "y": 605,
-                  "text": "maybe I am a trader"
+                  "x": 28,
+                  "y": 560,
+                  "text": "and {{.Name}} is"
+                  
+                },{
+                  "x": 97,
+                  "y": 600,
+                  "text": "${{FormatNumber .CurrentPrice}}"
                   
                 }
               ]
@@ -251,7 +302,7 @@
           ]
         },
         {
-          "value": 10,
+          "value": 2,
           "memes": [
             {
               "caption": "Oh my god, it's happening. {{.Name}} is ${{FormatNumber .CurrentPrice}}! Everybody calm down",
@@ -304,7 +355,7 @@
           ]
         },
         {
-          "value": 20,
+          "value": 5,
           "memes": [
             {
               "caption": "Watching {{.Name}} price at ${{FormatNumber .CurrentPrice}}",
@@ -325,6 +376,23 @@
             {
               "caption": "People who are selling {{.Name}} at ${{FormatNumber .CurrentPrice}} vs. Me, hodling",
               "image": "/memes/black-widow-happy-scared.jpg"
+            },
+            {
+              "caption": "{{.Name}} is ${{FormatNumber .CurrentPrice}}",
+              "image": "/memes/red-buttons.jpg",
+              "content": [
+                {
+                  "x": 52,
+                  "y": 370,
+                  "text": "buy"
+                  
+                },{
+                  "x": 170,
+                  "y": 360,
+                  "text": "sell"
+                  
+                }
+              ]
             }
           ]
         },
@@ -359,7 +427,7 @@
       "name": "ethereum",
       "ranges": [
         {
-          "value": -30,
+          "value": -10,
           "memes": [
             {
               "caption": "{{.Name}} ${{FormatNumber .CurrentPrice}}",
@@ -376,7 +444,7 @@
           ]
         },
         {
-          "value": -5,
+          "value": -4,
           "memes": [
             {
               "caption": "{{.Name}} ${{FormatNumber .CurrentPrice}}",
@@ -431,7 +499,7 @@
           ]
         },
         {
-          "value": -2,
+          "value": -1,
           "memes": [
             {
               "caption": "Me, losing all my money on {{.Name}}",
@@ -444,6 +512,23 @@
             {
               "caption": "{{.Name}} dumping to ${{FormatNumber .CurrentPrice}}",
               "image": "/memes/star-trek-surprised.jpg"
+            },
+            {
+              "caption": "",
+              "image": "/memes/what-happened-to-him.jpg",
+              "content": [
+                {
+                  "x": 132,
+                  "y": 380,
+                  "text": "what happened to him?"
+                  
+                },{
+                  "x": 142,
+                  "y": 590,
+                  "text": "He invested in {{.Name}}"
+                  
+                }
+              ]
             }
           ]
         },
@@ -469,7 +554,7 @@
           ]
         },
         {
-          "value": 3,
+          "value": 1,
           "memes": [
             {
               "caption": "{{.Name}} is ${{FormatNumber .CurrentPrice}} but it can go higher",
@@ -508,11 +593,23 @@
                   
                 }
               ]
+            },
+            {
+              "caption": "1 {{.Name}} = ${{FormatNumber .CurrentPrice}}",
+              "image": "/memes/thor-still-worthy.jpg",
+              "content": [
+                {
+                  "x": 530,
+                  "y": 260,
+                  
+                  "image": "/logos/eth.png"
+                }
+              ]
             }
           ]
         },
         {
-          "value": 10,
+          "value": 3,
           "memes": [
             {
               "caption": "{{.Name}} is ${{FormatNumber .CurrentPrice}} today",
@@ -542,6 +639,33 @@
                   
                 }
               ]
+            },
+            {
+              "caption": "",
+              "image": "/memes/kid-with-glasses.jpg",
+              "content": [
+                {
+                  "x": 180,
+                  "y": 350,
+                  "text": "I told you to HODL"
+                  
+                },{
+                  "x": 50,
+                  "y": 600,
+                  "text": "I told you"
+                  
+                },{
+                  "x": 340,
+                  "y": 600,
+                  "text": "to"
+                  
+                },{
+                  "x": 530,
+                  "y": 600,
+                  "text": "HODL"
+                  
+                }
+              ]
             }
           ]
         },
@@ -560,7 +684,7 @@
       "name": "binance coin",
       "ranges": [
         {
-          "value": -30,
+          "value": -10,
           "memes": [
             {
               "caption": "Let me check {{.Name}} price.         ${{FormatNumber .CurrentPrice}}",
@@ -581,7 +705,7 @@
           ]
         },
         {
-          "value": 10,
+          "value": 5,
           "memes": [
             {
               "caption": "{{.Name}} is ${{FormatNumber .CurrentPrice}}",
@@ -594,6 +718,37 @@
             {
               "caption": "Me telling everyone to buy {{.Name}}",
               "image": "/memes/talk-to-wall.jpg"
+            },
+            {
+              "caption": "",
+              "image": "/memes/spongebob-rounded-strong.jpg",
+              "content": [
+                {
+                  "x": 400,
+                  "y": 250,
+                  "text": "Binance coin"
+                  
+                },{
+                  "x": 400,
+                  "y": 300,
+                  "text": "before"
+                  
+                },{
+                  "x": 400,
+                  "y": 480,
+                  "text": "Binance coin"
+                  
+                },{
+                  "x": 400,
+                  "y": 530,
+                  "text": "now"
+                  
+                }
+              ]
+            },
+            {
+              "caption": "Ok class, we have a {{.Name}} billionaire here",
+              "image": "/memes/ok-class.jpg"
             }
           ]
         },
@@ -603,10 +758,6 @@
             {
               "caption": "{{.Name}} holders to other alts",
               "image": "/memes/know-your-place-trash.jpg"
-            },
-            {
-              "caption": "Ok class, we have a {{.Name}} billionaire here",
-              "image": "/memes/ok-class.jpg"
             },
             {
               "caption": "How {{.Name}} holders look at other crypto holders",
@@ -620,7 +771,7 @@
       "name": "tether",
       "ranges": [
         {
-          "value": -5,
+          "value": -2,
           "memes": [
             {
               "caption": "Nobody:                                          {{.Name}} price:",
@@ -638,11 +789,28 @@
             {
               "caption": "{{.Name}} holders looking at all other cryptos going up and down",
               "image": "/memes/squidward-looking.jpg"
+            },
+            {
+              "caption": "",
+              "image": "/memes/2-spider-man.jpg",
+              "content": [
+                {
+                  "x": 140,
+                  "y": 310,
+                  "text": "USDT"
+                  
+                },{
+                  "x": 490,
+                  "y": 300,
+                  "text": "USDC"
+                  
+                }
+              ]
             }
           ]
         },
         {
-          "value": 5,
+          "value": 2,
           "memes": [
             {
               "caption": "{{.Name}} holders looking at all other cryptos going up and down",
@@ -660,7 +828,7 @@
       "name": "solana",
       "ranges": [
         {
-          "value": -30,
+          "value": -10,
           "memes": [
             {
               "caption": "My {{.Name}} investment is totaly fine",
@@ -673,11 +841,28 @@
             {
               "caption": "When they say {{.Name}} will pump again",
               "image": "/memes/hawkeye-dont-give-me-hope.jpg"
+            },
+            {
+              "caption": "",
+              "image": "/memes/what-happened-to-him.jpg",
+              "content": [
+                {
+                  "x": 132,
+                  "y": 380,
+                  "text": "what happened to him?"
+                  
+                },{
+                  "x": 142,
+                  "y": 590,
+                  "text": "He invested in {{.Name}}"
+                  
+                }
+              ]
             }
           ]
         },
         {
-          "value": -5,
+          "value": -2,
           "memes": [
             {
               "caption": "Waiting for {{.Name}} price to go up",
@@ -711,7 +896,7 @@
           ]
         },
         {
-          "value": 5,
+          "value": 2,
           "memes": [
             {
               "caption": "When they ask me what is my {{.Name}} trading strategy",
@@ -772,7 +957,7 @@
           ]
         },
         {
-          "value": 10,
+          "value": 5,
           "memes": [
             {
               "caption": "1 {{.Name}} = ${{FormatNumber .CurrentPrice}}",
@@ -803,7 +988,7 @@
       "name": "cardano",
       "ranges": [
         {
-          "value": -30,
+          "value": -10,
           "memes": [
             {
               "caption": "You can't lose money if you don't have money",
@@ -863,7 +1048,7 @@
           ]
         },
         {
-          "value": 5,
+          "value": 2,
           "memes": [
             {
               "caption": "Watching {{.Name}} price at ${{FormatNumber .CurrentPrice}}",
@@ -876,7 +1061,7 @@
           ]
         },
         {
-          "value": 10,
+          "value": 5,
           "memes": [
             {
               "caption": "One {{.Name}} is now ${{FormatNumber .CurrentPrice}}",
@@ -885,6 +1070,23 @@
             {
               "caption": "When I see {{.Name}} is ${{FormatNumber .CurrentPrice}}",
               "image": "/memes/tom-cruise-laugh.jpg"
+            },
+            {
+              "caption": "{{.Name}} is ${{FormatNumber .CurrentPrice}}",
+              "image": "/memes/red-buttons.jpg",
+              "content": [
+                {
+                  "x": 52,
+                  "y": 370,
+                  "text": "buy"
+                  
+                },{
+                  "x": 170,
+                  "y": 360,
+                  "text": "sell"
+                  
+                }
+              ]
             }
           ]
         },
@@ -907,7 +1109,7 @@
       "name": "xrp",
       "ranges": [
         {
-          "value": -30,
+          "value": -10,
           "memes": [
             {
               "caption": "When can I see {{.Name}} price go up again?",
@@ -924,6 +1126,23 @@
             {
               "caption": "When you sell all your {{.Name}} at ${{FormatNumber .CurrentPrice}} to avoid losing more money.",
               "image": "/memes/lotr-its-done.jpg"
+            },
+            {
+              "caption": "",
+              "image": "/memes/squidward-tombstone.jpg",
+              "content": [
+                {
+                  "x": 472,
+                  "y": 220,
+                  
+                  "image": "/logos/xrp.png"
+                },{
+                  "x": 486,
+                  "y": 370,
+                  "text": "XRP"
+                  
+                }
+              ]
             }
           ]
         },
@@ -941,6 +1160,28 @@
             {
               "caption": "Me as a {{.Name}} holder",
               "image": "/memes/worthless.jpg"
+            },
+            {
+              "caption": "",
+              "image": "/memes/anakin-for-the-better.jpg",
+              "content": [
+                {
+                  "x": 60,
+                  "y": 250,
+                  "text": "I hold crypto"
+                  
+                },{
+                  "x": 400,
+                  "y": 250,
+                  "text": "Bitcoin, right?"
+                  
+                },{
+                  "x": 400,
+                  "y": 600,
+                  "text": "Bitcoin, right?"
+                  
+                }
+              ]
             }
           ]
         },
@@ -979,6 +1220,23 @@
                   
                 }
               ]
+            },
+            {
+              "caption": "",
+              "image": "/memes/3rd-place-winner.jpg",
+              "content": [
+                {
+                  "x": 542,
+                  "y": 530,
+                  "text": "XRP"
+                  
+                },{
+                  "x": 330,
+                  "y": 580,
+                  "text": "other coins"
+                  
+                }
+              ]
             }
           ]
         },
@@ -1010,7 +1268,7 @@
       "name": "polkadot",
       "ranges": [
         {
-          "value": -30,
+          "value": -10,
           "memes": [
             {
               "caption": "Some day my {{.Name}} investment will pay off",
@@ -1023,7 +1281,7 @@
           ]
         },
         {
-          "value": -5,
+          "value": -2,
           "memes": [
             {
               "caption": "{{.Name}} = ${{FormatNumber .CurrentPrice}}",
@@ -1032,7 +1290,7 @@
           ]
         },
         {
-          "value": 5,
+          "value": 2,
           "memes": [
             {
               "caption": "One {{.Name}} here is ${{FormatNumber .CurrentPrice}} on earth",
@@ -1045,7 +1303,7 @@
           ]
         },
         {
-          "value": 10,
+          "value": 5,
           "memes": [
             {
               "caption": "Me looking at ${{FormatNumber .CurrentPrice}} {{.Name}}",
@@ -1076,7 +1334,7 @@
       "name": "usd coin",
       "ranges": [
         {
-          "value": -5,
+          "value": -2,
           "memes": [
             {
               "caption": "Nobody:                                          {{.Name}} price:",
@@ -1115,7 +1373,7 @@
           ]
         },
         {
-          "value": 5,
+          "value": 2,
           "memes": [
             {
               "caption": "{{.Name}} holders watching other cryptos go up and down",
@@ -1124,6 +1382,23 @@
             {
               "caption": "When you see {{.Name}} price goes up.",
               "image": "/memes/anyway.jpg"
+            },
+            {
+              "caption": "",
+              "image": "/memes/2-spider-man.jpg",
+              "content": [
+                {
+                  "x": 140,
+                  "y": 310,
+                  "text": "USDT"
+                  
+                },{
+                  "x": 490,
+                  "y": 300,
+                  "text": "USDC"
+                  
+                }
+              ]
             }
           ]
         }
@@ -1133,7 +1408,7 @@
       "name": "dogecoin",
       "ranges": [
         {
-          "value": -20,
+          "value": -10,
           "memes": [
             {
               "caption": "{{.Name}} is ${{FormatNumber .CurrentPrice}}. such dump!",
@@ -1142,20 +1417,59 @@
             {
               "caption": "How {{.Name}} is going to the moon",
               "image": "/memes/to-the-moon.jpg"
-            }
-          ]
-        },
-        {
-          "value": -10,
-          "memes": [
+            },
             {
-              "caption": "Waiting for Elon Musk to tweet about {{.Name}}",
-              "image": "/memes/elon-musk-dogecoin-titanic.jpg"
+              "caption": "",
+              "image": "/memes/what-happened-to-him.jpg",
+              "content": [
+                {
+                  "x": 132,
+                  "y": 380,
+                  "text": "what happened to him?"
+                  
+                },{
+                  "x": 142,
+                  "y": 590,
+                  "text": "He invested in {{.Name}}"
+                  
+                }
+              ]
             }
           ]
         },
         {
           "value": -5,
+          "memes": [
+            {
+              "caption": "Waiting for Elon Musk to tweet about {{.Name}}",
+              "image": "/memes/elon-musk-dogecoin-titanic.jpg"
+            },
+            {
+              "caption": "",
+              "image": "/memes/naruto-handshake.jpg",
+              "content": [
+                {
+                  "x": 100,
+                  "y": 150,
+                  "text": "Dogecoin"
+                  
+                },{
+                  "x": 430,
+                  "y": 150,
+                  "text": "Dogecoin"
+                  
+                },{
+                  "x": 177,
+                  "y": 530,
+                  "text": "1 Doge = 1 Doge"
+                  
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "value": -2,
           "memes": [
             {
               "caption": "1 {{.Name}} = 1 {{.Name}}",
@@ -1164,6 +1478,18 @@
             {
               "caption": "1 {{.Name}} = 1 {{.Name}}",
               "image": "/memes/elon-musk-dogecoin.jpg"
+            },
+            {
+              "caption": "1 {{.Name}} is 1 {{.Name}}?",
+              "image": "/memes/always-has-been.jpg",
+              "content": [
+                {
+                  "x": 346,
+                  "y": 290,
+                  "text": "Always has been"
+                  
+                }
+              ]
             }
           ]
         },
@@ -1199,11 +1525,38 @@
                   
                 }
               ]
+            },
+            {
+              "caption": "",
+              "image": "/memes/drake.jpg",
+              "content": [
+                {
+                  "x": 420,
+                  "y": 100,
+                  "text": "Buy crypto"
+                  
+                },{
+                  "x": 420,
+                  "y": 150,
+                  "text": "for profit"
+                  
+                },{
+                  "x": 420,
+                  "y": 420,
+                  "text": "Buy crypto"
+                  
+                },{
+                  "x": 420,
+                  "y": 470,
+                  "text": "for memes"
+                  
+                }
+              ]
             }
           ]
         },
         {
-          "value": 5,
+          "value": 2,
           "memes": [
             {
               "caption": "1 {{.Name}} is 1 {{.Name}} today. such crypto!",
@@ -1212,11 +1565,33 @@
             {
               "caption": "Wow! 1 {{.Name}} is 1 {{.Name}} now",
               "image": "/memes/doge-rich.jpg"
+            },
+            {
+              "caption": "",
+              "image": "/memes/naruto-handshake.jpg",
+              "content": [
+                {
+                  "x": 100,
+                  "y": 150,
+                  "text": "Dogecoin"
+                  
+                },{
+                  "x": 430,
+                  "y": 150,
+                  "text": "Dogecoin"
+                  
+                },{
+                  "x": 177,
+                  "y": 530,
+                  "text": "1 Doge = 1 Doge"
+                  
+                }
+              ]
             }
           ]
         },
         {
-          "value": 10,
+          "value": 5,
           "memes": [
             {
               "caption": "${{FormatNumber .CurrentPrice}}. very currency. such coin",
@@ -1247,7 +1622,7 @@
       "name": "shiba inu",
       "ranges": [
         {
-          "value": -20,
+          "value": -10,
           "memes": [
             {
               "caption": "When you realize you lost all your money to a for a meme coin",
@@ -1256,7 +1631,7 @@
           ]
         },
         {
-          "value": -5,
+          "value": -3,
           "memes": [
             {
               "caption": "Waiting for shiba go to moon",
@@ -1300,7 +1675,7 @@
           ]
         },
         {
-          "value": 5,
+          "value": 3,
           "memes": [
             {
               "caption": "Is shiba the currency of the future?",
@@ -1317,7 +1692,7 @@
           ]
         },
         {
-          "value": 10,
+          "value": 5,
           "memes": [
             {
               "caption": "",
