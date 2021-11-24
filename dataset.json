@@ -130,12 +130,24 @@
                 },{
                   "x": 65,
                   "y": 110,
-                  "text": "at xxx"
+                  "text": "at ${{FormatNumber .CurrentPrice}}"
                   
                 },{
                   "x": 472,
                   "y": 90,
                   "text": "wait more"
+                  
+                }
+              ]
+            },
+            {
+              "caption": "{{.Name}}: ${{FormatNumber .CurrentPrice}} today",
+              "image": "/memes/tired-miazaki.jpg",
+              "content": [
+                {
+                  "x": 150,
+                  "y": 600,
+                  "text": "Me bought at ${{FormatOppositePrice .CurrentPrice .PriceChangePercentage24h}}"
                   
                 }
               ]
@@ -228,6 +240,28 @@
                   "x": 97,
                   "y": 600,
                   "text": "${{FormatNumber .CurrentPrice}}"
+                  
+                }
+              ]
+            },
+            {
+              "caption": "",
+              "image": "/memes/squid-game-choice.jpg",
+              "content": [
+                {
+                  "x": 508,
+                  "y": 90,
+                  "text": "DUMP"
+                  
+                },{
+                  "x": 95,
+                  "y": 90,
+                  "text": "PUMP"
+                  
+                },{
+                  "x": 280,
+                  "y": 610,
+                  "text": "WHALES"
                   
                 }
               ]
@@ -393,6 +427,18 @@
                   
                 }
               ]
+            },
+            {
+              "caption": "{{.Name}}: ${{FormatNumber .CurrentPrice}} today",
+              "image": "/memes/tired-miazaki.jpg",
+              "content": [
+                {
+                  "x": 150,
+                  "y": 600,
+                  "text": "When I sold at ${{FormatOppositePrice .CurrentPrice .PriceChangePercentage24h}}"
+                  
+                }
+              ]
             }
           ]
         },
@@ -526,6 +572,28 @@
                   "x": 142,
                   "y": 590,
                   "text": "He invested in {{.Name}}"
+                  
+                }
+              ]
+            },
+            {
+              "caption": "",
+              "image": "/memes/squid-game-choice.jpg",
+              "content": [
+                {
+                  "x": 508,
+                  "y": 90,
+                  "text": "DUMP"
+                  
+                },{
+                  "x": 95,
+                  "y": 90,
+                  "text": "PUMP"
+                  
+                },{
+                  "x": 280,
+                  "y": 610,
+                  "text": "WHALES"
                   
                 }
               ]
@@ -745,10 +813,6 @@
                   
                 }
               ]
-            },
-            {
-              "caption": "Ok class, we have a {{.Name}} billionaire here",
-              "image": "/memes/ok-class.jpg"
             }
           ]
         },
@@ -758,6 +822,10 @@
             {
               "caption": "{{.Name}} holders to other alts",
               "image": "/memes/know-your-place-trash.jpg"
+            },
+            {
+              "caption": "Ok class, we have a {{.Name}} billionaire here",
+              "image": "/memes/ok-class.jpg"
             },
             {
               "caption": "How {{.Name}} holders look at other crypto holders",
