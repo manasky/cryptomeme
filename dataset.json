@@ -334,6 +334,23 @@
               "content": [
 
               ]
+            },
+            {
+              "caption": "",
+              "image": "/memes/kid-motorcycle.jpg",
+              "content": [
+                {
+                  "x": 230,
+                  "y": 280,
+
+                  "image": "logos/btc.png"
+                },{
+                  "x": 270,
+                  "y": 170,
+                  "text": "${{FormatNumber .CurrentPrice}}"
+
+                }
+              ]
             }
           ]
         },
@@ -399,6 +416,23 @@
                   "y": 600,
                   "text": "${{FormatNumber .CurrentPrice}}"
                   
+                }
+              ]
+            },
+            {
+              "caption": "",
+              "image": "/memes/kid-motorcycle.jpg",
+              "content": [
+                {
+                  "x": 230,
+                  "y": 280,
+
+                  "image": "logos/btc.png"
+                },{
+                  "x": 270,
+                  "y": 170,
+                  "text": "${{FormatNumber .CurrentPrice}}"
+
                 }
               ]
             }
