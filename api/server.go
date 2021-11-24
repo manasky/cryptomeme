@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"github.com/manasky/cryptomeme/database"
 	"github.com/manasky/cryptomeme/meme"
+	"github.com/manasky/cryptomeme/common"
 	"log"
 	"net/http"
 	"strconv"
@@ -67,15 +68,24 @@ func (s *Server) Markets(w http.ResponseWriter, r *http.Request) {
 				market.MemeCaption = c
 			}
 
+			market.MemeContent = []*common.Content{}
 			if len(m.Content) > 0 {
-				for i, c := range m.Content {
-					if c.Text != "" {
-						if txt, err := meme.ParseCaption(c.Text, market); err == nil {
-							m.Content[i].Text = txt
+				var memeContent []*common.Content
+				for _, c := range m.Content {
+					tmp := &common.Content{
+						Text: c.Text,
+						Image: c.Image,
+						X: c.X,
+						Y: c.Y,
+					}
+					if tmp.Text != "" {
+						if txt, err := meme.ParseCaption(tmp.Text, market); err == nil {
+							tmp.Text = txt
 						}
 					}
+					memeContent = append(memeContent, tmp)
 				}
-				market.MemeContent = m.Content
+				market.MemeContent = memeContent
 			}
 		}
 	}
