@@ -121,16 +121,16 @@ export const drawMeme = ({
     ctx.fillStyle = '#fff';
     ctx.fillText(footer_left.title, footerPaddingX + logoSize + 10, footerPaddingY + 22);
 
-    ctx.font = "12px 'Courier'";
+    ctx.font = "14px 'Andale Mono', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', 'monospace'";
     ctx.fillStyle = '#ccc';
     ctx.fillText(footer_left.desc, footerPaddingX + logoSize + 10, footerPaddingY + 38);
 
     // footer right
-    ctx.font = "20px 'Courier'";
+    ctx.font = "20px 'Andale Mono', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', 'monospace'";
     ctx.fillStyle = '#fff';
     ctx.fillText(footer_right.title, canvas.width - ctx.measureText(footer_right.title).width - footerPaddingX, footerPaddingY + 22);
 
-    ctx.font = "12px 'Courier'";
+    ctx.font = "14px 'Andale Mono', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', 'monospace'";
     ctx.fillStyle = footer_right.color;
     ctx.fillText(footer_right.desc, canvas.width - ctx.measureText(footer_right.desc).width - footerPaddingX, footerPaddingY + 38);
   };
