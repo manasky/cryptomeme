@@ -32,11 +32,11 @@ let themes = [
     </div> -->
 
   </div>
-  <div class="navbar-center flex flex-col">
+  <div class="flex flex-col navbar-center">
     <a href="/" class="text-xl font-black link link-hover">
       CryptoMeme.WTF
     </a>
-    <div class="text-xs opacity-70">crypto live price + memes!</div>
+    <div class="text-sm opacity-70">crypto live price + memes!</div>
   </div>
   <div class="gap-4 navbar-end">
 
