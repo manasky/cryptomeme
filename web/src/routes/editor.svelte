@@ -104,7 +104,7 @@ onMount(() => {
         name: 'Dogecoin',
         symbol: 'doge',
         current_price: '999',
-        price_change_24h: '99',
+        price_change_percentage_24h: '99',
 
         meme_caption: meme.caption,
         meme: '/memes/'+meme.image,
