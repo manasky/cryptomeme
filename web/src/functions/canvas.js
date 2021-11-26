@@ -56,9 +56,16 @@ export const drawMeme = ({
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     // load the image
-    let autoHeight = canvas.width * imageObj.height / imageObj.width
-    let y = canvas.height - autoHeight
-    ctx.drawImage(imageObj, 0, y-footerHeight, canvas.width, autoHeight);
+    var hRatio = canvas.width / imageObj.width    ;
+    var vRatio = (canvas.height-footerHeight) / imageObj.height  ;
+    var ratio  = Math.min ( hRatio, vRatio );
+
+    let imgW = imageObj.width * ratio
+    let imgH = imageObj.height * ratio
+    let imgX = (canvas.width - imgW)/2
+    let imgY = canvas.height -footerHeight - imgH
+    
+    ctx.drawImage(imageObj, imgX, imgY, imgW, imgH);
 
     // meme caption
     let fontSize
