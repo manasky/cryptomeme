@@ -85,13 +85,13 @@
               ]
             },
             {
-              "caption": "Is it a dump?",
+              "caption": "Is this a dump?",
               "image": "/memes/always-has-been.jpg",
               "content": [
                 {
                   "x": 310,
-                  "y": 600,
-                  "text": "It always has been"
+                  "y": 580,
+                  "text": "Always has been"
 
                 }
               ]
@@ -139,18 +139,18 @@
               "image": "/memes/squid-game-choice.jpg",
               "content": [
                 {
-                  "x": 42,
-                  "y": 65,
-                  "text": " buy bitcoin"
-                  
-                },{
-                  "x": 65,
-                  "y": 110,
-                  "text": "at ${{FormatNumber .CurrentPrice}}"
-                  
-                },{
-                  "x": 472,
+                  "x": 59,
                   "y": 90,
+                  "text": "buy bitcoin"
+                  
+                },{
+                  "x": 70,
+                  "y": 135,
+                  "text": "at XXXX"
+                  
+                },{
+                  "x": 461,
+                  "y": 110,
                   "text": "wait more"
                   
                 }
@@ -163,7 +163,7 @@
                 {
                   "x": 150,
                   "y": 600,
-                  "text": "Me bought at ${{FormatOppositePrice .CurrentPrice .PriceChangePercentage24h}}"
+                  "text": "Me buying at ${{FormatOppositePrice .CurrentPrice .PriceChangePercentage24h}}"
                   
                 }
               ]
@@ -270,7 +270,7 @@
               "image": "/memes/wolverine-remember.jpg",
               "content": [
                 {
-                  "x": 324,
+                  "x": 290,
                   "y": 440,
                   "text": "${{FormatNumber .ATH}}"
                   
@@ -305,12 +305,12 @@
               "content": [
                 {
                   "x": 508,
-                  "y": 90,
+                  "y": 110,
                   "text": "DUMP"
                   
                 },{
-                  "x": 95,
-                  "y": 90,
+                  "x": 110,
+                  "y": 110,
                   "text": "PUMP"
                   
                 },{
@@ -435,6 +435,50 @@
 
                 }
               ]
+            },
+            {
+              "caption": "",
+              "image": "/memes/galaxy-mind.jpg",
+              "content": [
+                {
+                  "x": 29,
+                  "y": 80,
+                  "text": "buy {{.Name}} now"
+                  
+                },{
+                  "x": 109,
+                  "y": 130,
+                  "text": "at ${{FormatNumber .CurrentPrice}}"
+                  
+                },{
+                  "x": 29,
+                  "y": 310,
+                  "text": "wait for $69K"
+                  
+                },{
+                  "x": 29,
+                  "y": 520,
+                  "text": "wait for 420K"
+                  
+                }
+              ]
+            },
+            {
+              "caption": "",
+              "image": "/memes/anime-girl-buying.jpg",
+              "content": [
+                {
+                  "x": 300,
+                  "y": 350,
+                  "text": "${{FormatNumber .CurrentPrice}}"
+                  
+                },{
+                  "x": 170,
+                  "y": 460,
+                  "text": "one {{.Name}} please"
+                  
+                }
+              ]
             }
           ]
         },
@@ -456,10 +500,6 @@
             {
               "caption": "I'm telling you, {{.Name}} will pump any time now",
               "image": "/memes/man-explaining.jpg"
-            },
-            {
-              "caption": "Ok class, we have a {{.Name}} billionaire here",
-              "image": "/memes/ok-class.jpg"
             },
             {
               "caption": "",
@@ -490,7 +530,7 @@
               "image": "/memes/kid-gun.jpg"
             },
             {
-              "caption": "Me bought at ${{FormatOppositePrice .CurrentPrice .PriceChangePercentage24h}}",
+              "caption": "Me buying {{.Name}} at ${{FormatOppositePrice .CurrentPrice .PriceChangePercentage24h}}",
               "image": "/memes/tom-cruise-laugh.jpg",
               "content": [
 
@@ -504,6 +544,10 @@
             {
               "caption": "Watching {{.Name}} price at ${{FormatNumber .CurrentPrice}}",
               "image": "/memes/kylo-ren-more.jpg"
+            },
+            {
+              "caption": "Ok class, we have a {{.Name}} billionaire here",
+              "image": "/memes/ok-class.jpg"
             },
             {
               "caption": "They bought {{.Name}} at ${{FormatNumber .CurrentPrice}}? Dump it",
@@ -758,12 +802,12 @@
               "content": [
                 {
                   "x": 508,
-                  "y": 90,
+                  "y": 110,
                   "text": "DUMP"
                   
                 },{
                   "x": 95,
-                  "y": 90,
+                  "y": 110,
                   "text": "PUMP"
                   
                 },{
@@ -819,6 +863,35 @@
               "content": [
 
               ]
+            },
+            {
+              "caption": "",
+              "image": "/memes/anime-girl-buying.jpg",
+              "content": [
+                {
+                  "x": 300,
+                  "y": 350,
+                  "text": "${{FormatNumber .CurrentPrice}}"
+                  
+                },{
+                  "x": 170,
+                  "y": 460,
+                  "text": "one {{.Name}} please"
+                  
+                }
+              ]
+            },
+            {
+              "caption": "",
+              "image": "/memes/everyday-i-wake-up.jpg",
+              "content": [
+                {
+                  "x": 60,
+                  "y": 600,
+                  "text": "{{.Name}} is being dumped"
+
+                }
+              ]
             }
           ]
         },
@@ -840,18 +913,6 @@
             {
               "caption": "{{.Name}} holders when it's ${{FormatNumber .CurrentPrice}}",
               "image": "/memes/sunglasses.jpg"
-            },
-            {
-              "caption": "",
-              "image": "/memes/everyday-i-wake-up.jpg",
-              "content": [
-                {
-                  "x": 50,
-                  "y": 590,
-                  "text": "It's dumping"
-
-                }
-              ]
             }
           ]
         },
@@ -968,6 +1029,23 @@
                   
                 }
               ]
+            },
+            {
+              "caption": "",
+              "image": "/memes/anime-girl-buying.jpg",
+              "content": [
+                {
+                  "x": 300,
+                  "y": 350,
+                  "text": "${{FormatNumber .CurrentPrice}}"
+                  
+                },{
+                  "x": 170,
+                  "y": 460,
+                  "text": "one {{.Name}} please"
+                  
+                }
+              ]
             }
           ]
         },
@@ -979,17 +1057,17 @@
               "image": "/memes/anakin-for-the-better.jpg",
               "content": [
                 {
-                  "x": 70,
-                  "y": 250,
+                  "x": 50,
+                  "y": 270,
                   "text": "ETH is ${{FormatNumber .CurrentPrice}}"
 
                 },{
-                  "x": 370,
-                  "y": 250,
+                  "x": 360,
+                  "y": 270,
                   "text": "How about fees?"
 
                 },{
-                  "x": 370,
+                  "x": 360,
                   "y": 600,
                   "text": "How about fees?"
 
@@ -1236,7 +1314,7 @@
               "image": "/memes/harold-calling.jpg"
             },
             {
-              "caption": "Me, losing all my money to {{.Name}}",
+              "caption": "Me, losing all my money to {{.Name}}                    ",
               "image": "/memes/kid-burn-house.jpg"
             },
             {
@@ -1302,7 +1380,7 @@
                 },{
                   "x": 28,
                   "y": 600,
-                  "text": "what did it cost?"
+                  "text": "how much fee?"
                   
                 },{
                   "x": 478,
@@ -1329,6 +1407,23 @@
             {
               "caption": "When your friend is a {{.Name}} billionaire and you know where they put their private keys",
               "image": "/memes/kid-gun.jpg"
+            },
+            {
+              "caption": "",
+              "image": "/memes/anime-girl-buying.jpg",
+              "content": [
+                {
+                  "x": 300,
+                  "y": 350,
+                  "text": "${{FormatNumber .CurrentPrice}}"
+                  
+                },{
+                  "x": 170,
+                  "y": 460,
+                  "text": "one {{.Name}} please"
+                  
+                }
+              ]
             }
           ]
         },
@@ -1431,7 +1526,7 @@
               "image": "/memes/kylo-ren-more.jpg"
             },
             {
-              "caption": "When I see {{.Name}} is ${{FormatNumber .CurrentPrice}}",
+              "caption": "When I see {{.Name}} is ${{FormatNumber .CurrentPrice}}             ",
               "image": "/memes/tom-cruise-laugh.jpg"
             },
             {
@@ -1530,16 +1625,16 @@
               "content": [
                 {
                   "x": 60,
-                  "y": 250,
+                  "y": 280,
                   "text": "I hold crypto"
                   
                 },{
-                  "x": 400,
-                  "y": 250,
+                  "x": 380,
+                  "y": 280,
                   "text": "Bitcoin, right?"
                   
                 },{
-                  "x": 400,
+                  "x": 380,
                   "y": 600,
                   "text": "Bitcoin, right?"
                   
@@ -1684,6 +1779,23 @@
             {
               "caption": "{{.Name}} = ${{FormatNumber .CurrentPrice}}",
               "image": "/memes/dissapointed.jpg"
+            },
+            {
+              "caption": "",
+              "image": "/memes/anime-girl-buying.jpg",
+              "content": [
+                {
+                  "x": 300,
+                  "y": 350,
+                  "text": "${{FormatNumber .CurrentPrice}}"
+                  
+                },{
+                  "x": 170,
+                  "y": 460,
+                  "text": "one {{.Name}} please"
+                  
+                }
+              ]
             }
           ]
         },
@@ -1809,7 +1921,7 @@
           "value": -10,
           "memes": [
             {
-              "caption": "{{.Name}} is ${{FormatNumber .CurrentPrice}}. such dump!",
+              "caption": "{{.Name}} is ${{FormatNumber .CurrentPrice}}. such dump!      ",
               "image": "/memes/dogecoin-bicycle.jpg"
             },
             {
