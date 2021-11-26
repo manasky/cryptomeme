@@ -102,6 +102,18 @@
               ]
             },
             {
+              "caption": "1 {{.Name}} = ${{FormatNumber .CurrentPrice}}",
+              "image": "/memes/meta.jpg",
+              "content": [
+                {
+                  "x": 410,
+                  "y": 420,
+                  "text": "bear market"
+                  
+                }
+              ]
+            },
+            {
               "caption": "Is this a dump?",
               "image": "/memes/always-has-been.jpg",
               "content": [
@@ -144,6 +156,31 @@
                   "y": 70,
                   "text": "it's dump time"
                   
+                },{
+                  "x": 160,
+                  "y": 380,
+                  "text": "no..."
+                  
+                }
+              ]
+            },
+            {
+              "caption": "",
+              "image": "/memes/dad-belt.jpg",
+              "content": [
+                {
+                  "x": 424,
+                  "y": 63,
+                  
+                  "image": "/logos/btc.png"
+                },{
+                  "x": 90,
+                  "y": 70,
+                  "text": "bear market"
+                },{
+                  "x": 140,
+                  "y": 120,
+                  "text": "begins"
                 },{
                   "x": 160,
                   "y": 380,
@@ -347,6 +384,28 @@
                   "image": "logos/btc.png"
                 }
               ]
+            },
+            {
+              "caption": "",
+              "image": "/memes/i-killed-a-man.jpg",
+              "content": [
+                {
+                  "x": 50,
+                  "y": 411,
+                  "text": "I sold {{.Name}}"
+                  
+                },{
+                  "x": 80,
+                  "y": 452,
+                  "text": "at ${{FormatNumber .CurrentPrice}}"
+                  
+                },{
+                  "x": 70,
+                  "y": 60,
+                  "text": "Year 2025"
+                  
+                }
+              ]
             }
           ]
         },
@@ -464,6 +523,38 @@
                 },{
                   "x": 130,
                   "y": 0,
+                  
+                  "image": "/logos/btc.png"
+                }
+              ]
+            },
+            {
+              "caption": "",
+              "image": "/memes/man-holding.jpg",
+              "content": [
+                {
+                  "x": 230,
+                  "y": 200,
+                  "text": "ATH"
+                  
+                },{
+                  "x": 460,
+                  "y": 30,
+                  
+                  "image": "/logos/btc.png"
+                },{
+                  "x": 220,
+                  "y": 480,
+                  "text": "Bear"
+                  
+                },{
+                  "x": 200,
+                  "y": 520,
+                  "text": "market"
+                  
+                },{
+                  "x": 340,
+                  "y": 340,
                   
                   "image": "/logos/btc.png"
                 }
@@ -898,6 +989,23 @@
             {
               "caption": "Me and my shitcoin owner friends",
               "image": "/memes/squidward-patrick-spongebob.jpg"
+            },
+            {
+              "caption": "",
+              "image": "/memes/heidi.jpg",
+              "content": [
+                {
+                  "x": 230,
+                  "y": 50,
+                  "text": "I bought {{.Name}}"
+                  
+                },{
+                  "x": 350,
+                  "y": 100,
+                  "text": "at ${{FormatNumber .ATH}}"
+                  
+                }
+              ]
             }
           ]
         },
@@ -1296,6 +1404,28 @@
 
                 }
               ]
+            },
+            {
+              "caption": "",
+              "image": "/memes/dio-jojo.jpg",
+              "content": [
+                {
+                  "x": 100,
+                  "y": 211,
+                  "text": "${{FormatNumber .CurrentPrice}}"
+                  
+                },{
+                  "x": 100,
+                  "y": 251,
+                  "text": "{{.Name}}"
+                  
+                },{
+                  "x": 460,
+                  "y": 250,
+                  "text": "Bitcoin"
+                  
+                }
+              ]
             }
           ]
         },
@@ -1372,6 +1502,33 @@
                   "x": 400,
                   "y": 530,
                   "text": "now"
+                  
+                }
+              ]
+            },
+            {
+              "caption": "",
+              "image": "/memes/act-like-youre-better-than-me.jpg",
+              "content": [
+                {
+                  "x": 320,
+                  "y": 70,
+                  "text": "BNB"
+                  
+                },{
+                  "x": 431,
+                  "y": 459,
+                  "text": "ADA"
+                  
+                },{
+                  "x": 279,
+                  "y": 473,
+                  "text": "SOL"
+                  
+                },{
+                  "x": 152,
+                  "y": 489,
+                  "text": "DOT"
                   
                 }
               ]
@@ -1620,6 +1777,55 @@
                   
                 }
               ]
+            },
+            {
+              "caption": "",
+              "image": "/memes/dio-jojo.jpg",
+              "content": [
+                {
+                  "x": 100,
+                  "y": 211,
+                  "text": "${{FormatNumber .CurrentPrice}}"
+                  
+                },{
+                  "x": 100,
+                  "y": 251,
+                  "text": "{{.Name}}"
+                  
+                },{
+                  "x": 460,
+                  "y": 250,
+                  "text": "Ethereum"
+                  
+                }
+              ]
+            },
+            {
+              "caption": "",
+              "image": "/memes/jojo-beating-up.jpg",
+              "content": [
+                {
+                  "x": 220,
+                  "y": 90,
+                  "text": "BTC"
+                  
+                },{
+                  "x": 350,
+                  "y": 90,
+                  "text": "ETH"
+                  
+                },{
+                  "x": 270,
+                  "y": 200,
+                  "text": "ADA"
+                  
+                },{
+                  "x": 310,
+                  "y": 370,
+                  "text": "SOL"
+                  
+                }
+              ]
             }
           ]
         },
@@ -1633,6 +1839,23 @@
             {
               "caption": "1 {{.Name}} = ${{FormatNumber .CurrentPrice}}",
               "image": "/memes/breaking-bad-money.jpg"
+            },
+            {
+              "caption": "",
+              "image": "/memes/you-think-youre-better-than-me.jpg",
+              "content": [
+                {
+                  "x": 260,
+                  "y": 120,
+                  
+                  "image": "/logos/eth.png"
+                },{
+                  "x": 210,
+                  "y": 310,
+                  
+                  "image": "/logos/sol.png"
+                }
+              ]
             }
           ]
         }
@@ -1695,6 +1918,33 @@
                   "x": 82,
                   "y": 160,
                   "text": "{{.Name}}"
+                  
+                }
+              ]
+            },
+            {
+              "caption": "",
+              "image": "/memes/jojo-beating-up.jpg",
+              "content": [
+                {
+                  "x": 220,
+                  "y": 90,
+                  "text": "BTC"
+                  
+                },{
+                  "x": 350,
+                  "y": 90,
+                  "text": "ETH"
+                  
+                },{
+                  "x": 270,
+                  "y": 200,
+                  "text": "ADA"
+                  
+                },{
+                  "x": 310,
+                  "y": 370,
+                  "text": "SOL"
                   
                 }
               ]
@@ -1797,6 +2047,23 @@
                   
                 }
               ]
+            },
+            {
+              "caption": "",
+              "image": "/memes/heidi.jpg",
+              "content": [
+                {
+                  "x": 230,
+                  "y": 50,
+                  "text": "I bought {{.Name}}"
+                  
+                },{
+                  "x": 350,
+                  "y": 100,
+                  "text": "at ${{FormatNumber .ATH}}"
+                  
+                }
+              ]
             }
           ]
         },
@@ -1871,6 +2138,10 @@
                   "image": "/logos/xrp.png"
                 }
               ]
+            },
+            {
+              "caption": "",
+              "image": "/memes/not-stressful.jpg"
             }
           ]
         },
@@ -2018,6 +2289,33 @@
             {
               "caption": "Me, watching {{.Name}} price at ${{FormatNumber .CurrentPrice}}",
               "image": "/memes/polkadot-man.jpg"
+            },
+            {
+              "caption": "",
+              "image": "/memes/shrek-relax-unexpected.jpg",
+              "content": [
+                {
+                  "x": 390,
+                  "y": 130,
+                  "text": "buy a cheap"
+                  
+                },{
+                  "x": 390,
+                  "y": 180,
+                  "text": "coin for fun"
+                  
+                },{
+                  "x": 390,
+                  "y": 440,
+                  "text": "it's ${{FormatNumber .CurrentPrice}}"
+                  
+                },{
+                  "x": 390,
+                  "y": 490,
+                  "text": "now"
+                  
+                }
+              ]
             }
           ]
         },
@@ -2337,6 +2635,38 @@
             {
               "caption": "When you realize you lost all your money to a for a meme coin",
               "image": "/memes/monster-inc-pokerface.jpg"
+            },
+            {
+              "caption": "",
+              "image": "/memes/lets-keep-this-on.jpg",
+              "content": [
+                {
+                  "x": 90,
+                  "y": 130,
+                  
+                  "image": "/logos/shib.png"
+                },{
+                  "x": 420,
+                  "y": 50,
+                  
+                  "image": "/logos/shib.png"
+                },{
+                  "x": 100,
+                  "y": 440,
+                  "text": "scam"
+                  
+                },{
+                  "x": 400,
+                  "y": 400,
+                  "text": "text",
+                  "image": "/logos/shib.png"
+                },{
+                  "x": 118,
+                  "y": 42,
+                  "text": "Shiba"
+                  
+                }
+              ]
             }
           ]
         },
@@ -2418,25 +2748,69 @@
                 },
                 {
                   "caption": "",
-                  "image": "/memes/you-cant-defeat-me.jpg",
+                  "image": "/memes/you-think-youre-better-than-me.jpg",
                   "content": [
                     {
-                      "x": 300,
-                      "y": 100,
-                      
-                      "image": "/logos/btc.png"
-                    },{
-                      "x": 425,
-                      "y": 403,
+                      "x": 260,
+                      "y": 120,
                       
                       "image": "/logos/doge.png"
                     },{
-                      "x": 293,
-                      "y": 465,
+                      "x": 210,
+                      "y": 310,
                       
                       "image": "/logos/shib.png"
                     }
                   ]
+                }
+              ]
+            },
+            {
+              "caption": "",
+              "image": "/memes/you-cant-defeat-me.jpg",
+              "content": [
+                {
+                  "x": 300,
+                  "y": 100,
+                  
+                  "image": "/logos/btc.png"
+                },{
+                  "x": 425,
+                  "y": 403,
+                  
+                  "image": "/logos/doge.png"
+                },{
+                  "x": 293,
+                  "y": 465,
+                  
+                  "image": "/logos/shib.png"
+                }
+              ]
+            },
+            {
+              "caption": "",
+              "image": "/memes/shrek-relax-unexpected.jpg",
+              "content": [
+                {
+                  "x": 390,
+                  "y": 130,
+                  "text": "buy a meme"
+                  
+                },{
+                  "x": 390,
+                  "y": 180,
+                  "text": "coin for fun"
+                  
+                },{
+                  "x": 390,
+                  "y": 440,
+                  "text": "it's ${{FormatNumber .CurrentPrice}}"
+                  
+                },{
+                  "x": 390,
+                  "y": 490,
+                  "text": "now"
+                  
                 }
               ]
             }
