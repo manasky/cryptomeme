@@ -29,6 +29,23 @@
             {
               "caption": "When I see the {{.Name}} price at ${{FormatNumber .CurrentPrice}}",
               "image": "/memes/wojak-gun.jpg"
+            },
+            {
+              "caption": "",
+              "image": "/memes/trump-interview.jpg",
+              "content": [
+                {
+                  "x": 70,
+                  "y": 562,
+                  "text": "${{FormatNumber .CurrentPrice}}"
+                  
+                },{
+                  "x": 130,
+                  "y": 0,
+                  
+                  "image": "/logos/btc.png"
+                }
+              ]
             }
           ]
         },
@@ -95,6 +112,67 @@
 
                 }
               ]
+            },
+            {
+              "caption": "",
+              "image": "/memes/quiz-kid.jpg",
+              "content": [
+                {
+                  "x": 345,
+                  "y": 436,
+                  "text": "1 {{.Name}}"
+                  
+                },{
+                  "x": 345,
+                  "y": 470,
+                  "text": "${{FormatNumber .CurrentPrice}}"
+                  
+                }
+              ]
+            },
+            {
+              "caption": "",
+              "image": "/memes/dad-belt.jpg",
+              "content": [
+                {
+                  "x": 424,
+                  "y": 63,
+                  
+                  "image": "/logos/btc.png"
+                },{
+                  "x": 80,
+                  "y": 70,
+                  "text": "it's dump time"
+                  
+                },{
+                  "x": 160,
+                  "y": 380,
+                  "text": "no..."
+                  
+                }
+              ]
+            },
+            {
+              "caption": "",
+              "image": "/memes/wizard.jpg",
+              "content": [
+                {
+                  "x": 450,
+                  "y": 400,
+                  "text": "my"
+                  
+                },{
+                  "x": 160,
+                  "y": 380,
+                  "text": "whales"
+                  
+                },{
+                  "x": 380,
+                  "y": 440,
+                  "text": "investment"
+                  
+                }
+              ]
             }
           ]
         },
@@ -146,7 +224,7 @@
                 },{
                   "x": 70,
                   "y": 135,
-                  "text": "at XXXX"
+                  "text": "at ${{FormatNumber .CurrentPrice}}"
                   
                 },{
                   "x": 461,
@@ -164,6 +242,28 @@
                   "x": 150,
                   "y": 600,
                   "text": "Me buying at ${{FormatOppositePrice .CurrentPrice .PriceChangePercentage24h}}"
+                  
+                }
+              ]
+            },
+            {
+              "caption": "",
+              "image": "/memes/train-hit-bus.jpg",
+              "content": [
+                {
+                  "x": 298,
+                  "y": 140,
+                  "text": "my small"
+                  
+                },{
+                  "x": 210,
+                  "y": 180,
+                  "text": "{{.Name}} investment "
+                  
+                },{
+                  "x": 205,
+                  "y": 436,
+                  "text": "whales"
                   
                 }
               ]
@@ -351,6 +451,23 @@
 
                 }
               ]
+            },
+            {
+              "caption": "",
+              "image": "/memes/trump-interview.jpg",
+              "content": [
+                {
+                  "x": 20,
+                  "y": 562,
+                  "text": "dump is coiming"
+                  
+                },{
+                  "x": 130,
+                  "y": 0,
+                  
+                  "image": "/logos/btc.png"
+                }
+              ]
             }
           ]
         },
@@ -479,6 +596,30 @@
                   
                 }
               ]
+            },
+            {
+              "caption": "there was no {{.Name}} dump today",
+              "image": "/memes/are-you-challenging-me.jpg",
+              "content": [
+                {
+                  "x": 120,
+                  "y": 240,
+                  
+                  "image": "/logos/btc.png"
+                }
+              ]
+            },
+            {
+              "caption": "Still waiting for Bitcoin ATH",
+              "image": "/memes/jojo-picture.jpg",
+              "content": [
+                {
+                  "x": 200,
+                  "y": 470,
+                  "text": "${{FormatNumber .ATH}}"
+                  
+                }
+              ]
             }
           ]
         },
@@ -520,10 +661,7 @@
             },
             {
               "caption": "When {{.Name}} is finally ${{FormatNumber .CurrentPrice}}",
-              "image": "/memes/inner-peace.jpg",
-              "content": [
-                
-              ]
+              "image": "/memes/inner-peace.jpg"
             },
             {
               "caption": "When your friend is a {{.Name}} billionaire and you know where they put their private keys",
@@ -535,6 +673,56 @@
               "content": [
 
               ]
+            },
+            {
+              "caption": "",
+              "image": "/memes/wizard-pump.jpg",
+              "content": [
+                {
+                  "x": 59,
+                  "y": 90,
+                  "text": "when I predict {{.Name}} price"
+                  
+                },{
+                  "x": 70,
+                  "y": 135,
+                  "text": "and my prediction comes true"
+                  
+                }
+              ]
+            },
+            {
+              "caption": "",
+              "image": "/memes/peter-parker-harry-osborn.jpg",
+              "content": [
+                {
+                  "x": 78,
+                  "y": 60,
+                  "text": "my small {{.Name}} investment "
+                  
+                },{
+                  "x": 270,
+                  "y": 370,
+                  "text": "whales"
+                  
+                }
+              ]
+            },
+            {
+              "caption": "When {{.Name}} reaches ${{FormatNumber .CurrentPrice}}",
+              "image": "/memes/jojo-rabbit.jpg",
+              "content": [
+                {
+                  "x": 230,
+                  "y": 465,
+                  "text": "bear market"
+                  
+                }
+              ]
+            },
+            {
+              "caption": "1 {{.Name}} = ${{FormatNumber .CurrentPrice}}",
+              "image": "/memes/pepe-kills-bear-market.jpg"
             }
           ]
         },
@@ -637,6 +825,10 @@
 
                 }
               ]
+            },
+            {
+              "caption": "1 {{.Name}} = ${{FormatNumber .CurrentPrice}}",
+              "image": "/memes/look-dad.jpg"
             }
           ]
         },
@@ -913,6 +1105,10 @@
             {
               "caption": "{{.Name}} holders when it's ${{FormatNumber .CurrentPrice}}",
               "image": "/memes/sunglasses.jpg"
+            },
+            {
+              "caption": "looking at ${{FormatNumber .CurrentPrice}} {{.Name}} price                                                                         ",
+              "image": "/memes/james-harden-looking.jpg"
             }
           ]
         },
@@ -1944,6 +2140,10 @@
                   
                 }
               ]
+            },
+            {
+              "caption": "Did you really think a meme is the currency of future?      Think about it!   Think!                                                                           ",
+              "image": "/memes/elon-musk-think.jpg"
             }
           ]
         },
@@ -2145,10 +2345,7 @@
           "memes": [
             {
               "caption": "Waiting for shiba go to moon",
-              "image": "/memes/narcos-waiting.jpg",
-              "content": [
-                
-              ]
+              "image": "/memes/narcos-waiting.jpg"
             }
           ]
         },
@@ -2218,6 +2415,28 @@
                   "y": 210,
                   
                   "image": "/logos/shib.png"
+                },
+                {
+                  "caption": "",
+                  "image": "/memes/you-cant-defeat-me.jpg",
+                  "content": [
+                    {
+                      "x": 300,
+                      "y": 100,
+                      
+                      "image": "/logos/btc.png"
+                    },{
+                      "x": 425,
+                      "y": 403,
+                      
+                      "image": "/logos/doge.png"
+                    },{
+                      "x": 293,
+                      "y": 465,
+                      
+                      "image": "/logos/shib.png"
+                    }
+                  ]
                 }
               ]
             }
@@ -2228,9 +2447,28 @@
           "memes": [
             {
               "caption": "Shiba investors right now",
-              "image": "/memes/bart-rich.jpg",
+              "image": "/memes/bart-rich.jpg"
+            },
+            {
+              "caption": "",
+              "image": "/memes/you-cant-defeat-me.jpg",
               "content": [
-                
+                {
+                  "x": 300,
+                  "y": 100,
+                  
+                  "image": "/logos/btc.png"
+                },{
+                  "x": 425,
+                  "y": 403,
+                  
+                  "image": "/logos/doge.png"
+                },{
+                  "x": 293,
+                  "y": 465,
+                  
+                  "image": "/logos/shib.png"
+                }
               ]
             }
           ]
