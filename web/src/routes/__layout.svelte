@@ -30,3 +30,4 @@
     <div class="mt-4"></div>
     <Footer/>
   </main>
+<div class="fixed z-20 inline-block bottom-3 right-3"><a href="https://www.producthunt.com/posts/cryptomeme-wtf?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-cryptomeme-wtf" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=322126&amp;theme=dark" alt="CryptoMeme.WTF - Crypto live price + generated Memes! | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54"></a></div>
