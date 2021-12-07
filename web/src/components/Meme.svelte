@@ -42,9 +42,9 @@ afterUpdate(() => {
 
 </script>
 
-<div class="{wrapperClasses} overflow-hidden border border-base-content border-opacity-5 cursor-pointer">
+<div class="{wrapperClasses} overflow-hidden border border-base-content border-opacity-5 cursor-pointer" style="transform: translateZ(0)">
   <canvas
-    class="{classes} relative mb-[-12%] -mr-4" width='700' height='700' 
+    class="{classes} relative mb-[-12%] -mr-4" width="700" height="700"
     on:click={clickToDownload ? download() : ''} bind:this={canvasEl}
   ></canvas>
 </div>
