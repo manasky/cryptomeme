@@ -220,7 +220,7 @@ onMount(() => {
         </div>
       {/if}
       {#if coin}
-        <div class="mt-20 text-xs opacity-70">
+        <div class="pt-20 pb-10 text-xs opacity-70">
           <p>
             {coin.name} (<span class="uppercase">{coin.symbol}</span>) price is ${formatPrice(coin.current_price)} right now.
             {coin.name} price has
