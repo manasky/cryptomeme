@@ -6,6 +6,7 @@ import Seo from '@components/Seo.svelte'
 import Meme from '@components/Meme.svelte'
 import { sparkline } from "@fnando/sparkline"
 import { normalizeArrayToMin, extractObjectProperyToArray } from '@src/functions/utils.js'
+import { timeAgo } from '@src/functions/timeago.js'
 
 let API_PATH
 if (import.meta.env.VITE_API_PATH !== undefined) {
@@ -216,6 +217,38 @@ onMount(() => {
               clickToDownload=true
             />
           </div>
+        </div>
+      {/if}
+      {#if coin}
+        <div class="mt-20 text-xs opacity-70">
+          <p>
+            {coin.name} (<span class="uppercase">{coin.symbol}</span>) price is ${formatPrice(coin.current_price)} right now.
+            {coin.name} price has
+            {#if coin.price_change_percentage_24h >= 0}
+              increased
+            {:else if coin.price_change_percentage_24h < 0}
+              decreased
+            {/if}
+            by {coin.price_change_percentage_24h}% (${coin.price_change_24h})  in the last 24 hours.
+          </p>
+          <p>
+            Today minimum {coin.name} price was ${formatPrice(coin.low_24h)}
+            and maximum price was ${formatPrice(coin.high_24h)}
+          </p>
+          <p>
+            Minimum {coin.name} price in the last 7 days was ${formatPrice(Math.min(...extractObjectProperyToArray(coin.prices_7d, 'price')))}
+            and maximum price was ${formatPrice(Math.max(...extractObjectProperyToArray(coin.prices_7d, 'price')))}
+          </p>
+          <p>
+            {timeAgo(coin.ath_date, true)} ago {coin.name} reached all time high of ${formatPrice(coin.ath)}.
+          </p>
+          <p>
+            {timeAgo(coin.atl_date, true)} ago {coin.name} reached all time low of ${formatPrice(coin.atl)}.
+          </p>
+          <p>
+            Currently {coin.name} market cap is ${formatPrice(coin.market_cap)}
+            and circulating supply is {coin.circulating_supply}
+          </p>
         </div>
       {/if}
     </div>
